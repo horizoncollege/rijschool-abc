@@ -12,29 +12,29 @@
 </head>
 
 <body>
-
-    <nav>
-        <div class="menu-icon" onclick="toggleMenu()">
-            <i class="material-icons">☰</i>
-            <!-- Use an appropriate icon library, here using Material Icons as an example -->
-        </div>
-        <div class="logo">
-            <img src="{{ asset('images/logo.png') }}" alt="Logo">
-            <!-- Replace 'your-logo.png' with the path to your logo image -->
-        </div>
-        <div class="menu-items">
-            <a href="#">Home</a>
-            <a href="#">Autorijles bij ons</a>
-            <a href="#">Tarieven</a>
-            <a href="#">Over ons</a>
-            <a href="#">Contact</a>
-        </div>
-        <div class="menu-buttons">
-            <button class="blue-button">Inloggen</button>
-            <button class="yellow-button">Aanmelden</button>
-        </div>
-    </nav>
-
+    <div class="background">
+        <nav>
+            <div class="menu-icon" onclick="toggleMenu()">
+                <i class="material-icons">☰</i>
+                <!-- Use an appropriate icon library, here using Material Icons as an example -->
+            </div>
+            <div class="logo">
+                <img src="{{ asset('images/logo.png') }}" alt="Logo">
+                <!-- Replace 'your-logo.png' with the path to your logo image -->
+            </div>
+            <div class="menu-items">
+                <a href="#">Home</a>
+                <a href="#">Autorijles bij ons</a>
+                <a href="#">Tarieven</a>
+                <a href="#">Over ons</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="menu-buttons">
+                <button class="blue-button">Inloggen</button>
+                <button class="yellow-button">Aanmelden</button>
+            </div>
+        </nav>
+    </div>
     <div class="banner-afbeelding">
         <img src="{{ asset('images/vierkante-wielen-banner.jpg') }}" alt="Example Image">
     </div>

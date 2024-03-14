@@ -37,6 +37,11 @@ nav {
     margin: 0 auto;
 }
 
+.background {
+    background-color: white;
+    position: sticky;
+}
+
 .nav-logo {
     order: -1;
 }
