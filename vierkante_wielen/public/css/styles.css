@@ -8,12 +8,6 @@ body {
 }
 
 /* Container */
-.content {
-    margin: 0 auto;
-    max-width: 1280px;
-    background-color: white;
-}
-
 .container {
     background-color: #F2F2F2;
 }
@@ -25,7 +19,7 @@ header {
     text-align: center;
 }
 
-/* Navigation bar */
+/* NAVBAR */
 nav {
     display: flex;
     justify-content: space-between;
@@ -35,11 +29,6 @@ nav {
     height: 100px;
     max-width: 1280px;
     margin: 0 auto;
-}
-
-.background {
-    background-color: white;
-    position: sticky;
 }
 
 .nav-logo {
@@ -62,10 +51,6 @@ nav a:hover {
 .menu-icon {
     display: none;
     cursor: pointer;
-}
-
-.menu-icon i {
-    font-size: 24px;
 }
 
 .menu-items {
@@ -107,6 +92,7 @@ nav a:hover {
     background-color: #cc9400;
 }
 
+/* MOBILE OPTIMIZATION */
 @media screen and (max-width: 768px) {
     nav {
         flex-direction: column;
@@ -133,6 +119,49 @@ nav a:hover {
         display: flex;
         flex-direction: column;
     }
+
+    .brick-container {
+        flex-direction: column;
+    }
+
+    .brick {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        flex: 1;
+        text-align: center;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .text-afbeelding {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text-afbeelding .afbeelding {
+        width: 100%;
+        order: 1;
+        margin-bottom: 10px;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .text-afbeelding .text {
+        width: 100%;
+        order: 2;
+        margin-left: 0; /* Remove left margin on mobile */
+    }
+
+    .text-afbeelding img {
+        margin-top: 36px;
+        max-width: 100%; /* Ensure image scales down if too big */
+        height: auto;
+    }
+}
+
+/* Non-mobile styles */
+.text-afbeelding .text {
+    margin-left: 36px; /* Add left margin */
 }
 
 /* Banner image */
@@ -159,6 +188,7 @@ nav a:hover {
     margin: 0;
     font-weight: bold;
     font-size: 18px;
+    text-align: center;
 }
 
 /* Brick container and columns */
@@ -195,7 +225,7 @@ nav a:hover {
     color: #31393C;
 }
 
-/* Text + afbeelding */
+/* Text + image */
 .text-afbeelding {
     background-color: white;
     margin: 0 auto;
@@ -208,7 +238,6 @@ nav a:hover {
 .text-afbeelding img {
     margin-top: 36px;
     margin-bottom: 36px;
-    margin-right: 36px;
 }
 
 .text h2 {
