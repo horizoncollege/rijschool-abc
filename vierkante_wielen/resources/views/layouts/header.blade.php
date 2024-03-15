@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Site Title</title>
+    <title>Autorijschool De Vierkante Wielen</title>
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <script src="{{ asset('js/script.js') }}"></script>
 </head>
 
 <body>
@@ -45,16 +46,6 @@
     <div class="yellow-bar">
         <p>Veilig en vertrouwd de weg op met Autorijschool De Vierkante Wielen!</p>
     </div>
-
-    <script>
-        function toggleMenu() {
-            const menuItems = document.querySelector('.menu-items');
-            menuItems.classList.toggle('show');
-            const buttons = document.querySelector('.menu-buttons');
-            buttons.style.display = buttons.style.display === 'none' ? 'flex' : 'none';
-        }
-    </script>
-
 </body>
 
 </html>
