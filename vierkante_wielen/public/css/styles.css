@@ -149,19 +149,22 @@ nav a:hover {
     .text-afbeelding .text {
         width: 100%;
         order: 2;
-        margin-left: 0; /* Remove left margin on mobile */
+        margin-left: 0;
+        /* Remove left margin on mobile */
     }
 
     .text-afbeelding img {
         margin-top: 36px;
-        max-width: 100%; /* Ensure image scales down if too big */
+        max-width: 100%;
+        /* Ensure image scales down if too big */
         height: auto;
     }
 }
 
 /* Non-mobile styles */
 .text-afbeelding .text {
-    margin-left: 36px; /* Add left margin */
+    margin-left: 36px;
+    /* Add left margin */
 }
 
 /* Banner image */
@@ -250,16 +253,21 @@ nav a:hover {
 }
 
 /* Footer */
+
 footer {
     background-color: #003D86;
     color: white;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
 }
 
 .footer-brick-container {
     display: flex;
     max-width: 1280px;
     margin: 0 auto;
-    justify-content: center;
 }
 
 .footer-brick {
@@ -293,4 +301,25 @@ footer {
 
 .footer-brick a:hover {
     text-decoration: underline;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .footer-brick {
+        flex: none;
+        /* Remove flex property to allow stacking */
+        margin-left: 0;
+        /* Reset margin */
+        margin-bottom: 20px;
+        /* Add margin bottom for spacing */
+        text-align: center;
+        /* Center align text */
+    }
+
+    .footer-brick-container {
+        flex-direction: column;
+        /* Change to column layout */
+        align-items: center;
+        /* Center align items */
+    }
 }
