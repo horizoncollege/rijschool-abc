@@ -84,6 +84,19 @@ nav a:hover {
     font-size: 16px;
 }
 
+.menubar-mobiel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.bar {
+    width: 35px;
+    height: 5px;
+    background-color: #003D86;
+    margin: 6px 0;
+}
+
 .blue-button {
     background-color: #003D86;
     color: #fff;

@@ -14,11 +14,17 @@
 <body>
     <div class="background">
         <nav>
-            <div class="menu-icon" onclick="toggleMenu()">
-                <i class="material-icons">☰</i>
-            </div>
-            <div class="logo">
-                <img src="{{ asset('images/logo.png') }}" alt="Logo">
+            <div class="menubar-mobiel">
+                <div class="menu-icon" onclick="toggleMenu()">
+                    <i class="material-icons">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </i>
+                </div>
+                <div class="logo">
+                    <img src="{{ asset('images/logo.png') }}" alt="Logo">
+                </div>
             </div>
             <div class="menu-items">
                 <a href="#">Home</a>
