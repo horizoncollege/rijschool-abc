@@ -18,7 +18,7 @@
             <div class="footer-brick">
                 <h3>Contactgegevens</h3>
                 <p><b>Adres:</b><br>Rijschool De Vierkante Wielen<br>Wevershof 22<br>1482PK De Rijp</p>
-                <p><b>Telefoon:</b><br>06 73 16 47 17</p>
+                <p><b>Telefoon:</b><br>+31 6 73 16 47 17</p>
                 <p><b>E-mailadres:</b><br>166389@student.horizoncollege.nl</p>
             </div>
             <div class="footer-brick">

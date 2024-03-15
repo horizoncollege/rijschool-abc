@@ -97,6 +97,12 @@ nav a:hover {
     margin: 6px 0;
 }
 
+.material-icons {
+    position: absolute;
+    left: 20px;
+    top: 40px;
+}
+
 .blue-button {
     background-color: #003D86;
     color: #fff;
