@@ -16,11 +16,9 @@
         <nav>
             <div class="menu-icon" onclick="toggleMenu()">
                 <i class="material-icons">☰</i>
-                <!-- Use an appropriate icon library, here using Material Icons as an example -->
             </div>
             <div class="logo">
                 <img src="{{ asset('images/logo.png') }}" alt="Logo">
-                <!-- Replace 'your-logo.png' with the path to your logo image -->
             </div>
             <div class="menu-items">
                 <a href="#">Home</a>

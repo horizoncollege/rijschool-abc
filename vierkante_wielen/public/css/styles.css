@@ -1,3 +1,14 @@
+.text-afbeelding .text {
+    margin-left: 36px;
+    margin-bottom: 36px;
+}
+
+@media screen and (max-width: 768px) {
+    .text-afbeelding .text {
+        margin-left: 0px;
+    }
+}
+
 /* Reset styles */
 body {
     margin: 0;
@@ -7,7 +18,6 @@ body {
     background-color: white;
 }
 
-/* Container */
 .container {
     background-color: #F2F2F2;
 }
@@ -19,7 +29,7 @@ header {
     text-align: center;
 }
 
-/* NAVBAR */
+/* Navbar */
 nav {
     display: flex;
     justify-content: space-between;
@@ -74,25 +84,25 @@ nav a:hover {
     font-size: 16px;
 }
 
-.menu-buttons .blue-button {
+.blue-button {
     background-color: #003D86;
     color: #fff;
 }
 
-.menu-buttons .blue-button:hover {
+.blue-button:hover {
     background-color: #001f4d;
 }
 
-.menu-buttons .yellow-button {
+.yellow-button {
     background-color: #FFB703;
     color: #31393C;
 }
 
-.menu-buttons .yellow-button:hover {
+.yellow-button:hover {
     background-color: #cc9400;
 }
 
-/* MOBILE OPTIMIZATION */
+/* Mobile Optimization */
 @media screen and (max-width: 768px) {
     nav {
         flex-direction: column;
@@ -120,51 +130,37 @@ nav a:hover {
         flex-direction: column;
     }
 
-    .brick-container {
+    .brick-container,
+    .text-afbeelding {
         flex-direction: column;
     }
 
     .brick {
         margin-top: 20px;
         margin-bottom: 20px;
-        flex: 1;
         text-align: center;
         padding-left: 10px;
         padding-right: 10px;
     }
 
-    .text-afbeelding {
-        flex-direction: column;
-        align-items: center;
-    }
-
     .text-afbeelding .afbeelding {
         width: 100%;
         order: 1;
-        margin-bottom: 10px;
+        margin-bottom: 0px;
         text-align: center;
-        margin: 0 auto;
     }
 
     .text-afbeelding .text {
-        width: 100%;
+        width: 85%;
         order: 2;
-        margin-left: 0;
-        /* Remove left margin on mobile */
+        text-align: left;
     }
 
     .text-afbeelding img {
         margin-top: 36px;
         max-width: 100%;
-        /* Ensure image scales down if too big */
         height: auto;
     }
-}
-
-/* Non-mobile styles */
-.text-afbeelding .text {
-    margin-left: 36px;
-    /* Add left margin */
 }
 
 /* Banner image */
@@ -253,26 +249,25 @@ nav a:hover {
 }
 
 /* Footer */
-
 footer {
     background-color: #003D86;
     color: white;
 }
 
 .footer-container {
-    display: flex;
-    justify-content: center;
+    max-width: 1280px;
+    margin: 0 auto;
 }
 
 .footer-brick-container {
     display: flex;
-    max-width: 1280px;
-    margin: 0 auto;
+    justify-content: space-between;
 }
 
 .footer-brick {
     flex: 1;
     margin-left: 36px;
+    text-align: left;
 }
 
 .footer-brick h3 {
@@ -305,21 +300,15 @@ footer {
 
 /* Media query for smaller screens */
 @media (max-width: 768px) {
-    .footer-brick {
-        flex: none;
-        /* Remove flex property to allow stacking */
-        margin-left: 0;
-        /* Reset margin */
-        margin-bottom: 20px;
-        /* Add margin bottom for spacing */
-        text-align: center;
-        /* Center align text */
-    }
-
     .footer-brick-container {
         flex-direction: column;
-        /* Change to column layout */
-        align-items: center;
-        /* Center align items */
+        align-items: flex-start;
+    }
+
+    .footer-brick {
+        flex: none;
+        margin-left: 0;
+        padding-left: 20px;
+        text-align: left;
     }
 }

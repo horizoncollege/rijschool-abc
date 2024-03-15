@@ -17,7 +17,6 @@
                 <p><b>Telefoon:</b><br>06 73 16 47 17</p>
                 <p><b>E-mailadres:</b><br>166389@student.horizoncollege.nl</p>
             </div>
-
             <div class="footer-brick">
                 <h3>Snel naar</h3>
                 <ul>
@@ -28,7 +27,16 @@
                     <li><a href="#">Contact</a></li>
                 </ul>
             </div>
-
+            <div class="footer-brick">
+                <h3>Volg ons</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">X (Twitter)</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">YouTube</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
             <div class="footer-brick">
                 <h3>Volg ons</h3>
                 <ul>
