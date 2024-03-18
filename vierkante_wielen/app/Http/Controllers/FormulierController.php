@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Gebruiker;
+use App\Models\User;
 
 class FormulierController extends Controller
 {
@@ -14,7 +14,7 @@ class FormulierController extends Controller
 
     public function opslaanGegevens(Request $request)
     {
-        $request->validate([
+        $user = $request->validate([
             'voornaam' => 'required|string|max:255',
             'achternaam' => 'required|string|max:255',
             'email' => 'required|email|max:255',
@@ -25,23 +25,14 @@ class FormulierController extends Controller
             'opmerkingen' => 'nullable|string|max:255',
         ]);
 
-        Gebruiker::create([
-            'voornaam' => $request->voornaam,
-            'achternaam' => $request->achternaam,
-            'email' => $request->email,
-            'mobiel' => $request->mobiel,
-            'plaats' => $request->plaats,
-            'postcode' => $request->postcode,
-            'adres' => $request->adres,
-            'opmerkingen' => $request->opmerkingen,
-        ]);
+        User::create($user);
 
         return redirect('/gegevens');
     }
 
     public function gegevensTonen()
     {
-        $gebruikers = Gebruiker::all();
+        $gebruikers = User::all();
         return view('gegevens', ['gebruikers' => $gebruikers]);
     }
 }
