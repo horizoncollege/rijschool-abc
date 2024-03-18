@@ -24,11 +24,12 @@
             <div class="footer-brick">
                 <h3>Snel naar</h3>
                 <ul>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li><a href="#">Autorijles bij ons</a></li>
                     <li><a href="#">Tarieve </a></li>
                     <li><a href="#">Over ons</a></li>
                     <li><a href="#">Contact</a></li>
+                    <li><a href="{{ url('overzicht-leerlingen') }}">Leerlingen</a></li>
                 </ul>
             </div>
             <div class="footer-brick">

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FormulierController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+
+Route::get('/formulier', [FormulierController::class, 'createFormulier']);
+Route::post('/opslaan', [FormulierController::class, 'opslaanGegevens'])->name('opslaan');
+Route::get('/gegevens', [FormulierController::class, 'gegevensTonen']);
