@@ -29,7 +29,7 @@
                     <li><a href="#">Tarieve </a></li>
                     <li><a href="#">Over ons</a></li>
                     <li><a href="#">Contact</a></li>
-                    <li><a href="{{ url('overzicht-leerlingen') }}">Leerlingen</a></li>
+                    <li><a href="{{ url('formulier') }}">Formulier</a></li>
                 </ul>
             </div>
             <div class="footer-brick">
