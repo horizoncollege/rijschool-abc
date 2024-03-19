@@ -28,11 +28,11 @@
                 </div>
             </div>
             <div class="menu-items">
-                <a href="#">Home</a>
-                <a href="#">Autorijles bij ons</a>
-                <a href="#">Tarieven</a>
-                <a href="#">Over ons</a>
-                <a href="#">Contact</a>
+                <a href="{{ url('') }}">Home</a>
+                <a href="{{ url('autorijles-bij-ons') }}">Autorijles bij ons</a>
+                <a href="{{ url('tarieven') }}">Tarieven</a>
+                <a href="{{ url('over-ons') }}">Over ons</a>
+                <a href="{{ url('contact') }}">Contact</a>
             </div>
             <div class="menu-buttons">
                 <button class="blue-button">Inloggen</button>
