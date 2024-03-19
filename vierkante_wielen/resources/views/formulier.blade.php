@@ -10,6 +10,36 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     <script src="{{ asset('js/script.js') }}"></script>
+    <style>
+        form {
+            display: grid;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid transparent;
+            border-radius: 5px;
+            box-sizing: border-box;
+            background-color: #f2f2f2;
+        }
+
+        button[type="submit"] {
+            padding: 5px 15px;
+            border: 5px solid transparent;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #003D86;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #001f4d;
+        }
+    </style>
 </head>
 
 <body>
