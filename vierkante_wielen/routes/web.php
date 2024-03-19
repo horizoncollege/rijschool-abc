@@ -14,10 +14,6 @@ use App\Http\Controllers\FormulierController;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-
 Route::get('autorijles-bij-ons', function () {
     return view('autorijlesbijons');
 });
@@ -33,6 +29,20 @@ Route::get('over-ons', function () {
 Route::get('contact', function () {
     return view('contact');
 });
+
+// Custom
+
+Route::view('/', 'index');
+
+Route::view('dashboard', 'dashboard')
+    ->middleware(['auth', 'verified'])
+    ->name('dashboard');
+
+Route::view('profile', 'profile')
+    ->middleware(['auth'])
+    ->name('profile');
+
+require __DIR__.'/auth.php';
 
 
 Route::get('/formulier', [FormulierController::class, 'createFormulier']);
