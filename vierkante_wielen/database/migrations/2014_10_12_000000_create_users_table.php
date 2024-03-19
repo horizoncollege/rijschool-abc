@@ -13,16 +13,10 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('voornaam')->default('');
-            $table->string('achternaam');
-            $table->string('mobiel');
-            $table->string('adres');
-            $table->string('postcode');
-            $table->string('plaats');
-            $table->string('opmerkingen')->nullable();
+            $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password')->default('');
+            $table->string('password')->default('default_password'); // Set default value for password column
             $table->rememberToken();
             $table->timestamps();
         });

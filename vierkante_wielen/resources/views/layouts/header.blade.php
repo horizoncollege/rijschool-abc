@@ -35,8 +35,8 @@
                 <a href="{{ url('contact') }}">Contact</a>
             </div>
             <div class="menu-buttons">
-                <button class="blue-button">Inloggen</button>
-                <button class="yellow-button">Aanmelden</button>
+                <a href="{{ url('login') }}"><button class="blue-button">Inloggen</button></a>
+                <a href="{{ url('register') }}"><button class="yellow-button">Aanmelden</button></a>
             </div>
         </nav>
     </div>
