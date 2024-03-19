@@ -18,6 +18,23 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('autorijles-bij-ons', function () {
+    return view('autorijlesbijons');
+});
+
+Route::get('tarieven', function () {
+    return view('tarieven');
+});
+
+Route::get('over-ons', function () {
+    return view('over-ons');
+});
+
+Route::get('contact', function () {
+    return view('contact');
+});
+
+
 Route::get('/formulier', [FormulierController::class, 'createFormulier']);
 Route::post('/opslaan', [FormulierController::class, 'opslaanGegevens'])->name('opslaan');
 Route::get('/gegevens', [FormulierController::class, 'gegevensTonen']);

@@ -25,10 +25,10 @@
                 <h3>Snel naar</h3>
                 <ul>
                     <li><a href="{{ url('') }}">Home</a></li>
-                    <li><a href="{{ url('Autorijles-bij-ons') }}">Autorijles bij ons</a></li>
-                    <li><a href="{{ url('Tarieven') }}">Tarieven</a></li>
-                    <li><a href="{{ url('Over-ons') }}">Over ons</a></li>
-                    <li><a href="{{ url('Contact') }}">Contact</a></li>
+                    <li><a href="{{ url('autorijles-bij-ons') }}">Autorijles bij ons</a></li>
+                    <li><a href="{{ url('tarieven') }}">Tarieven</a></li>
+                    <li><a href="{{ url('over-ons') }}">Over ons</a></li>
+                    <li><a href="{{ url('contact') }}">Contact</a></li>
                     <li><a href="{{ url('formulier') }}">Formulier</a></li>
                 </ul>
             </div>
