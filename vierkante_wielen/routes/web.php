@@ -24,3 +24,25 @@ Route::view('profile', 'profile')
     ->name('profile');
 
 require __DIR__.'/auth.php';
+
+// Navbar linkjes
+
+Route::get('/', function () {
+    return view('index');
+});
+
+Route::get('autorijles-bij-ons', function () {
+    return view('autorijlesbijons');
+});
+
+Route::get('tarieven', function () {
+    return view('tarieven');
+});
+
+Route::get('over-ons', function () {
+    return view('over-ons');
+});
+
+Route::get('contact', function () {
+    return view('contact');
+});
