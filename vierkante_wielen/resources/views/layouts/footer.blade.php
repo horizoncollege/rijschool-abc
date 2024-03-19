@@ -24,11 +24,11 @@
             <div class="footer-brick">
                 <h3>Snel naar</h3>
                 <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="#">Autorijles bij ons</a></li>
-                    <li><a href="#">Tarieve </a></li>
-                    <li><a href="#">Over ons</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="{{ url('') }}">Home</a></li>
+                    <li><a href="{{ url('Autorijles-bij-ons') }}">Autorijles bij ons</a></li>
+                    <li><a href="{{ url('Tarieven') }}">Tarieven</a></li>
+                    <li><a href="{{ url('Over-ons') }}">Over ons</a></li>
+                    <li><a href="{{ url('Contact') }}">Contact</a></li>
                     <li><a href="{{ url('formulier') }}">Formulier</a></li>
                 </ul>
             </div>
