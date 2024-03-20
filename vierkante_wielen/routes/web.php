@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,38 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'index');
-Route::view('login', 'login');
-Route::view('register', 'register');
-
-Route::view('dashboard', 'dashboard')
-    ->middleware(['auth', 'verified'])
-    ->name('dashboard');
-
-Route::view('profile', 'profile')
-    ->middleware(['auth'])
-    ->name('profile');
-
-require __DIR__ . '/auth.php';
-
-// Navbar linkjes
-
 Route::get('/', function () {
     return view('index');
 });
 
-Route::get('autorijles-bij-ons', function () {
-    return view('autorijlesbijons');
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('tarieven', function () {
-    return view('tarieven');
-});
-
-Route::get('over-ons', function () {
-    return view('over-ons');
-});
-
-Route::get('contact', function () {
-    return view('contact');
-});
+require __DIR__.'/auth.php';
