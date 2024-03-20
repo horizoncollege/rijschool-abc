@@ -17,7 +17,12 @@ Pas dit README.md bestand aan om de beoordelaars inzicht te geven in het project
 
 ## Introductie
 
+Vierkante wielen is rijschoolwebsite waar je kan lessen. gespecialiceerd voor mensen met een beperking of handicap. 
+
 ## Teamleden
+- Abbi Sinnathamby
+- Chris Groen
+- Bruno Dijkhuis
 
 ## Over de website
 
