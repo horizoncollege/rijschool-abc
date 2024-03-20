@@ -15,6 +15,20 @@ Pas dit README.md bestand aan om de beoordelaars inzicht te geven in het project
 
 # Vierkante Wielen
 
+## Introductie
+
+## Teamleden
+
+## Over de website
+
+## Links
+
+## Features
+
+## Issues
+
+## License
+
 Vierkante Wielen is een website waar je als rijschool 
 
 
