@@ -103,6 +103,8 @@ nav a:hover {
     top: 40px;
 }
 
+/* Buttons-NAV */
+
 .blue-button {
     background-color: #003D86;
     color: #fff;
@@ -120,6 +122,35 @@ nav a:hover {
 .yellow-button:hover {
     background-color: #cc9400;
 }
+
+/* Buttons-Content */
+
+.menu-buttons-404 {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.menu-buttons-404 button {
+    padding: 5px 15px;
+    margin-top: 10px;
+    margin-right: 20px;
+    border: 5px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.blue-button-404 {
+    background-color: #003D86;
+    color: #fff;
+}
+
+.blue-button-404:hover {
+    background-color: #001f4d;
+}
+
 
 /* Mobile Optimization */
 @media screen and (max-width: 768px) {

@@ -22,7 +22,6 @@ Route::view('/contact', 'pages.contact');
 Route::view('/over-ons', 'pages.over-ons');
 Route::view('/tarieven', 'pages.tarieven');
 
-
 // Dashboard
 Route::get('/dashboard', function () {
     return view('dashboard');
