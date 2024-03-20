@@ -289,6 +289,14 @@ nav a:hover {
     margin-bottom: 36px;
 }
 
+.square-image {
+    max-width: 500px;
+    max-height: 500px;
+    width: auto;
+    height: auto;
+}
+
+
 .text h2 {
     font-size: 26px;
     color: #003D86;
@@ -297,11 +305,6 @@ nav a:hover {
 .text {
     width: 500px;
 }
-
-
-/* Formulier */
-
-
 
 /* Footer */
 footer {
