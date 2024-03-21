@@ -13,7 +13,7 @@
 @section('content')
     <div class="text-afbeelding">
         <div class="afbeelding">
-            <img src="https://picsum.photos/500" alt="afbeelding">
+            <img src="https://www.disabilitydrivinginstructors.com/wp-content/uploads/2014/09/Driving-Mobility-128-998x568.jpg" alt="afbeelding">
         </div>
         <div class="text">
             <h2>Autorijles bij ons</h2>
