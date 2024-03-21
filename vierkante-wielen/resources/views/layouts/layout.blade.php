@@ -20,6 +20,9 @@
     {{-- Hero section --}}
     @yield('hero')
 
+        {{-- Action-bar section --}}
+        @yield('action-bar')
+
     <main>
         {{-- Main content section --}}
         @yield('content')

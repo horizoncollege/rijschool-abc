@@ -151,10 +151,6 @@ nav a:hover {
     background-color: #001f4d;
 }
 
-.content-404{
-    margin-bottom: 57px;
-}
-
 /* Mobile Optimization */
 @media screen and (max-width: 768px) {
     nav {
@@ -298,7 +294,6 @@ nav a:hover {
     width: auto;
     height: auto;
 }
-
 
 .text h2 {
     font-size: 26px;
