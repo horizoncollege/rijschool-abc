@@ -10,6 +10,10 @@
     @include('partials.hero') {{-- Include the hero section --}}
 @endsection
 
+@section('action-bar')
+    @include('partials.action-bar') {{-- Include the action-bar section --}}
+@endsection
+
 @section('content')
     <div class="text-afbeelding">
         <div class="afbeelding">
