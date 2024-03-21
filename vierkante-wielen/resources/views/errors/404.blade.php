@@ -7,9 +7,10 @@
 @endsection
 
 @section('content')
+  <div class="content-404">
     <div class="text-afbeelding">
         <div class="afbeelding">
-            <img src="https://i.postimg.cc/1XS4Bth6/Ongetiteld.png" alt="afbeelding" style="width: 550px; height: auto;">
+            <img src="https://i.postimg.cc/fRX1JbPQ/tim-404v2.png" alt="afbeelding">
         </div>
         <div class="text">
             <h2>Ben je de weg kwijt?🤔</h2>
@@ -21,6 +22,7 @@
             </div>
         </div>
     </div>
+</div>
 @endsection
 
 @section('footer')
