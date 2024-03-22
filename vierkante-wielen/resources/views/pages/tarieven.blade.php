@@ -15,17 +15,78 @@
 @endsection
 
 @section('content')
-    <div class="text-afbeelding">
-        <div class="afbeelding">
-            <img src="https://picsum.photos/500" alt="afbeelding">
+
+<h1>Lespakketten</h1>
+
+    <div class="brick-container-tarieven">
+        <div class="brick-tarieven">
+            <img src="{{ asset('images/usp.png') }}" alt="USP-1">
+            <h2>Proefles van 60 minuten</h2>
+            <h3>1399,-</h3>
+            <p>Autorijschool de Vierkante Wielen biedt een gratis proefles aan.</p>
+            <ul class="list-check">
+                <li>Kennismaking en uitleg over hoe een rijles verloopt.</li><br>
+                <li>Mogelijkheid voor de leerling om zelf een rondje te rijden, vaak op een rustig oefenterrein.</li><br>
+                <li>Evaluatie aan het einde van de proefles om een inschatting te maken van het aantal benodigde lessen voor
+                    het praktijkexamen.</li><br>
+                <li>Aanbieding van een passend lespakket inclusief examens bij FranX na de proefles, waarbij de proefles
+                    gratis is.</li><br>
+                <li>In het geval dat de leerling besluit niet bij FranX te gaan lessen, wordt er een bedrag van 50 in
+                    rekening gebracht voor de proefles.</li><br>
+
+                    <div class="menu-buttons-tarieven">
+                        <a href="{{ url('register') }}"><button class="yellow-button">Aanmelden</button></a>
+                    </div>
+
+            </ul>
         </div>
-        <div class="text">
-            <h2>Tarieven</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua.<br><br>Volutpat blandit aliquam etiam erat velit scelerisque. Felis imperdiet proin fermentum
-                leo vel. Dictumst quisque sagittis purus sit.</p>
+
+        <div class="brick-tarieven">
+            <img src="{{ asset('images/usp.png') }}" alt="USP-2">
+            <h2>Gratis proefles</h2>
+            <h3>1399,-</h3>
+            <p>Autorijschool de Vierkante Wielen biedt een gratis proefles aan.</p>
+            <ul class="list-check">
+                <li>Kennismaking en uitleg over hoe een rijles verloopt.</li><br>
+                <li>Mogelijkheid voor de leerling om zelf een rondje te rijden, vaak op een rustig oefenterrein.</li><br>
+                <li>Evaluatie aan het einde van de proefles om een inschatting te maken van het aantal benodigde lessen voor
+                    het praktijkexamen.</li><br>
+                <li>Aanbieding van een passend lespakket inclusief examens bij FranX na de proefles, waarbij de proefles
+                    gratis is.</li><br>
+                <li>In het geval dat de leerling besluit niet bij FranX te gaan lessen, wordt er een bedrag van 50 in
+                    rekening gebracht voor de proefles.</li><br>
+
+                    <div class="menu-buttons-tarieven">
+                        <a href="{{ url('register') }}"><button class="yellow-button">Aanmelden</button></a>
+                    </div>
+
+            </ul>
+        </div>
+
+        <div class="brick-tarieven">
+            <img src="{{ asset('images/usp.png') }}" alt="USP-3">
+            <h2>Gratis proefles</h2>
+            <h3>1399,-</h3>
+            <p>Autorijschool de Vierkante Wielen biedt een gratis proefles aan.</p>
+            <ul class="list-check">
+                <li>Kennismaking en uitleg over hoe een rijles verloopt.</li><br>
+                <li>Mogelijkheid voor de leerling om zelf een rondje te rijden, vaak op een rustig oefenterrein.</li><br>
+                <li>Evaluatie aan het einde van de proefles om een inschatting te maken van het aantal benodigde lessen voor
+                    het praktijkexamen.</li><br>
+                <li>Aanbieding van een passend lespakket inclusief examens bij FranX na de proefles, waarbij de proefles
+                    gratis is.</li><br>
+                <li>In het geval dat de leerling besluit niet bij FranX te gaan lessen, wordt er een bedrag van 50 in
+                    rekening gebracht voor de proefles.</li><br>
+
+                    <div class="menu-buttons-tarieven">
+                        <a href="{{ url('register') }}"><button class="yellow-button">Aanmelden</button></a>
+                    </div>
+
+            </ul>
         </div>
     </div>
+
+
 @endsection
 
 @section('usp')

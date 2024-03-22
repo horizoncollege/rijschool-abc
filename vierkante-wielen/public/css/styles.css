@@ -151,6 +151,21 @@ nav a:hover {
     background-color: #001f4d;
 }
 
+.menu-buttons-tarieven {
+    display: flex;
+    justify-content: center;
+}
+
+.menu-buttons-tarieven button {
+    padding: 5px 15px;
+    margin-top: 10px;
+    margin-right: 20px;
+    border: 5px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+}
 /* Mobile Optimization */
 @media screen and (max-width: 768px) {
     nav {
@@ -271,6 +286,83 @@ nav a:hover {
     margin-top: 5px;
     font-size: 18px;
     color: #31393C;
+}
+
+/* Brick container and columns -tarieven*/
+
+h1{
+    color: #003D86;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: -40px;
+}
+
+.brick-container-tarieven {
+    display: flex;
+    flex-wrap: wrap; /* Toegevoegd voor wrap bij kleinere schermen */
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    justify-content: space-between;
+}
+
+.brick-tarieven {
+    background-color: #F2F2F2;
+    height: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin: 20px;
+    flex: 1;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+}
+
+.brick-tarieven img {
+    margin-top: 20px;
+    max-width: 100%;
+    height: auto;
+}
+
+.brick-tarieven h2 {
+    margin-top: 10px;
+    font-size: 24px;
+    color: #003D86;
+}
+
+.brick-tarieven p {
+    margin-top: 5px;
+    font-size: 18px;
+    color: #31393C;
+}
+
+.list-check {
+    list-style: none;
+    margin-bottom: 50px;
+    margin-right: 30px;
+  }
+  
+  .list-check li {
+    display: flex;
+    justify-content: flex-start;
+    text-align: start;
+  }
+  
+  .list-check li::before {
+    content: "☑️";
+    display: inline-block;
+    margin-right: 0.2em;
+  }
+  
+  
+/* Media queries voor responsiveness */
+@media screen and (max-width: 768px) {
+    .brick-tarieven {
+        flex-basis: calc(50% - 40px); /* Twee kolommen op schermen kleiner dan 768px */
+    }
 }
 
 /* Text + image */
