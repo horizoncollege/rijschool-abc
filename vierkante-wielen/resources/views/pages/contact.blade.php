@@ -17,7 +17,7 @@
 @section('content')
     <div class="text-afbeelding">
         <div class="afbeelding">
-            <img src="https://picsum.photos/500" alt="afbeelding">
+            <img src="{{ asset('images/rijles-met-handicap.jpg') }}" alt="afbeelding">
         </div>
         <div class="text">
             <h2>Neem contact met ons op</h2>
