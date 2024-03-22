@@ -15,38 +15,25 @@
 @endsection
 
 @section('content')
-    <div class="container">
-        <div class="brick-container">
-            <div class="brick">
-                <img src="{{ asset('images/usp.png') }}" alt="USP-1">
-                <h2>Gratis proefles</h2>
-                <p>Autorijschool de Vierkante Wielen biedt een gratis proefles aan.</p>
-            </div>
-
-            <div class="brick">
-                <img src="{{ asset('images/usp.png') }}" alt="USP-2">
-                <h2>Gratis proefles</h2>
-                <p>Autorijschool de Vierkante Wielen biedt een gratis proefles aan.</p>
-            </div>
-
-            <div class="brick">
-                <img src="{{ asset('images/usp.png') }}" alt="USP-3">
-                <h2>Gratis proefles</h2>
-                <p>Autorijschool de Vierkante Wielen biedt een gratis proefles aan.</p>
-            </div>
-        </div>
-    </div>
     <div class="text-afbeelding">
         <div class="afbeelding">
             <img src="{{ asset('images/rijles-met-rolstoel.jpg') }}" alt="afbeelding">
         </div>
         <div class="text">
-            <h2>Rijles van Alkmaar tot De Rijp</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua.<br><br>Volutpat blandit aliquam etiam erat velit scelerisque. Felis imperdiet proin fermentum
-                leo vel. Dictumst quisque sagittis purus sit.</p>
+            <h2>Veilig en snel leren lessen door heel Noord-Holland</h2>
+            <p>Bij autorijschool Vierkante Wielen wordt u begeleid door een van onze ervaren rijinstructeurs, die zich
+                inzetten om u met motivatie en vertrouwen naar uw examen te begeleiden.<br><br>Wij streven ernaar om voor
+                iedereen een passende rijervaring te bieden, inclusief leerlingen met een handicap. Daarom bieden wij
+                speciale lessen aan, afgestemd op individuele behoeften.</p>
+            <div class="menu-buttons-404">
+                <a href="{{ url('register') }}"><button class="yellow-button">Meld je aan</button></a>
+            </div>
         </div>
     </div>
+@endsection
+
+@section('usp')
+    @include('partials.usp') {{-- Include the USP --}}
 @endsection
 
 @section('footer')

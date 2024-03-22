@@ -20,10 +20,11 @@
             <img src="{{ asset('images/rolstoel-rijles.jpg') }}" alt="afbeelding">
         </div>
         <div class="text">
-            <h2>Over ons</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua.<br><br>Volutpat blandit aliquam etiam erat velit scelerisque. Felis imperdiet proin fermentum
-                leo vel. Dictumst quisque sagittis purus sit.</p>
+            <h2>Over Vierkante Wielen</h2>
+            <p>In het afgelopen jaar is rijschool Vierkante Wielen enorm gegroeid tot een rijschool die zijn best doet om
+                iedereen in één keer te laten slagen.<br><br>Daarnaast is onze rijschool ook erg flexibel. Wanneer er een
+                rijinstructeur ziek is, is er altijd een andere rijinstructeur beschikbaar.
+            </p>
         </div>
     </div>
 @endsection

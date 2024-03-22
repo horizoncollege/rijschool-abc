@@ -20,10 +20,10 @@
             <img src="{{ asset('images/autorijles-bij-ons.jpg') }}" alt="afbeelding">
         </div>
         <div class="text">
-            <h2>Autorijles bij ons</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua.<br><br>Volutpat blandit aliquam etiam erat velit scelerisque. Felis imperdiet proin fermentum
-                leo vel. Dictumst quisque sagittis purus sit.</p>
+            <h2>Autorijles bij Vierkante Wielen</h2>
+            <p>Onze rijschool maakt gebruik van een portal waar u kunt inloggen en zelf uw lestijden in kan
+                plannen.<br><br>Let wel op. U kunt alleen als inloggen in de portal wanneer u een pakket heeft gekocht. Deze
+                pakketten zijn te vinden onder <b><a href="{{ url('tarieven') }}">tarieven</b></a>.</p>
         </div>
     </div>
 @endsection
