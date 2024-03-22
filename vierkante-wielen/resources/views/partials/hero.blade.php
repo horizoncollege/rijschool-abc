@@ -1,4 +1,4 @@
 <div class="banner-afbeelding">
-    <img src="{{ asset('images/vierkante-wielen-banner.jpg') }}" alt="Example Image">
+    <img src="{{ asset('images/vierkante-wielen-banner-nieuw.jpg') }}" alt="Example Image">
 </div>
 

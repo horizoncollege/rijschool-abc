@@ -38,7 +38,7 @@
     </div>
     <div class="text-afbeelding">
         <div class="afbeelding">
-            <img src="https://picsum.photos/500" alt="afbeelding">
+            <img src="{{ asset('images/rijles-met-rolstoel.jpg') }}" alt="afbeelding">
         </div>
         <div class="text">
             <h2>Rijles van Alkmaar tot De Rijp</h2>
