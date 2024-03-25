@@ -27,6 +27,49 @@
             </p>
         </div>
     </div>
+
+    <div class="container-personeel">
+        <h2>Ontmoet ons personeel</h2>
+        <div class="brick-container-personeel">
+            <div class="brick-personeel">
+                <img src="{{ asset('images/rijinstructeur-1.jpg') }}" alt="Instructeur-1"style="border-radius: 10px;">
+                <h3>Tyrone</h3>
+                <p>Onze rijschool heeft een hoger slagingspercentage dan rijscholen in de omgeving.</p>
+            </div>
+
+            <div class="brick-personeel">
+                <img src="{{ asset('images/rijinstructeur-2.jpg') }}" alt="Instructeur-2"style="border-radius: 10px;">
+                <h3>Emily</h3>
+                <p>Onze rijschool heeft een hoger slagingspercentage dan rijscholen in de omgeving.</p>
+            </div>
+
+            <div class="brick-personeel">
+                <img src="{{ asset('images/rijinstructeur-3.jpg') }}" alt="Instructeur-3"style="border-radius: 10px;">
+                <h3>Michael</h3>
+                <p>Onze rijschool heeft een hoger slagingspercentage dan rijscholen in de omgeving.</p>
+            </div>
+        </div>
+        <div class="brick-container-personeel">
+            <div class="brick-personeel">
+                <img src="{{ asset('images/rijinstructeur-4.jpg') }}" alt="Instructeur-4"style="border-radius: 10px;">
+                <h3>Reinout</h3>
+                <p>Onze rijschool heeft een hoger slagingspercentage dan rijscholen in de omgeving.</p>
+            </div>
+
+            <div class="brick-personeel">
+                <img src="{{ asset('images/rijinstructeur-5.jpg') }}" alt="Instructeur-5"style="border-radius: 10px;">
+                <h3>Isa</h3>
+                <p>Onze rijschool heeft een hoger slagingspercentage dan rijscholen in de omgeving.</p>
+            </div>
+
+            <div class="brick-personeel">
+                <img src="{{ asset('images/rijinstructeur-6.jpg') }}" alt="Instructeur-6"style="border-radius: 10px;">
+                <h3>Huell</h3>
+                <p>Onze rijschool heeft een hoger slagingspercentage dan rijscholen in de omgeving.</p>
+            </div>
+        </div>
+    </div>
+
 @endsection
 
 @section('usp')

@@ -20,6 +20,8 @@ body {
 
 .container {
     background-color: #F2F2F2;
+    text-align: center;
+    color: #003D86;
 }
 
 header {
@@ -208,6 +210,19 @@ nav a:hover {
         padding-right: 10px;
     }
 
+    .brick-container-personeel,
+    .text-afbeelding {
+        flex-direction: column;
+    }
+
+    .brick-personeel {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
     .text-afbeelding .afbeelding {
         width: 100%;
         order: 1;
@@ -289,8 +304,43 @@ nav a:hover {
     color: #31393C;
 }
 
-/* Brick container and columns -tarieven*/
+/* Personeel */
+.container-personeel {
+    background-color: #F2F2F2;
+    text-align: center;
+    color: #003D86;
+    padding-top: 10px;
+    margin-bottom: 50px;
+}
 
+.brick-container-personeel {
+    display: flex;
+    max-width: 1280px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.brick-personeel {
+    margin-top: 10px;
+    margin-bottom: 50px;
+    flex: 1;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.brick-personeel img {
+    max-width: 100%;
+    height: auto;
+}
+
+.brick-personeel p {
+    margin-top: 5px;
+    font-size: 18px;
+    color: #31393C;
+}
+
+/* Brick container and columns -tarieven*/
 h1 {
     color: #003D86;
     display: flex;
@@ -302,7 +352,6 @@ h1 {
 .brick-container-tarieven {
     display: flex;
     flex-wrap: wrap;
-    /* Toegevoegd voor wrap bij kleinere schermen */
     max-width: 1280px;
     margin: 0 auto;
     margin-top: 50px;
@@ -358,7 +407,6 @@ h1 {
     display: inline-block;
     margin-right: 0.2em;
 }
-
 
 /* Media queries voor responsiveness */
 @media screen and (max-width: 768px) {
