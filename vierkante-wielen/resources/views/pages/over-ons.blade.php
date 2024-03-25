@@ -34,38 +34,38 @@
             <div class="brick-personeel">
                 <img src="{{ asset('images/rijinstructeur-1.jpg') }}" alt="Instructeur-1"style="border-radius: 10px;">
                 <h3>Tyrone</h3>
-                <p>Onze rijschool heeft een hoger slagingspercentage dan rijscholen in de omgeving.</p>
+                <p>Tyrone is begin 2022 begonnen als instructeur bij Vierkante Wielen. Tyrone geeft speciale lessen voor leerlingen met een handicap.</p>
             </div>
 
             <div class="brick-personeel">
                 <img src="{{ asset('images/rijinstructeur-2.jpg') }}" alt="Instructeur-2"style="border-radius: 10px;">
                 <h3>Emily</h3>
-                <p>Onze rijschool heeft een hoger slagingspercentage dan rijscholen in de omgeving.</p>
+                <p>Emily is in 2021 komen werken. Emily geeft geen speciale lessen maar heeft wel enorm veel evaring op de weg.</p>
             </div>
 
             <div class="brick-personeel">
                 <img src="{{ asset('images/rijinstructeur-3.jpg') }}" alt="Instructeur-3"style="border-radius: 10px;">
                 <h3>Michael</h3>
-                <p>Onze rijschool heeft een hoger slagingspercentage dan rijscholen in de omgeving.</p>
+                <p>Michael is een baken van steun voor leerlingen met een handicap. Zijn geduld en aanmoediging zorgt voor veel zelfvertrouwen.</p>
             </div>
         </div>
         <div class="brick-container-personeel">
             <div class="brick-personeel">
                 <img src="{{ asset('images/rijinstructeur-4.jpg') }}" alt="Instructeur-4"style="border-radius: 10px;">
                 <h3>Reinout</h3>
-                <p>Onze rijschool heeft een hoger slagingspercentage dan rijscholen in de omgeving.</p>
+                <p>Reinout is niet zomaar een instructeur. Met zijn empathische aanpak en opbeurende woorden moedigt hij hen aan om te groeien en zelfvertrouwen op te bouwen.</p>
             </div>
 
             <div class="brick-personeel">
                 <img src="{{ asset('images/rijinstructeur-5.jpg') }}" alt="Instructeur-5"style="border-radius: 10px;">
                 <h3>Isa</h3>
-                <p>Onze rijschool heeft een hoger slagingspercentage dan rijscholen in de omgeving.</p>
+                <p>Isa is een toegewijde instructeur die haar leerlingen met warmte en begrip begeleidt. Door haar aanmoediging vinden leerlingen hun vaardigheden te ontwikkelen en zelfverzekerd de weg op te gaan.</p>
             </div>
 
             <div class="brick-personeel">
                 <img src="{{ asset('images/rijinstructeur-6.jpg') }}" alt="Instructeur-6"style="border-radius: 10px;">
                 <h3>Huell</h3>
-                <p>Onze rijschool heeft een hoger slagingspercentage dan rijscholen in de omgeving.</p>
+                <p>Huell staat altijd klaar als een betrouwbare gids voor zijn leerlingen. Huell helpt elke leerling zijn angst te overwinnen.</p>
             </div>
         </div>
     </div>
