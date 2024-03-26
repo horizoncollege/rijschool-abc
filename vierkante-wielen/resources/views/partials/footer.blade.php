@@ -24,8 +24,8 @@
             </div>
             <div class="footer-brick middle-brick">
                 <h3>Meld je aan voor onze nieuwsbrief!</h3>
-                <p>Wil jij altijd op de hoogte blijven van ons nieuws? Ben jij benieuwd wat er allemaal voor plannen er
-                    komen in de toekomst? Meld je dan aan voor onze nieuwsbrief!</p>
+                <p>Wil jij altijd op de hoogte blijven van ons nieuws? Ben jij benieuwd wat er voor plannen komen in de
+                    toekomst? Meld je dan aan voor onze nieuwsbrief!</p>
                 <div class="menu-buttons-footer">
                     <a href="{{ url('') }}"><button class="yellow-button-footer">Aanmelden</button></a>
                 </div>
