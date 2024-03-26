@@ -22,7 +22,7 @@
                     <li><b>E-mailadres:</b><br>166389@student.horizoncollege.nl</li>
                 </ul>
             </div>
-            <div class="footer-brick middle-brick">
+            <div class="footer-brick">
                 <h3>Meld je aan voor onze nieuwsbrief!</h3>
                 <p>Wil jij altijd op de hoogte blijven van ons nieuws? Ben jij benieuwd wat er voor plannen komen in de
                     toekomst? Meld je dan aan voor onze nieuwsbrief!</p>
@@ -31,6 +31,5 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
 </footer>

@@ -169,32 +169,6 @@ nav a:hover {
     font-weight: bold;
     font-size: 16px;
 }
-/* Buttons-Content-footer */
-.yellow-button-footer {
-    background-color: #FFB703;
-    color: #31393C;
-}
-
-.yellow-button-footer:hover {
-    background-color: #cc9400;
-}
-
-.menu-buttons-footer {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-}
-
-.menu-buttons-footer button {
-    padding: 5px 15px;
-    /* margin-left: 10px; */
-    border: 5px solid transparent;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 16px;
-}
-
 
 /* Mobile Optimization */
 @media screen and (max-width: 768px) {
@@ -435,11 +409,10 @@ h1 {
     margin-right: 0.2em;
 }
 
-/* Media queries voor responsiveness */
+/* Media queries for responsiveness */
 @media screen and (max-width: 768px) {
     .brick-tarieven {
         flex-basis: calc(50% - 40px);
-        /* Twee kolommen op schermen kleiner dan 768px */
     }
 }
 
@@ -484,6 +457,7 @@ footer {
 .footer-container {
     max-width: 1280px;
     margin: 0 auto;
+    padding-bottom: 20px;
 }
 
 .footer-brick-container {
@@ -533,6 +507,45 @@ footer {
 .footer-brick a:hover {
     text-decoration: underline;
 }
+
+/* Buttons-Content-footer */
+.yellow-button-footer {
+    background-color: #FFB703;
+    color: #31393C;
+}
+
+.yellow-button-footer:hover {
+    background-color: #cc9400;
+}
+
+.menu-buttons-footer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.menu-buttons-footer button {
+    padding: 5px 15px;
+    border: 5px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.menu-buttons-footer a {
+    text-decoration: none;
+}
+
+.yellow-button-footer {
+    background-color: #FFB703;
+    color: #31393C;
+}
+
+.yellow-button-footer:hover {
+    background-color: #cc9400;
+}
+
 
 /* Media query for smaller screens */
 @media (max-width: 768px) {
