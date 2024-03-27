@@ -22,7 +22,7 @@
         <div class="text">
             <h2>Autorijles bij Vierkante Wielen</h2>
             <p>Onze rijschool maakt gebruik van een portal waar u kunt inloggen en zelf uw lestijden in kan
-                plannen.<br><br>Let wel op. U kunt alleen als inloggen in de portal wanneer u een pakket heeft gekocht. Deze
+                plannen.<br><br><u>Let wel op:</u> u kunt alleen als inloggen in de portal wanneer u een pakket heeft gekocht. Deze
                 pakketten zijn te vinden onder <b><a href="{{ url('tarieven') }}">tarieven</b></a>.</p>
         </div>
     </div>

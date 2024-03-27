@@ -468,6 +468,7 @@ footer {
 .footer-brick {
     flex: 1;
     margin-left: 36px;
+    margin-right: 18px;
     text-align: left;
 }
 

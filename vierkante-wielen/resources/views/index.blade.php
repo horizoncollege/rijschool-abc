@@ -21,7 +21,7 @@
         </div>
         <div class="text">
             <h2>Veilig en snel leren lessen door heel Noord-Holland</h2>
-            <p>Bij autorijschool Vierkante Wielen wordt u begeleid door een van onze ervaren rijinstructeurs, die zich
+            <p>Bij Autorijschool Vierkante Wielen wordt u begeleid door een van onze ervaren rijinstructeurs, die zich
                 inzetten om u met motivatie en vertrouwen naar uw examen te begeleiden.<br><br>Wij streven ernaar om voor
                 iedereen een passende rijervaring te bieden, inclusief leerlingen met een handicap. Daarom bieden wij
                 speciale lessen aan, afgestemd op individuele behoeften.</p>
