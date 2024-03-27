@@ -1,6 +1,6 @@
-@extends('layouts.layout')
+@extends('layouts.layout') {{-- Include the layout --}}
 
-@section('title', 'Autorijschool De Vierkante Wielen')
+@section('title', 'Autorijschool De Vierkante Wielen')  {{-- Include the title --}}
 
 @section('navbar')
     @include('partials.nav') {{-- Include the navbar --}}
@@ -14,12 +14,12 @@
     @include('partials.action-bar') {{-- Include the action-bar section --}}
 @endsection
 
-@section('content')
+@section('content')   {{-- Include the content --}}
 
 <h1>Lespakketten</h1>
 
-    <div class="brick-container-tarieven">
-        <div class="brick-tarieven">
+    <div class="brick-container-tarieven">   {{-- Container for tarieven  --}}
+        <div class="brick-tarieven"> {{-- one of the lespakket --}}
             <img src="{{ asset('images/usp.png') }}" alt="USP-1">
             <h2>Proefles van 60 minuten</h2>
             <h3>1399,-</h3>
@@ -34,14 +34,14 @@
                 <li>In het geval dat de leerling besluit niet bij FranX te gaan lessen, wordt er een bedrag van 50 in
                     rekening gebracht voor de proefles.</li><br>
 
-                    <div class="menu-buttons-tarieven">
+                    <div class="menu-buttons-tarieven"> {{-- button to sign up  --}}
                         <a href="{{ url('register') }}"><button class="yellow-button">Aanmelden</button></a>
                     </div>
 
             </ul>
         </div>
 
-        <div class="brick-tarieven">
+        <div class="brick-tarieven"> {{-- one of the lespakket --}}
             <img src="{{ asset('images/usp.png') }}" alt="USP-2">
             <h2>Gratis proefles</h2>
             <h3>1399,-</h3>
@@ -56,14 +56,14 @@
                 <li>In het geval dat de leerling besluit niet bij FranX te gaan lessen, wordt er een bedrag van 50 in
                     rekening gebracht voor de proefles.</li><br>
 
-                    <div class="menu-buttons-tarieven">
+                    <div class="menu-buttons-tarieven"> {{-- button to sign up  --}}
                         <a href="{{ url('register') }}"><button class="yellow-button">Aanmelden</button></a>
                     </div>
 
             </ul>
         </div>
 
-        <div class="brick-tarieven">
+        <div class="brick-tarieven"> {{-- one of the lespakket --}}
             <img src="{{ asset('images/usp.png') }}" alt="USP-3">
             <h2>Gratis proefles</h2>
             <h3>1399,-</h3>
@@ -78,7 +78,7 @@
                 <li>In het geval dat de leerling besluit niet bij FranX te gaan lessen, wordt er een bedrag van 50 in
                     rekening gebracht voor de proefles.</li><br>
 
-                    <div class="menu-buttons-tarieven">
+                    <div class="menu-buttons-tarieven"> {{-- button to sign up  --}}
                         <a href="{{ url('register') }}"><button class="yellow-button">Aanmelden</button></a>
                     </div>
 
