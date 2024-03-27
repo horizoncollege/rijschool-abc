@@ -15,15 +15,50 @@
 @endsection
 
 @section('content')
-    <div class="text-afbeelding">
-        <div class="afbeelding">
-            <img src="{{ asset('images/rijles-met-handicap-2.jpg') }}" alt="afbeelding">
-        </div>
         <div class="text">
-            <h2>Algemene voorwaarden</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua.<br><br>Volutpat blandit aliquam etiam erat velit scelerisque. Felis imperdiet proin fermentum
-                leo vel. Dictumst quisque sagittis purus sit.</p>
+            <h1>Algemene Voorwaarden van Autorijschool Vierkante Wielen</h1>
+            <br></br>
+            <p>Welkom bij Autorijschool Vierkante Wielen. Voordat je gebruikmaakt van onze diensten, vragen we je
+                vriendelijk om deze algemene voorwaarden zorgvuldig door te lezen. Deze voorwaarden regelen jouw gebruik van
+                onze website en onze diensten. Door gebruik te maken van onze website en diensten, ga je akkoord met deze
+                voorwaarden. Als je het niet eens bent met een of meer van deze voorwaarden, verzoeken wij je vriendelijk om
+                onze website niet te gebruiken.</p>
+
+            <h2>Diensten</h2>
+            <p>1.1 Autorijschool Vierkante Wielen biedt rijlesdiensten aan individuen volgens de geldende wet- en
+                regelgeving in Nederland.</p>
+            <p>1.2 De details met betrekking tot onze diensten, inclusief prijzen, zijn beschikbaar op onze website. We
+                behouden ons het recht voor om deze informatie op elk moment te wijzigen zonder voorafgaande kennisgeving.
+            </p>
+
+            <h2>Boekingen en Betalingen</h2>
+            <p>2.1 Alle boekingen voor rijlessen moeten worden gemaakt via onze website of telefonisch.</p>
+            <p>2.2 Betalingen voor rijlessen dienen vooraf te worden voldaan, tenzij anders overeengekomen.</p>
+            <p>2.3 Eventuele annuleringen of wijzigingen in boekingen dienen minimaal 48 uur van tevoren te worden gemeld.
+                Anders kunnen annuleringskosten in rekening worden gebracht.</p>
+
+            <h2>Aansprakelijkheid</h2>
+            <p>3.1 Autorijschool Vierkante Wielen streeft ernaar om hoogwaardige diensten te leveren, maar kan niet
+                aansprakelijk worden gesteld voor verlies of schade als gevolg van gebruik van onze diensten.</p>
+            <p>3.2 Het gebruik van onze diensten geschiedt op eigen risico. Wij zijn niet verantwoordelijk voor enige
+                schade, letsel of verlies van eigendommen die voortvloeien uit het gebruik van onze diensten.</p>
+
+            <h2>Intellectueel Eigendom</h2>
+            <p>4.1 Alle inhoud op onze website, inclusief maar niet beperkt tot tekst, afbeeldingen, logo's, en video's,
+                zijn eigendom van Autorijschool Vierkante Wielen en zijn beschermd door auteursrecht en andere intellectuele
+                eigendomsrechten.</p>
+            <p>4.2 Het is niet toegestaan om onze inhoud te kopiëren, reproduceren, verspreiden of te gebruiken voor
+                commerciële doeleinden zonder onze uitdrukkelijke toestemming.</p>
+
+            <h2>Wijzigingen van Voorwaarden</h2>
+            <p>5.1 Autorijschool Vierkante Wielen behoudt zich het recht voor om deze algemene voorwaarden op elk moment te
+                wijzigen. Het is jouw verantwoordelijkheid om regelmatig te controleren op updates van deze voorwaarden.</p>
+            <p>Door gebruik te maken van onze website en diensten, stem je in met de meest recente versie van deze algemene
+                voorwaarden.</p>
+
+            <h2>Contact</h2>
+            <p>6.1 Als je vragen, opmerkingen of klachten hebt over deze algemene voorwaarden of onze diensten, neem dan
+                gerust contact met ons op via [contactgegevens].</p>
         </div>
     </div>
 @endsection
