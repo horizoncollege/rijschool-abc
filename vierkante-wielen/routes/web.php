@@ -20,7 +20,7 @@ Route::view('/algemene-voorwaarden', 'pages.algemene-voorwaarden');
 Route::view('/autorijles-bij-ons', 'pages.autorijles-bij-ons');
 Route::view('/contact', 'pages.contact');
 Route::view('/over-ons', 'pages.over-ons');
-Route::view('/tarieven', 'pages.tarieven');
+Route::view('/lespakketten', 'pages.lespakketten');
 
 // Dashboard
 Route::get('/dashboard', function () {
