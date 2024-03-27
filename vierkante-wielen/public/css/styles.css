@@ -341,8 +341,8 @@ nav a:hover {
     color: #31393C;
 }
 
-/* Brick container and columns -tarieven*/
-h1 {
+/* Brick container and columns lespakketten*/
+.lespakketten h1 {
     color: #003D86;
     display: flex;
     justify-content: center;
@@ -440,12 +440,35 @@ h1 {
 }
 
 .text h2 {
-    font-size: 26px;
+    font-size: 24px;
     color: #003D86;
 }
 
 .text {
     width: 500px;
+}
+
+/* Algemene Voorwaarden */
+.text-center {
+    display: flex;
+    justify-content: center;
+}
+
+.text-av {
+    max-width: 1280px;
+}
+
+.text-av h1 {
+    color: #003D86;
+    display: flex;
+    justify-content: start;
+    margin-top: 50px;
+    margin-bottom: -40px;
+}
+
+.text-av h2 {
+    font-size: 24px;
+    color: #003D86;
 }
 
 /* Footer */

@@ -15,9 +15,9 @@
 @endsection
 
 @section('content')
-        <div class="text">
-            <h1>Algemene Voorwaarden van Autorijschool Vierkante Wielen</h1>
-            <br></br>
+    <div class="text-center">
+        <div class="text-av">
+            <h1>Algemene Voorwaarden</h1><br></br>
             <p>Welkom bij Autorijschool Vierkante Wielen. Voordat je gebruikmaakt van onze diensten, vragen we je
                 vriendelijk om deze algemene voorwaarden zorgvuldig door te lezen. Deze voorwaarden regelen jouw gebruik van
                 onze website en onze diensten. Door gebruik te maken van onze website en diensten, ga je akkoord met deze
@@ -61,10 +61,6 @@
                 gerust contact met ons op via [contactgegevens].</p>
         </div>
     </div>
-@endsection
-
-@section('usp')
-    @include('partials.usp') {{-- Include the USP --}}
 @endsection
 
 @section('footer')
