@@ -27,7 +27,6 @@
             </p>
         </div>
     </div>
-
     <div class="container-personeel">
         <h2>Ontmoet ons personeel</h2>
         <div class="brick-container-personeel">
@@ -75,28 +74,26 @@
             </div>
         </div>
     </div>
-
     <div class="container-autos">
-        <h2>Bekijk onze auto's</h2>
+        <h2>Bekijk onze lesauto's</h2>
         <div class="brick-container-autos">
             <div class="brick-autos">
-                <img src="{{ asset('images/rijinstructeur-1.jpg') }}" alt="auto-1"style="border-radius: 10px;">
+                <img src="{{ asset('images/volkswagen-golf.jpg') }}" alt="volkswagen-golf"style="border-radius: 10px;">
                 <h3>Volkswagen Golf</h3>
                 <p>De Volkswagen Golf is een vertrouwde keuze voor rijlessen. Met zijn uitstekende wendbaarheid, betrouwbare
                     prestaties en comfortabele interieur, biedt de Golf een ideale omgeving om uw rijvaardigheden te
                     ontwikkelen.</p>
             </div>
-
-            <div class="brick-personeel">
-                <img src="{{ asset('images/rijinstructeur-2.jpg') }}" alt="auto-2"style="border-radius: 10px;">
-                <h3>Toyota Yaris</h3>
-                <p>De Toyota Yaris is de perfecte combinatie van efficiëntie en betrouwbaarheid. Met zijn compacte formaat,
-                    soepele bediening en geavanceerde veiligheidsfuncties, is de Yaris een populaire keuze voor
-                    rijinstructeurs en leerlingen.</p>
+            <div class="brick-autos">
+                <img src="{{ asset('images/ford-focus.jpg') }}" alt="ford-focus"style="border-radius: 10px;">
+                <h3>Ford Focus</h3>
+                <p>De Ford Focus is een icoon onder rijinstructeurs. Met zijn dynamische rijgedrag, geavanceerde
+                    technologieën en ruime interieur, biedt de Focus een plezierige en leerzame rijervaring voor elke
+                    leerling.</p>
             </div>
-
-            <div class="brick-personeel">
-                <img src="{{ asset('images/rijinstructeur-3.jpg') }}" alt="auto-3"style="border-radius: 10px;">
+            <div class="brick-autos">
+                <img src="{{ asset('images/caddy-maxi-life.jpg') }}"
+                    alt="volkswagen-caddy-maxi-life"style="border-radius: 10px;">
                 <h3>Volkswagen Caddy Maxi Life</h3>
                 <p>Speciaal ontworpen voor leerlingen met een handicap, biedt de aangepaste Volkswagen Caddy Maxi Life
                     optimale toegankelijkheid en gebruiksgemak. Met zijn handbediening en aanpassingen voor rolstoelgebruik,
