@@ -76,6 +76,34 @@
         </div>
     </div>
 
+    <div class="container-autos">
+        <h2>Bekijk onze auto's</h2>
+        <div class="brick-container-autos">
+            <div class="brick-autos">
+                <img src="{{ asset('images/rijinstructeur-1.jpg') }}" alt="auto-1"style="border-radius: 10px;">
+                <h3>Volkswagen Golf</h3>
+                <p>De Volkswagen Golf is een vertrouwde keuze voor rijlessen. Met zijn uitstekende wendbaarheid, betrouwbare
+                    prestaties en comfortabele interieur, biedt de Golf een ideale omgeving om uw rijvaardigheden te
+                    ontwikkelen.</p>
+            </div>
+
+            <div class="brick-personeel">
+                <img src="{{ asset('images/rijinstructeur-2.jpg') }}" alt="auto-2"style="border-radius: 10px;">
+                <h3>Toyota Yaris</h3>
+                <p>De Toyota Yaris is de perfecte combinatie van efficiëntie en betrouwbaarheid. Met zijn compacte formaat,
+                    soepele bediening en geavanceerde veiligheidsfuncties, is de Yaris een populaire keuze voor
+                    rijinstructeurs en leerlingen.</p>
+            </div>
+
+            <div class="brick-personeel">
+                <img src="{{ asset('images/rijinstructeur-3.jpg') }}" alt="auto-3"style="border-radius: 10px;">
+                <h3>Volkswagen Caddy Maxi Life</h3>
+                <p>Speciaal ontworpen voor leerlingen met een handicap, biedt de aangepaste Volkswagen Caddy Maxi Life
+                    optimale toegankelijkheid en gebruiksgemak. Met zijn handbediening en aanpassingen voor rolstoelgebruik,
+                    stelt deze auto leerlingen met een handicap in staat om veilig en comfortabel te leren rijden.</p>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @section('usp')

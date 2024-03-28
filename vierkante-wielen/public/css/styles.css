@@ -212,11 +212,20 @@ nav a:hover {
     }
 
     .brick-container-personeel,
+    .brick-container-autos,
     .text-afbeelding {
         flex-direction: column;
     }
 
     .brick-personeel {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .brick-autos {
         margin-top: 20px;
         margin-bottom: 20px;
         text-align: center;
@@ -311,7 +320,6 @@ nav a:hover {
     text-align: center;
     color: #003D86;
     padding-top: 10px;
-    margin-bottom: 50px;
 }
 
 .brick-container-personeel {
@@ -336,6 +344,41 @@ nav a:hover {
 }
 
 .brick-personeel p {
+    margin-top: 5px;
+    font-size: 18px;
+    color: #31393C;
+}
+
+/* Auto's */
+.container-autos {
+    background-color: white;
+    text-align: center;
+    color: #003D86;
+    padding-top: 10px;
+}
+
+.brick-container-autos {
+    display: flex;
+    max-width: 1280px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.brick-autos {
+    margin-top: 10px;
+    margin-bottom: 50px;
+    flex: 1;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.brick-autos img {
+    max-width: 100%;
+    height: auto;
+}
+
+.brick-autos p {
     margin-top: 5px;
     font-size: 18px;
     color: #31393C;
@@ -449,9 +492,12 @@ nav a:hover {
 }
 
 /* Algemene Voorwaarden */
-.text-center {
+.algemene-voorwaarden {
     display: flex;
     justify-content: center;
+    margin-bottom: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .text-av {
