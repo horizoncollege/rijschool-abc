@@ -15,14 +15,15 @@
 @endsection
 
 @section('content')
-    <div class="text-afbeelding">
+    <div class="text-afbeelding"> {{-- Text + image --}}
         <div class="afbeelding">
             <img src="{{ asset('images/autorijles-bij-ons.jpg') }}" alt="afbeelding">
         </div>
         <div class="text">
             <h2>Autorijles bij Vierkante Wielen</h2>
             <p>Onze rijschool maakt gebruik van een portal waar u kunt inloggen en zelf uw lestijden in kan
-                plannen.<br><br><b>Let wel op:</B> u kunt alleen als inloggen in de portal wanneer u een pakket heeft gekocht. Deze
+                plannen.<br><br><b>Let wel op:</B> u kunt alleen als inloggen in de portal wanneer u een pakket heeft
+                gekocht. Deze
                 pakketten zijn te vinden onder <a href="{{ url('lespakketten') }}">lespakketten</a>.</p>
         </div>
     </div>

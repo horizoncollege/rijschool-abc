@@ -15,7 +15,7 @@
 @endsection
 
 @section('content')
-    <div class="algemene-voorwaarden">
+    <div class="algemene-voorwaarden"> {{-- Text for the 'Algemene Voorwaarden' --}}
         <div class="text-av">
             <h1>Algemene Voorwaarden</h1><br></br>
             <p>Welkom bij Autorijschool Vierkante Wielen. Voordat je gebruikmaakt van onze diensten, vragen we je

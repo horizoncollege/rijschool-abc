@@ -15,7 +15,7 @@
 @endsection
 
 @section('content')
-    <div class="text-afbeelding">
+    <div class="text-afbeelding"> {{-- Text + image --}}
         <div class="afbeelding">
             <img src="{{ asset('images/rolstoel-rijles.jpg') }}" alt="afbeelding">
         </div>
@@ -27,7 +27,7 @@
             </p>
         </div>
     </div>
-    <div class="container-personeel">
+    <div class="container-personeel"> {{-- Container for staff/medewerkers --}}
         <h2>Ontmoet ons personeel</h2>
         <div class="brick-container-personeel">
             <div class="brick-personeel">
@@ -74,7 +74,7 @@
             </div>
         </div>
     </div>
-    <div class="container-autos">
+    <div class="container-autos"> {{-- Container for cars --}}
         <h2>Bekijk onze lesauto's</h2>
         <div class="brick-container-autos">
             <div class="brick-autos">

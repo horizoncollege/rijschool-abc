@@ -17,7 +17,7 @@
 @section('content')
     <div class="lespakketten">
         <h1>Lespakketten</h1>
-        <div class="brick-container-tarieven"> {{-- Container for tarieven  --}}
+        <div class="brick-container-tarieven"> {{-- Container for tarieven/lespakketten  --}}
             <div class="brick-tarieven"> {{-- Lespakket 1 --}}
                 <img src="{{ asset('images/USP-car.png') }}" alt="USP-1">
                 <h2>Proefles van 60 minuten</h2>

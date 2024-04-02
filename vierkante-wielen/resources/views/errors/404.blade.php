@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-    <div class="text-afbeelding">
+    <div class="text-afbeelding"> {{-- Text + image --}}
         <div class="afbeelding">
             <img src="{{ asset('images/404-afbeelding-nieuw.png') }}" alt="afbeelding">
         </div>
@@ -15,10 +15,10 @@
             <h2>Ben je de weg kwijt?🤔</h2>
             <p>De inhoud die je zoekt, bestaat niet. Het is ofwel verwijderd, of je hebt de link verkeerd
                 getypt.<br></p>
-                <div class="menu-buttons-404">
-                    <a href="{{ url('') }}"><button class="blue-button-404">Terug naar de homepage</button></a>
-                    <a href="{{ url('contact') }}"><button class="yellow-button">Neem contact op</button></a>
-                </div>
+            <div class="menu-buttons-404"> {{-- Buttons home/contact --}}
+                <a href="{{ url('') }}"><button class="blue-button-404">Terug naar de homepage</button></a>
+                <a href="{{ url('contact') }}"><button class="yellow-button">Neem contact op</button></a>
+            </div>
         </div>
     </div>
 @endsection
