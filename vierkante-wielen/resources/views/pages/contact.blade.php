@@ -15,7 +15,7 @@
 @endsection
 
 @section('content')
-    <div class="text-afbeelding">
+    <div class="text-afbeelding"> {{-- Text + image --}}
         <div class="afbeelding">
             <img src="{{ asset('images/rijles-met-handicap.jpg') }}" alt="afbeelding">
         </div>
