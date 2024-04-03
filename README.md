@@ -41,5 +41,11 @@ Wij doen elke dag een Daily Stand-up om te bespreken wat iedereen gisteren heeft
 
 ## License
 
+## Definition of Done
+
+- Alle taken in de user stories + de user stories zelf zijn afgerond
+- Alle acceptatiecriteria's zijn goed getest
+- Er heeft een review plaatsgevonden door een tweede persoon
+
 
 
