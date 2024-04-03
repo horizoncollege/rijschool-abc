@@ -31,7 +31,7 @@ Rijschool vierkante wielen is gebouwd met het php framework Laravel. Ook is er g
 - [Figma Schets](https://www.figma.com/file/l25pgwYEGU69f53lMnQeDM/Rijschool-Vierkante-Wielen?type=design&node-id=0-1&mode=design)
 - [Github Wiki](https://github.com/horizoncollege/rijschool-abc/wiki)
 
-##Teamwork
+## Teamwork
 Gedurende dit project hebben wij vooral contact gehouden via Discord. Hier bespreken wij issues die wij hebben of missende informatie wanneer iemand ziek of absent is. Wij houden ook contact met onze docenten via teams en ook tijdens onze lessen op school. 
 
 Wij doen elke dag een Daily Stand-up om te bespreken wat iedereen gisteren heeft gedaan, vandaag gaat doen en of er iemand nog problemen heeft. Deze Daily Stand-ups staan in ons [Excel](...) Bestand.
