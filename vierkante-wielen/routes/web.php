@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,9 +19,13 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'index');
 Route::view('/algemene-voorwaarden', 'pages.algemene-voorwaarden');
 Route::view('/autorijles-bij-ons', 'pages.autorijles-bij-ons');
-Route::view('/contact', 'pages.contact');
 Route::view('/over-ons', 'pages.over-ons');
+Route::view('/contact', 'pages.contact');
 Route::view('/lespakketten', 'pages.lespakketten');
+Route::view('/proefrijles-inplannen', 'pages.proefrijles-inplannen');
+
+// Contact Form
+Route::post('/contact-form', [ContactController::class, 'store'])->name('contact.store');
 
 // Dashboard
 Route::get('/dashboard', function () {

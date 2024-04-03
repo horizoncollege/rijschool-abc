@@ -28,6 +28,9 @@
         @yield('content')
     </main>
 
+    {{-- Contact Form section --}}
+    @yield('contact-form')
+
     {{-- USP section --}}
     @yield('usp')
 

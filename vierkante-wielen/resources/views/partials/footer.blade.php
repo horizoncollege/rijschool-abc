@@ -5,6 +5,7 @@
                 <h3>Snel naar</h3>
                 <ul>
                     <li> <a href="{{ url('') }}">Home</a></li>
+                    <li> <a href="{{ url('proefrijles-inplannen') }}">Proefrijles inplannen</a></li>
                     <li> <a href="{{ url('autorijles-bij-ons') }}">Autorijles bij ons</a></li>
                     <li> <a href="{{ url('lespakketten') }}">Lespakketten</a></li>
                     <li> <a href="{{ url('over-ons') }}">Over ons</a></li>
@@ -23,11 +24,12 @@
                 </ul>
             </div>
             <div class="footer-brick">
-                <h3>Meld u aan voor onze nieuwsbrief!</h3>
-                <p>Wilt u altijd op de hoogte blijven van ons nieuws? Bent u benieuwd wat er voor plannen komen in de
-                    toekomst? Meld u dan aan voor onze nieuwsbrief!</p>
+                <h3>Plan een gratis proefles in!</h3>
+                <p>Tijdens een proefles maak je kennis met onze rijschool. Daarnaast krijg je ook inzicht in welk
+                    lespakket past het best bij jou past!</p>
                 <div class="menu-buttons-footer">
-                    <a href="{{ url('') }}"><button class="yellow-button-footer">Aanmelden</button></a>
+                    <a href="{{ url('proefrijles-inplannen') }}"><button class="yellow-button-footer">Proefrijles
+                            inplannen</button></a>
                 </div>
             </div>
         </div>

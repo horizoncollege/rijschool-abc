@@ -17,23 +17,19 @@
 @section('content')
     <div class="text-afbeelding"> {{-- Text + image --}}
         <div class="afbeelding">
-            <img src="{{ asset('images/rijles-met-handicap.jpg') }}" alt="afbeelding">
+            <img src="{{ asset('images/autorijles-bij-ons.jpg') }}" alt="afbeelding">
         </div>
         <div class="text">
-            <h2>Neem contact met ons op</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua.<br><br>Volutpat blandit aliquam etiam erat velit scelerisque. Felis imperdiet proin fermentum
-                leo vel. Dictumst quisque sagittis purus sit.</p>
+            <h2>Plan een gratis proefrijles in van 1 uur!</h2>
+            <p>Onze rijschool maakt gebruik van een portal waar u kunt inloggen en zelf uw lestijden in kan
+                plannen.<br><br><b>Let wel op:</B> u kunt alleen als inloggen in de portal wanneer u een pakket heeft
+                gekocht.</p>
         </div>
     </div>
 @endsection
 
 @section('contact-form')
     @include('partials.contact-form') {{-- Include the contact form --}}
-@endsection
-
-@section('usp')
-    @include('partials.usp') {{-- Include the USP --}}
 @endsection
 
 @section('footer')

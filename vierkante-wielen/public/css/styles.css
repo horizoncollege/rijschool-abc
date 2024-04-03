@@ -384,6 +384,14 @@ nav a:hover {
     color: #31393C;
 }
 
+/* Contact Form */
+.contact-form {
+    display: flex;
+    max-width: 1280px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
 /* Brick container and columns lespakketten*/
 .lespakketten h1 {
     color: #003D86;

@@ -37,7 +37,7 @@
                         er
                         een bedrag van 50 in rekening gebracht voor de proefles.</li><br>
                     <div class="menu-buttons-tarieven"> {{-- button to sign up  --}}
-                        <a href="{{ url('register') }}"><button class="yellow-button">Aanmelden</button></a>
+                        <a href="{{ url('register') }}"><button class="yellow-button">Bestellen</button></a>
                     </div>
                 </ul>
             </div>
@@ -60,7 +60,7 @@
                         er
                         een bedrag van 50 in rekening gebracht voor de proefles.</li><br>
                     <div class="menu-buttons-tarieven"> {{-- button to sign up  --}}
-                        <a href="{{ url('register') }}"><button class="yellow-button">Aanmelden</button></a>
+                        <a href="{{ url('register') }}"><button class="yellow-button">Bestellen</button></a>
                     </div>
                 </ul>
             </div>
@@ -83,7 +83,7 @@
                         er
                         een bedrag van 50 in rekening gebracht voor de proefles.</li><br>
                     <div class="menu-buttons-tarieven"> {{-- button to sign up  --}}
-                        <a href="{{ url('register') }}"><button class="yellow-button">Aanmelden</button></a>
+                        <a href="{{ url('register') }}"><button class="yellow-button">Bestellen</button></a>
                     </div>
                 </ul>
             </div>
