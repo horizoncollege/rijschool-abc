@@ -19,7 +19,7 @@ Pas dit README.md bestand aan om de beoordelaars inzicht te geven in het project
 
 Vierkante wielen is rijschoolwebsite waar je kan lessen. gespecialiceerd voor mensen met een beperking of handicap. 
 
-## Teamleden
+## Teamleden👥️
 - Abbi Sinnathamby [github](https://github.com/Abbi159357)
 - Chris Groen [github](https://github.com/166389)
 - Bruno Dijkhuis [github](https://github.com/Bruntho2802)
@@ -27,7 +27,7 @@ Vierkante wielen is rijschoolwebsite waar je kan lessen. gespecialiceerd voor me
 ## Over de website
 Rijschool vierkante wielen is gebouwd met het php framework Laravel. Ook is er gebruik maakt van HTML, CSS en JavaScript. 
 
-## Links
+## Links🔗
 - [Figma Schets](https://www.figma.com/file/l25pgwYEGU69f53lMnQeDM/Rijschool-Vierkante-Wielen?type=design&node-id=0-1&mode=design)
 - [Github Wiki](https://github.com/horizoncollege/rijschool-abc/wiki)
 
@@ -38,9 +38,9 @@ Wij doen elke dag een Daily Stand-up om te bespreken wat iedereen gisteren heeft
 
 ## Features
 
-## Issues
+## Issues⚠️
 
-## License
+## License©️
 
 ## Definition of Done
 
