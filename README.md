@@ -9,14 +9,14 @@ Vierkante wielen is rijschoolwebsite waar je kan lessen. gespecialiceerd voor me
 - Chris Groen [github](https://github.com/166389)
 - Bruno Dijkhuis [github](https://github.com/Bruntho2802)
 
-## Over de website
+## Over de website🌐
 Rijschool vierkante wielen is gebouwd met het php framework Laravel. Ook is er gebruik maakt van HTML, CSS en JavaScript. 
 
 ## Links🔗
 - [Figma Schets](https://www.figma.com/file/l25pgwYEGU69f53lMnQeDM/Rijschool-Vierkante-Wielen?type=design&node-id=0-1&mode=design)
 - [Github Wiki](https://github.com/horizoncollege/rijschool-abc/wiki)
 
-## Teamwork
+## Teamwork✅️
 Gedurende dit project hebben wij vooral contact gehouden via Discord. Hier bespreken wij issues die wij hebben of missende informatie wanneer iemand ziek of absent is. Wij houden ook contact met onze docenten via teams en ook tijdens onze lessen op school. 
 
 Elke dag beginnen wij met een daily stand-up. Hierin bespreken wij wat wij gisteren hebben gedaan, wat wij vandaag gaan doen en of wij nog ergens problemen mee hebben.
@@ -24,7 +24,7 @@ Deze Daily Stand-ups staan in ons [Excel](...) Bestand.
 
 Op de github wiki kan je onze retrospective zien van de sprints die wij hebben gehad gedurende dit project.
 
-## Features
+## Features💡
 Rijschool vierkante wielen heeft allemaal features zoals:
 - Het aanvragen van een lespakket
 - Het inplannen van een gratis proefles
