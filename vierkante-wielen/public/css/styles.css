@@ -1,14 +1,3 @@
-.text-afbeelding .text {
-    margin-left: 36px;
-    margin-bottom: 36px;
-}
-
-@media screen and (max-width: 768px) {
-    .text-afbeelding .text {
-        margin-left: 0px;
-    }
-}
-
 /* Reset styles */
 body {
     margin: 0;
@@ -16,6 +5,8 @@ body {
     font-family: 'Quicksand', Arial, sans-serif;
     font-size: 18px;
     background-color: white;
+    padding-top: 120px;
+    /* Adjust this value based on the height of your navbar */
 }
 
 .container {
@@ -41,6 +32,27 @@ nav {
     height: 100px;
     max-width: 1280px;
     margin: 0 auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+/* Nav background */
+.container-nav {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 10px;
+    height: 100px;
+    max-width: auto;
+    margin: 0 auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
 }
 
 .nav-logo {
@@ -386,10 +398,60 @@ nav a:hover {
 
 /* Contact Form */
 .contact-form {
-    display: flex;
-    max-width: 1280px;
+    width: 400px;
     margin: 0 auto;
-    justify-content: center;
+    padding: 20px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    border-radius: 8px;
+    background-color: #F2F2F2;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #003D86;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Media query voor schermen kleiner dan 600px (mobiele apparaten) */
+@media (max-width: 600px) {
+    .contact-form {
+        width: 80%;
+    }
 }
 
 /* Brick container and columns lespakketten*/
@@ -497,6 +559,17 @@ nav a:hover {
 
 .text {
     width: 500px;
+}
+
+.text-afbeelding .text {
+    margin-left: 36px;
+    margin-bottom: 36px;
+}
+
+@media screen and (max-width: 768px) {
+    .text-afbeelding .text {
+        margin-left: 0px;
+    }
 }
 
 /* Algemene Voorwaarden */

@@ -21,15 +21,17 @@
         </div>
         <div class="text">
             <h2>Plan een gratis proefrijles in van 1 uur!</h2>
-            <p>Onze rijschool maakt gebruik van een portal waar u kunt inloggen en zelf uw lestijden in kan
-                plannen.<br><br><b>Let wel op:</B> u kunt alleen als inloggen in de portal wanneer u een pakket heeft
-                gekocht.</p>
+            <p>Tijdens een proefrijles maak je kennis met onze rijschool. Daarnaast krijg je ook inzicht in welk lespakket
+                het best bij jou past!<br><br>Nieuwsgierig? Vul dan ons <a href="{{ url('contact') }}">contactformulier</a> in en
+                wij
+                nemen zo snel mogelijk contact
+                met je op om een afspraak te maken.</p>
         </div>
     </div>
 @endsection
 
-@section('contact-form')
-    @include('partials.contact-form') {{-- Include the contact form --}}
+@section('usp')
+    @include('partials.usp') {{-- Include the USP --}}
 @endsection
 
 @section('footer')

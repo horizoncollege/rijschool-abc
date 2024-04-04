@@ -24,9 +24,9 @@
                 </ul>
             </div>
             <div class="footer-brick">
-                <h3>Plan een gratis proefles in!</h3>
-                <p>Tijdens een proefles maak je kennis met onze rijschool. Daarnaast krijg je ook inzicht in welk
-                    lespakket past het best bij jou past!</p>
+                <h3>Plan een gratis proefrijles in!</h3>
+                <p>Tijdens een proefrijles maak je kennis met onze rijschool. Daarnaast krijg je ook inzicht in welk
+                    lespakket het best bij jou past!</p>
                 <div class="menu-buttons-footer">
                     <a href="{{ url('proefrijles-inplannen') }}"><button class="yellow-button-footer">Proefrijles
                             inplannen</button></a>
