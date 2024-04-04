@@ -20,9 +20,11 @@
 
         <div class="form-group">
             <label for="message">Bericht</label>
-            <textarea name="message" class="form-control" required></textarea>
+            <textarea name="message" class="form-control" rows="5" required></textarea>
         </div>
 
-        <button type="submit" class="btn btn-primary">Verzenden</button>
+        <div class="menu-buttons-404">
+            <button class="yellow-button">Verzenden</button></a>
+        </div>
     </form>
 </div>

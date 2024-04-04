@@ -39,6 +39,3 @@
 @section('footer')
     @include('partials.footer') {{-- Include the footer --}}
 @endsection
-
-
-{{-- Test --}}

@@ -17,7 +17,7 @@
 @section('content')
     <div class="text-afbeelding"> {{-- Text + image --}}
         <div class="afbeelding">
-            <img src="{{ asset('images/rijles-met-handicap.jpg') }}" alt="afbeelding">
+            @include('partials.contact-form') {{-- Include the contact form --}}
         </div>
         <div class="text">
             <h2>Neem contact met ons op</h2>
@@ -26,14 +26,6 @@
                 leo vel. Dictumst quisque sagittis purus sit.</p>
         </div>
     </div>
-@endsection
-
-@section('contact-form')
-    @include('partials.contact-form') {{-- Include the contact form --}}
-@endsection
-
-@section('usp')
-    @include('partials.usp') {{-- Include the USP --}}
 @endsection
 
 @section('footer')
