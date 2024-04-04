@@ -26,7 +26,7 @@
                 iedereen een passende rijervaring te bieden, inclusief leerlingen met een handicap. Daarom bieden wij
                 speciale lessen aan, afgestemd op individuele behoeften.</p>
             <div class="menu-buttons-404">
-                <a href="{{ url('register') }}"><button class="yellow-button">Meld je aan</button></a>
+                <a href="{{ url('proefrijles-inplannen') }}"><button class="yellow-button">Gratis proefrijles</button></a>
             </div>
         </div>
     </div>

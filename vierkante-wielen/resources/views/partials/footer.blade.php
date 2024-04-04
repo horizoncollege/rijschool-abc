@@ -5,14 +5,14 @@
                 <h3>Snel naar</h3>
                 <ul>
                     <li> <a href="{{ url('') }}">Home</a></li>
-                    <li> <a href="{{ url('proefrijles-inplannen') }}">Proefrijles inplannen</a></li>
+                    <li> <a href="{{ url('gratis-proefrijles') }}">Gratis proefrijles</a></li>
                     <li> <a href="{{ url('autorijles-bij-ons') }}">Autorijles bij ons</a></li>
                     <li> <a href="{{ url('lespakketten') }}">Lespakketten</a></li>
                     <li> <a href="{{ url('over-ons') }}">Over ons</a></li>
                     <li> <a href="{{ url('contact') }}">Contact</a></li>
                     <li> <a href="{{ url('algemene-voorwaarden') }}">Algemene voorwaarden</a></li><br>
                     <li> <a href="{{ url('login') }}">Inloggen</a></li>
-                    <li> <a href="{{ url('aanmelden') }}">Aanmelden</a></li>
+                    <li> <a href="{{ url('register') }}">Aanmelden</a></li>
                 </ul>
             </div>
             <div class="footer-brick">

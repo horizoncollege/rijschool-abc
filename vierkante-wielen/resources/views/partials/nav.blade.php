@@ -21,8 +21,8 @@
                 <a href="{{ url('contact') }}">Contact</a>
             </div>
             <div class="menu-buttons">
-                <a href="{{ url('proefrijles-inplannen') }}"><button class="blue-button">Proefrijles
-                        inplannen</button></a>
+                <a href="{{ url('gratis-proefrijles') }}"><button class="blue-button">Gratis proefrijles
+                    </button></a>
             </div>
         </nav>
     </div>

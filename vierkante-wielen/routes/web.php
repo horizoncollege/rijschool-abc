@@ -22,7 +22,7 @@ Route::view('/autorijles-bij-ons', 'pages.autorijles-bij-ons');
 Route::view('/over-ons', 'pages.over-ons');
 Route::view('/contact', 'pages.contact');
 Route::view('/lespakketten', 'pages.lespakketten');
-Route::view('/proefrijles-inplannen', 'pages.proefrijles-inplannen');
+Route::view('/gratis-proefrijles', 'pages.gratis-proefrijles');
 
 // Contact Form
 Route::post('/contact-form', [ContactController::class, 'store'])->name('contact.store');
