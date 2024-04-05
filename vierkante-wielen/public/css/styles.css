@@ -629,6 +629,14 @@ button[type="submit"]:hover {
         margin-top: 18px;
         margin-bottom: 0px;
     }
+
+    .lespakketten h1 {
+        color: #003D86;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+
 }
 
 /* Algemene Voorwaarden */
