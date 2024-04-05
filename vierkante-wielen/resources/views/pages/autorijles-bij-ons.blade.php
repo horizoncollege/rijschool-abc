@@ -6,9 +6,12 @@
     @include('partials.nav') {{-- Include the navbar --}}
 @endsection
 
-@section('hero')
-    @include('partials.hero') {{-- Include the hero section --}}
-@endsection
+<div class="hero-image">
+    <div class="hero-text">
+        <h1>Autorijles bij ons</h1>
+        <p></p>
+    </div>
+</div>
 
 @section('action-bar')
     @include('partials.action-bar') {{-- Include the action-bar section --}}

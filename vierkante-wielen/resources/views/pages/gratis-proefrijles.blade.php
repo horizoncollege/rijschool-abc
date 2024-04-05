@@ -9,9 +9,7 @@
 <div class="hero-image">
     <div class="hero-text">
         <h1>Gratis proefrijles inplannen</h1>
-        <div class="menu-buttons-hero">
-            <a href="{{ url('gratis-proefrijles') }}"><button class="yellow-button">Gratis proefrijles aanvragen</button></a>
-        </div>
+        <p></p>
     </div>
 </div>
 
@@ -27,7 +25,8 @@
         <div class="text">
             <h2>Plan een gratis proefrijles in van 1 uur!</h2>
             <p>Tijdens een proefrijles maak je kennis met onze rijschool. Daarnaast krijg je ook inzicht in welk lespakket
-                het best bij jou past!<br><br>Nieuwsgierig? Vul dan ons <a href="{{ url('contact') }}">contactformulier</a> in en
+                het best bij jou past!<br><br>Nieuwsgierig? Vul dan ons <a href="{{ url('contact') }}">contactformulier</a>
+                in en
                 wij
                 nemen zo snel mogelijk contact
                 met je op om een afspraak te maken.</p>

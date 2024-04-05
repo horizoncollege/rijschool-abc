@@ -6,9 +6,12 @@
     @include('partials.nav') {{-- Include the navbar --}}
 @endsection
 
-@section('hero')
-    @include('partials.hero') {{-- Include the hero section --}}
-@endsection
+<div class="hero-image">
+    <div class="hero-text">
+        <h1>Lespakketten</h1>
+        <p></p>
+    </div>
+</div>
 
 @section('action-bar')
     @include('partials.action-bar') {{-- Include the action-bar section --}}
@@ -16,7 +19,7 @@
 
 @section('content')
     <div class="lespakketten">
-        <h1>Lespakketten</h1>
+        <h1>Bekijk onze lespakketten</h1>
         <div class="brick-container-tarieven"> {{-- Container for tarieven/lespakketten  --}}
             <div class="brick-tarieven"> {{-- Lespakket 1 --}}
                 <img src="{{ asset('images/USP-car.png') }}" alt="USP-1">
