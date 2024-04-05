@@ -20,7 +20,7 @@ Rijschool vierkante wielen is gebouwd met het php framework Laravel. Ook is er g
 Gedurende dit project hebben wij vooral contact gehouden via Discord. Hier bespreken wij issues die wij hebben of missende informatie wanneer iemand ziek of absent is. Wij houden ook contact met onze docenten via teams en ook tijdens onze lessen op school. 
 
 Elke dag beginnen wij met een daily stand-up. Hierin bespreken wij wat wij gisteren hebben gedaan, wat wij vandaag gaan doen en of wij nog ergens problemen mee hebben.
-Deze Daily Stand-ups staan in ons [Excel](...) Bestand.
+Deze Daily Stand-ups staan in ons [Excel](https://horizoncollege-my.sharepoint.com/:x:/r/personal/170370_student_horizoncollege_nl/Documents/Logboek.xlsx?d=we0f5415e0eca47fa9c09b72c79bd399a&csf=1&web=1&e=EMKgAy) Bestand.
 
 Op de github wiki kan je onze retrospective zien van de sprints die wij hebben gehad gedurende dit project.
 

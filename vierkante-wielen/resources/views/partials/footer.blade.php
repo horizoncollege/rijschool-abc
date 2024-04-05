@@ -28,7 +28,7 @@
                 <p>Tijdens een proefrijles maak je kennis met onze rijschool. Daarnaast krijg je ook inzicht in welk
                     lespakket het best bij jou past!</p>
                 <div class="menu-buttons-footer">
-                    <a href="{{ url('proefrijles-inplannen') }}"><button class="yellow-button-footer">Proefrijles
+                    <a href="{{ url('gratis-proefrijles') }}"><button class="yellow-button-footer">Proefrijles
                             inplannen</button></a>
                 </div>
             </div>

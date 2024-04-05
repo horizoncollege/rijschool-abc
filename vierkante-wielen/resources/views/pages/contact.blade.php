@@ -6,9 +6,13 @@
     @include('partials.nav') {{-- Include the navbar --}}
 @endsection
 
-@section('hero')
-    @include('partials.hero') {{-- Include the hero section --}}
-@endsection
+<div class="hero-image">
+    <div class="hero-text">
+        <h1>Contact</h1>
+        <p>Heb je vragen of hulp nodig? Wij staan altijd voor u klaar om u te assisteren. Aarzel niet om contact met ons
+            op te nemen via de onderstaande contactgegevens of het contactformulier.</p>
+    </div>
+</div>
 
 @section('action-bar')
     @include('partials.action-bar') {{-- Include the action-bar section --}}

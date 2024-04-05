@@ -271,7 +271,7 @@ nav a:hover {
 /* The hero image */
 .hero-image {
     /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('../images/vierkante-wielen-hero.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../images/vierkante-wielen-hero.jpg');
 
     /* Set a specific height */
     height: 50%;
@@ -293,12 +293,28 @@ nav a:hover {
     color: white;
 }
 
+.hero-text p {
+    text-align: start;
+    max-width: 500px;
+}
+
 /* Media query for mobile devices */
 @media only screen and (max-width: 768px) {
     .hero-text {
-        text-align: center; /* Center text horizontally on mobile devices */
-        left: 0; /* Reset left position */
-        transform: translate(0, -50%); /* Adjust transform for centering */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 300px;
+        /* Center text horizontally and vertically on mobile devices */
+    }
+
+    .hero-text p {
+        text-align: center;
+        justify-content: center;
+        max-width: 300px;
+        font-size: larger;
     }
 }
 
@@ -608,6 +624,19 @@ button[type="submit"]:hover {
     .text-afbeelding .text {
         margin-left: 0px;
     }
+
+    .text-afbeelding img {
+        margin-top: 18px;
+        margin-bottom: 0px;
+    }
+
+    .lespakketten h1 {
+        color: #003D86;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+
 }
 
 /* Algemene Voorwaarden */
