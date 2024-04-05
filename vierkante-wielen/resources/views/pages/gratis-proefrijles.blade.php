@@ -8,8 +8,10 @@
 
 <div class="hero-image">
     <div class="hero-text">
-        <h1>Gratis proefrijles inplannen</h1>
-        <p></p>
+        <h1>Gratis proefrijles</h1>
+        <div class="menu-buttons-hero">
+            <a href="#proefles_contact"><button class="yellow-button" onclick="scrollToContactForm()">Gratis proefrijles aanvragen</button></a>
+        </div>
     </div>
 </div>
 
@@ -24,15 +26,16 @@
         </div>
         <div class="text">
             <h2>Plan een gratis proefrijles in van 1 uur!</h2>
-            <p>Tijdens een proefrijles maak je kennis met onze rijschool. Daarnaast krijg je ook inzicht in welk lespakket
-                het best bij jou past!<br><br>Nieuwsgierig? Vul dan ons <a href="{{ url('contact') }}">contactformulier</a>
-                in en
-                wij
-                nemen zo snel mogelijk contact
-                met je op om een afspraak te maken.</p>
+            <p>Tijdens een proefrijles maak je kennis met onze rijschool. Daarnaast krijg je ook inzicht in welk lespakket het best bij jou past!<br><br>Nieuwsgierig? Vul dan ons <a href="{{ url('contact') }}">contactformulier</a> in en wij nemen zo snel mogelijk contact met je op om een afspraak te maken.</p>
         </div>
+
+    </div><div  id="proefles_contact" style="padding-bottom: 100px;"> </div>
+    <div >
+        @include('partials.contact-form') {{-- Include the contact form --}}
     </div>
+
 @endsection
+
 
 @section('usp')
     @include('partials.usp') {{-- Include the USP --}}
@@ -41,3 +44,9 @@
 @section('footer')
     @include('partials.footer') {{-- Include the footer --}}
 @endsection
+
+<script>
+    function scrollToContactForm() {
+        document.getElementById('proefles_contact').scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
