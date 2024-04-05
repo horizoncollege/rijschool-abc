@@ -6,9 +6,14 @@
     @include('partials.nav') {{-- Include the navbar --}}
 @endsection
 
-@section('hero')
-    @include('partials.hero') {{-- Include the hero section --}}
-@endsection
+<div class="hero-image">
+    <div class="hero-text">
+        <h1>Gratis proefrijles inplannen</h1>
+        <div class="menu-buttons-hero">
+            <a href="{{ url('gratis-proefrijles') }}"><button class="yellow-button">Gratis proefrijles aanvragen</button></a>
+        </div>
+    </div>
+</div>
 
 @section('action-bar')
     @include('partials.action-bar') {{-- Include the action-bar section --}}
