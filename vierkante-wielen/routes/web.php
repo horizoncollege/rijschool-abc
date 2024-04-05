@@ -24,6 +24,10 @@ Route::view('/contact', 'pages.contact');
 Route::view('/lespakketten', 'pages.lespakketten');
 Route::view('/gratis-proefrijles', 'pages.gratis-proefrijles');
 
+// Dashboard pages
+Route::view('/dashboard-contact', 'pages.dashboard.dashboard-contact');
+Route::view('/dashboard-lespakketten', 'pages.dashboard.dashboard-lespakketten');
+
 // Contact Form
 Route::post('/contact-form', [ContactController::class, 'store'])->name('contact.store');
 
