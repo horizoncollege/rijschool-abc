@@ -20,6 +20,9 @@
     {{-- Hero section --}}
     @yield('hero')
 
+    {{-- Hero Empty section --}}
+    @yield('hero-empty')
+
     {{-- Action-bar section --}}
     @yield('action-bar')
 
