@@ -41,32 +41,34 @@ class DatabaseSeeder extends Seeder
         }
 
         // Create admin User and assign the role to him.
-        $user = User::create([
+        $user1 = User::create([
             'name' => 'Rijschool_admin',
             'email' => 'vierkantewielen@gmail.com',
             'password' => Hash::make('12345678')
         ]);
 
-        $user = User::create([
+        $user2 = User::create([
             'name' => 'Tyrone',
             'email' => 'Tyrone@gmail.com',
             'password' => Hash::make('12345678')
         ]);
 
-        $user = User::create([
+        $user3 = User::create([
             'name' => 'Tim',
             'email' => 'Tim.Abbing@gmail.com',
             'password' => Hash::make('12345678')
         ]);
 
-        $role = Role::create(['name' => 'Admin']);
-        $role = Role::create(['name' => 'Rijinstructeur']);
-        $role = Role::create(['name' => 'Leerling']);
+        $role1 = Role::create(['name' => 'Admin']);
+        $role2 = Role::create(['name' => 'Rijinstructeur']);
+        $role3 = Role::create(['name' => 'Leerling']);
 
         $permissions = Permission::pluck('id', 'id')->all();
 
-        $role->syncPermissions($permissions);
+        $role1->syncPermissions($permissions);
 
-        $user->assignRole([$role->id]);
+        $user1->assignRole([$role1->id]);
+        $user2->assignRole([$role1->id]);
+        $user3->assignRole([$role1->id]);
     }
 }
