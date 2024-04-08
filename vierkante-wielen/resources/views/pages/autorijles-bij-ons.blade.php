@@ -20,7 +20,7 @@
 @section('content')
     <div class="text-afbeelding"> {{-- Text + image --}}
         <div class="afbeelding">
-            <img src="{{ asset('images/autorijles-bij-ons.jpg') }}" alt="afbeelding">
+            <img src="{{ asset('images/rijles-met-handicap.jpg') }}" alt="afbeelding">
         </div>
         <div class="text">
             <h2>Autorijles bij Vierkante Wielen</h2>

@@ -12,7 +12,7 @@
             <h1>Rijschool Vierkante Wielen</h1>
             <div class="menu-buttons-hero">
                 <a href="{{ url('gratis-proefrijles') }}"><button class="yellow-button">Gratis proefrijles
-                        aanvragen</button></a>
+                        inplannen</button></a>
             </div>
         </div>
     </div>
@@ -32,7 +32,7 @@
             </div>
             </p>
             <div class="menu-buttons-404">
-                <a href="{{ url('gratis-proefrijles') }}"><button class="yellow-button">Gratis proefrijles</button></a>
+                <a href="{{ url('gratis-proefrijles') }}"><button class="yellow-button">Proefrijles inplannen</button></a>
             </div>
         </div>
     </div>
