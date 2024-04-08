@@ -24,9 +24,12 @@ class DatabaseSeeder extends Seeder
         'product-list',
         'product-create',
         'product-edit',
-        'product-delete'
+        'product-delete',
+        'admin-dashboard-view',
+        'admin-dashboard-create',
+        'admin-dashboard-edit',
+        'admin-dashboard-delete',
     ];
-
 
     /**
      * Seed the application's database.
