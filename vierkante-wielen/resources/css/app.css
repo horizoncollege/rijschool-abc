@@ -507,6 +507,7 @@ button[type="submit"]:hover {
     justify-content: center;
     margin-top: 50px;
     margin-bottom: -40px;
+    font-size: 40px;
 }
 
 .brick-container-tarieven {

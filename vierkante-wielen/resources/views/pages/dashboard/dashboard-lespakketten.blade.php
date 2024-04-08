@@ -20,7 +20,7 @@
                             <img src="{{ asset('images/USP-car.png') }}" alt="USP-1"></div>
                             <h2>Proefles van 60 minuten</h2>
                             <h3>1399,-</h3>
-                            <p>Autorijschool de Vierkante Wielen biedt een gratis proefles van 60 minuten aan.</p>
+                            <p>Autorijschool de Vierkante Wielen biedt een gratis proefles van 60 minuten aan.</p><br>
                             <ul class="list-check">
                                 <li>Kennismaking en uitleg over hoe een rijles verloopt.</li><br>
                                 <li>Mogelijkheid voor de leerling om zelf een rondje te rijden, vaak op een rustig oefenterrein.</li>
@@ -44,7 +44,7 @@
                             <img src="{{ asset('images/USP-car.png') }}" alt="USP-1"></div>
                             <h2>Proefles van 60 minuten</h2>
                             <h3>1399,-</h3>
-                            <p>Autorijschool de Vierkante Wielen biedt een gratis proefles van 60 minuten aan.</p>
+                            <p>Autorijschool de Vierkante Wielen biedt een gratis proefles van 60 minuten aan.</p><br>
                             <ul class="list-check">
                                 <li>Kennismaking en uitleg over hoe een rijles verloopt.</li><br>
                                 <li>Mogelijkheid voor de leerling om zelf een rondje te rijden, vaak op een rustig oefenterrein.</li>
@@ -68,7 +68,7 @@
                             <img src="{{ asset('images/USP-car.png') }}" alt="USP-1"></div>
                             <h2>Proefles van 60 minuten</h2>
                             <h3>1399,-</h3>
-                            <p>Autorijschool de Vierkante Wielen biedt een gratis proefles van 60 minuten aan.</p>
+                            <p>Autorijschool de Vierkante Wielen biedt een gratis proefles van 60 minuten aan.</p><br>
                             <ul class="list-check">
                                 <li>Kennismaking en uitleg over hoe een rijles verloopt.</li><br>
                                 <li>Mogelijkheid voor de leerling om zelf een rondje te rijden, vaak op een rustig oefenterrein.</li>
