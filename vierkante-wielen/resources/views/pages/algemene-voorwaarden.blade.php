@@ -9,12 +9,16 @@
 <div class="hero-image">
     <div class="hero-text">
         <h1>Algemene voorwaarden</h1>
-        <p></p>
+        <div class="menu-buttons-hero">
+            <button class="yellow-button" onclick="scrollToContactForm()">Lees verder</button>
+        </div>
     </div>
 </div>
 
 @section('action-bar')
-    @include('partials.action-bar') {{-- Include the action-bar section --}}
+    <div id="proefles_contact">
+        @include('partials.action-bar') {{-- Include the action-bar section --}}
+    </div>
 @endsection
 
 @section('content')
@@ -74,3 +78,11 @@
 @section('footer')
     @include('partials.footer') {{-- Include the footer --}}
 @endsection
+
+<script>
+    function scrollToContactForm() {
+        document.getElementById('proefles_contact').scrollIntoView({
+            behavior: 'smooth'
+        });
+    }
+</script>

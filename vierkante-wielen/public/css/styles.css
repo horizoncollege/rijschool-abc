@@ -214,7 +214,8 @@ nav a:hover {
     }
 
     .brick-container,
-    .text-afbeelding {
+    .text-afbeelding,
+    .text-afbeelding-grey {
         flex-direction: column;
     }
 
@@ -228,7 +229,7 @@ nav a:hover {
 
     .brick-container-personeel,
     .brick-container-autos,
-    .text-afbeelding {
+    .text-afbeelding,.text-afbeelding-grey {
         flex-direction: column;
     }
 
@@ -262,6 +263,25 @@ nav a:hover {
     }
 
     .text-afbeelding img {
+        margin-top: 36px;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .text-afbeelding-grey .afbeelding {
+        width: 100%;
+        order: 1;
+        margin-bottom: 0px;
+        text-align: center;
+    }
+
+    .text-afbeelding-grey .text {
+        width: 85%;
+        order: 2;
+        text-align: left;
+    }
+
+    .text-afbeelding-grey img {
         margin-top: 36px;
         max-width: 100%;
         height: auto;
@@ -461,6 +481,16 @@ nav a:hover {
     background-color: #F2F2F2;
 }
 
+.contact-form-seperate {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    border-radius: 8px;
+    background-color: #F2F2F2;
+}
+
 .form-group {
     margin-bottom: 20px;
 }
@@ -584,6 +614,26 @@ button[type="submit"]:hover {
 }
 
 /* Text + image */
+.text-afbeelding-grey {
+    background-color: #F2F2F2;
+    margin: 0 auto;
+    max-width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-afbeelding-grey img {
+    margin-top: 36px;
+    margin-bottom: 36px;
+    border-radius: 10px;
+}
+
+.text-afbeelding-grey .text {
+    margin-left: 36px;
+    margin-bottom: 36px;
+}
+
 .text-afbeelding {
     background-color: white;
     margin: 0 auto;
@@ -630,6 +680,16 @@ button[type="submit"]:hover {
         margin-bottom: 0px;
     }
 
+    .text-afbeelding-grey .text {
+        margin-left: 0px;
+    }
+
+    .text-afbeelding-grey img {
+        margin-top: 18px;
+        margin-bottom: 0px;
+    }
+
+
     .lespakketten h1 {
         color: #003D86;
         display: flex;
@@ -656,7 +716,7 @@ button[type="submit"]:hover {
     color: #003D86;
     display: flex;
     justify-content: start;
-    margin-top: 50px;
+    margin-top: 60px;
     margin-bottom: -40px;
 }
 
