@@ -177,7 +177,7 @@ nav a:hover {
 .menu-buttons-tarieven button {
     padding: 5px 15px;
     margin-top: 10px;
-    margin-right: 20px;
+    margin-bottom: 36px;
     border: 5px solid transparent;
     border-radius: 5px;
     cursor: pointer;
@@ -229,7 +229,8 @@ nav a:hover {
 
     .brick-container-personeel,
     .brick-container-autos,
-    .text-afbeelding,.text-afbeelding-grey {
+    .text-afbeelding,
+    .text-afbeelding-grey {
         flex-direction: column;
     }
 
@@ -547,6 +548,16 @@ button[type="submit"]:hover {
     margin-bottom: -40px;
 }
 
+.tarief {
+    width: 300px;
+    margin: 20px;
+}
+
+.tarief img {
+    max-width: 100%;
+    height: auto;
+}
+
 .brick-container-tarieven {
     display: flex;
     flex-wrap: wrap;
@@ -554,20 +565,17 @@ button[type="submit"]:hover {
     margin: 0 auto;
     margin-top: 50px;
     margin-bottom: 50px;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .brick-tarieven {
     background-color: #F2F2F2;
-    height: auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    margin: 20px;
+    height: 90%;
+    padding: 10px;
     flex: 1;
     text-align: center;
-    padding-left: 10px;
-    padding-right: 10px;
     border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 .brick-tarieven img {
@@ -590,26 +598,29 @@ button[type="submit"]:hover {
 
 .list-check {
     list-style: none;
-    margin-bottom: 50px;
-    margin-right: 30px;
+    padding-left: 0; /* Verwijder eventuele padding */
 }
 
 .list-check li {
     display: flex;
-    justify-content: flex-start;
     text-align: start;
 }
 
 .list-check li::before {
     content: "☑️";
-    display: inline-block;
-    margin-right: 0.2em;
+    margin-right: 0.3em;
+    margin-left: 0; /* Stel de marge aan de linkerkant van het icoontje in op 0 */
 }
+
 
 /* Media queries for responsiveness */
 @media screen and (max-width: 768px) {
     .brick-tarieven {
         flex-basis: calc(50% - 40px);
+    }
+
+    .tarief {
+        width: calc(100% - 40px);
     }
 }
 

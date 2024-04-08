@@ -25,9 +25,10 @@
         </div>
         <div class="text">
             <h2>Neem contact met ons op</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua.<br><br>Volutpat blandit aliquam etiam erat velit scelerisque. Felis imperdiet proin fermentum
-                leo vel. Dictumst quisque sagittis purus sit.</p>
+            <p> <b>Adres:</b><br>Rijschool Vierkante Wielen<br>Wevershof 22<br>1482PK De Rijp<br><br>
+                <b>Telefoon:</b><br>+31 6 12 34 56 78<br><br>
+                <b>E-mailadres:</b><br>166389@student.horizoncollege.nl
+            </p>
         </div>
     </div>
 @endsection
