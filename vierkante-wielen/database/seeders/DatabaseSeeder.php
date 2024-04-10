@@ -2,8 +2,6 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -16,6 +14,7 @@ class DatabaseSeeder extends Seeder
     /**
      * List of applications to add.
      */
+
     private $permissions = [
         'role-list',
         'role-create',
@@ -30,6 +29,7 @@ class DatabaseSeeder extends Seeder
         'admin-dashboard-edit',
         'admin-dashboard-delete',
     ];
+
 
     /**
      * Seed the application's database.
@@ -59,16 +59,54 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('12345678')
         ]);
 
+        // Define different sets of permissions for each role
+        $adminPermissions = [
+            'role-list',
+            'role-create',
+            'role-edit',
+            'role-delete',
+            'product-list',
+            'product-create',
+            'product-edit',
+            'product-delete',
+            'admin-dashboard-view',
+            'admin-dashboard-create',
+            'admin-dashboard-edit',
+            'admin-dashboard-delete',
+        ];
+
+        $instructorPermissions = [
+            'product-list',
+            'product-edit',
+            'admin-dashboard-view',
+        ];
+
+        $studentPermissions = [
+            'product-list',
+            'admin-dashboard-view',
+        ];
+
+        // Create roles
         $role1 = Role::create(['name' => 'Admin']);
         $role2 = Role::create(['name' => 'Rijinstructeur']);
         $role3 = Role::create(['name' => 'Leerling']);
 
-        $permissions = Permission::pluck('id', 'id')->all();
+        // Assign permissions to roles
+        foreach ($adminPermissions as $permission) {
+            $role1->givePermissionTo($permission);
+        }
 
-        $role1->syncPermissions($permissions);
+        foreach ($instructorPermissions as $permission) {
+            $role2->givePermissionTo($permission);
+        }
 
+        foreach ($studentPermissions as $permission) {
+            $role3->givePermissionTo($permission);
+        }
+
+        // Assign roles to users
         $user1->assignRole([$role1->id]);
-        $user2->assignRole([$role1->id]);
-        $user3->assignRole([$role1->id]);
+        $user2->assignRole([$role2->id]);
+        $user3->assignRole([$role3->id]);
     }
 }
