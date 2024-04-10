@@ -49,13 +49,13 @@ class DatabaseSeeder extends Seeder
 
         $user2 = User::create([
             'name' => 'Tyrone',
-            'email' => 'Tyrone@gmail.com',
+            'email' => 'tyrone@gmail.com',
             'password' => Hash::make('12345678')
         ]);
 
         $user3 = User::create([
             'name' => 'Tim',
-            'email' => 'Tim.Abbing@gmail.com',
+            'email' => 'tim.abbing@gmail.com',
             'password' => Hash::make('12345678')
         ]);
 
