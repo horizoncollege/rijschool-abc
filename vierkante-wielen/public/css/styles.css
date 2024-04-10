@@ -1,16 +1,3 @@
-/* Keyframes / Animation */
-@keyframes transitionIn {
-    from {
-        opacity: 0;
-        transform: rotateX('-10deg');
-    }
-
-    to {
-        opacity: 1;
-        transform: rotateX('0');
-    }
-}
-
 /* Reset styles */
 body {
     animation: transitionIn 1s;
@@ -38,6 +25,19 @@ header {
     color: #fff;
     padding: 15px;
     text-align: center;
+}
+
+/* Keyframes / Animation */
+@keyframes transitionIn {
+    from {
+        opacity: 0;
+        transform: rotateX('-10deg');
+    }
+
+    to {
+        opacity: 1;
+        transform: rotateX('0');
+    }
 }
 
 /* Navbar */

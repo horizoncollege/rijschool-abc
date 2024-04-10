@@ -116,5 +116,3 @@
         </nav>
     </div>
 </div>
-
-@include('partials.action-bar') {{-- Include the action-bar section --}}

@@ -9,6 +9,16 @@ html {
 }
 
 body {
+    animation: transitionIn 1s;
+}
+
+.content {
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+body {
     margin: 0;
     height: 100%;
     padding: 0;
@@ -16,7 +26,20 @@ body {
     font-size: 18px;
     background-color: white;
     padding-top: 120px;
-    /* Adjust based on your design */
+}
+
+
+/* Keyframes / Animation */
+@keyframes transitionIn {
+    from {
+        opacity: 0;
+        transform: rotateX('-10deg');
+    }
+
+    to {
+        opacity: 1;
+        transform: rotateX('0');
+    }
 }
 
 /* Navbar */
@@ -27,7 +50,6 @@ nav {
     background-color: white;
     padding: 10px;
     height: 100px;
-    /* Adjust based on your design */
     max-width: 1280px;
     margin: 0 auto;
     position: fixed;
@@ -43,7 +65,6 @@ nav {
     background-color: white;
     padding: 10px;
     height: 100px;
-    /* Adjust based on your design */
     max-width: auto;
     margin: 0 auto;
     position: fixed;
@@ -156,19 +177,42 @@ nav a:hover {
 /* Table */
 .table-text {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 20px;
 }
 
+.table-grey,
 .table {
-    width: 48%;
+    width: 100%;
     border-collapse: collapse;
 }
 
+.table-grey h2,
 .table h2 {
     margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 24px;
+    color: #003D86;
+    font-weight: bold;
 }
 
+.table-grey-content {
+    border: 5px solid transparent;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    overflow-x: auto;
+}
+
+.table-content {
+    border: 5px solid transparent;
+    border-radius: 5px;
+    background-color: white;
+    overflow-x: auto;
+}
+
+.table-grey th,
+.table-grey td,
 .table th,
 .table td {
     padding: 8px;
@@ -176,29 +220,32 @@ nav a:hover {
     border-bottom: 1px solid #ddd;
 }
 
+.table-grey th,
 .table th {
     background-color: #f2f2f2;
 }
 
-.table tbody tr:hover {
-    background-color: #f5f5f5;
-}
-
+.table-grey a,
 .table a {
     text-decoration: none;
     color: blue;
 }
 
-.table a:hover {
-    text-decoration: underline;
+td {
+    color: #67697B;
 }
 
+/* Text */
 .text {
-    width: 48%;
+    width: 100%;
 }
 
 .text h2 {
     margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 24px;
+    color: #003D86;
+    font-weight: bold;
 }
 
 .text p {
@@ -219,4 +266,16 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
     background-color: #001f4d;
+}
+
+/* Media Queries */
+@media screen and (min-width: 768px) {
+    .table-grey,
+    .table {
+        width: 48%;
+    }
+
+    .text {
+        width: 48%;
+    }
 }
