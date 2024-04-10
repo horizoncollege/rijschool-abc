@@ -1,5 +1,19 @@
+/* Keyframes / Animation */
+@keyframes transitionIn {
+    from {
+        opacity: 0;
+        transform: rotateX('-10deg');
+    }
+
+    to {
+        opacity: 1;
+        transform: rotateX('0');
+    }
+}
+
 /* Reset styles */
 body {
+    animation: transitionIn 1s;
     margin: 0;
     height: 100%;
     padding: 0;
