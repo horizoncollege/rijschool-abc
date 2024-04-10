@@ -22,7 +22,7 @@ Route::view('/algemene-voorwaarden', 'pages.algemene-voorwaarden');
 Route::view('/autorijles-bij-ons', 'pages.autorijles-bij-ons');
 Route::view('/over-ons', 'pages.over-ons');
 Route::view('/contact', 'pages.contact');
-Route::view('/lespakketten', 'pages.lespakketten');
+Route::view('/tarieven', 'pages.tarieven');
 Route::view('/gratis-proefrijles', 'pages.gratis-proefrijles');
 
 // Dashboard pages

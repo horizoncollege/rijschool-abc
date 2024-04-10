@@ -7,7 +7,7 @@
                     <li> <a href="{{ url('') }}">Home</a></li>
                     <li> <a href="{{ url('gratis-proefrijles') }}">Gratis proefrijles</a></li>
                     <li> <a href="{{ url('autorijles-bij-ons') }}">Autorijles bij ons</a></li>
-                    <li> <a href="{{ url('lespakketten') }}">Lespakketten</a></li>
+                    <li> <a href="{{ url('tarieven') }}">Tarieven</a></li>
                     <li> <a href="{{ url('over-ons') }}">Over ons</a></li>
                     <li> <a href="{{ url('contact') }}">Contact</a></li>
                     <li> <a href="{{ url('algemene-voorwaarden') }}">Algemene voorwaarden</a></li><br>
