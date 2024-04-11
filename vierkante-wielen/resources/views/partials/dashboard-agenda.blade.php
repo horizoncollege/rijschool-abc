@@ -17,29 +17,6 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- Voeg het Nederlandse locale script toe -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/locale/nl.js'></script>
-
-    <style>
-        .fc-event {
-            display: flex;
-            flex-wrap: wrap;
-            align-content: center;
-        }
-        .fc-day-header {
-    background-color: #003D86;
-    color: white;
-}
-
-.fc-axis{
-    background-color: #003D86;
-    color: white;
-}
-
-.fc-next-button {
-    background-color: white;
-}
-
-
-    </style>
 </head>
 
 <body>
@@ -186,15 +163,12 @@
             $("#bookingModal").on("hidden.bs.modal", function () {
                 $('#saveBtn').unbind();
             });
-
                 // $('.fc-event').css('font-size', '14px');
-
                 // $('.fc').css('background-color', 'white')
-
-                $('.fc-event').css('display', 'flex');
-                $('.fc-event').css('justify-content', 'center');
-                $('.fc-event').css('margin-bottem', '-30px');
-                $('.fc-event').css('margin-top', '-29px');
+                // $('.fc-event').css('display', 'flex');
+                // $('.fc-event').css('justify-content', 'center');
+                // $('.fc-event').css('margin-bottem', '-30px');
+                // $('.fc-event').css('margin-top', '-29px');
 
         });
     </script>
