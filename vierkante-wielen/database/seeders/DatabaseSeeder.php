@@ -40,24 +40,6 @@ class DatabaseSeeder extends Seeder
             Permission::create(['name' => $permission]);
         }
 
-        // Create admin User and assign the role to him.
-        $user1 = User::create([
-            'name' => 'Rijschool_admin',
-            'email' => 'vierkantewielen@gmail.com',
-            'password' => Hash::make('12345678')
-        ]);
-
-        $user2 = User::create([
-            'name' => 'Tyrone',
-            'email' => 'tyrone@gmail.com',
-            'password' => Hash::make('12345678')
-        ]);
-
-        $user3 = User::create([
-            'name' => 'Tim',
-            'email' => 'tim.abbing@gmail.com',
-            'password' => Hash::make('12345678')
-        ]);
 
         // Define different sets of permissions for each role
         $adminPermissions = [
@@ -103,10 +85,5 @@ class DatabaseSeeder extends Seeder
         foreach ($studentPermissions as $permission) {
             $role3->givePermissionTo($permission);
         }
-
-        // Assign roles to users
-        $user1->assignRole([$role1->id]);
-        $user2->assignRole([$role2->id]);
-        $user3->assignRole([$role3->id]);
     }
 }
