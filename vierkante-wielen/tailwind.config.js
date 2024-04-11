@@ -14,6 +14,9 @@ export default {
             fontFamily: {
                 'sans': ['Quicksand', 'Arial', 'sans-serif'],
             },
+            colors: {
+                grijs: '#f2f2f2',
+            },
         },
     },
 
