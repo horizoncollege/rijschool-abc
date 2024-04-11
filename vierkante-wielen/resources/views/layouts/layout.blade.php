@@ -34,6 +34,9 @@
     {{-- Contact Form section --}}
     @yield('contact-form')
 
+     {{-- Dashboard-agenda --}}
+     @yield('dashboard-agenda')
+
     {{-- USP section --}}
     @yield('usp')
 
