@@ -188,7 +188,7 @@
             });
 
                 // $('.fc-event').css('font-size', '14px');
-            
+
                 // $('.fc').css('background-color', 'white')
 
                 $('.fc-event').css('display', 'flex');

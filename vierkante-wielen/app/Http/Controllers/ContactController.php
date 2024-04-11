@@ -21,9 +21,8 @@ class ContactController extends Controller
     }
 
     public function index()
-{
-    $contacts = Contact::all();
-    return view('dashboard.contact.index', compact('contacts'));
-}
-
+    {
+        $contacts = Contact::latest()->get();
+        return view('pages.dashboard.dashboard-contact', compact('contacts'));
+    }
 }

@@ -17,8 +17,10 @@ use App\Http\Controllers\CalendarController;
 |
 */
 
-// Custom pages
+// Index
 Route::view('/', 'index');
+
+// Pages
 Route::view('/algemene-voorwaarden', 'pages.algemene-voorwaarden');
 Route::view('/autorijles-bij-ons', 'pages.autorijles-bij-ons');
 Route::view('/over-ons', 'pages.over-ons');
@@ -26,17 +28,13 @@ Route::view('/contact', 'pages.contact');
 Route::view('/tarieven', 'pages.tarieven');
 Route::view('/gratis-proefrijles', 'pages.gratis-proefrijles');
 
-// Dashboard pages
-Route::view('/dashboard-contact', 'pages.dashboard.dashboard-contact');
-Route::view('/dashboard-lespakketten', 'pages.dashboard.dashboard-lespakketten');
-
 // Contact Form
 Route::post('/contact-form', [ContactController::class, 'store'])->name('contact.store');
+Route::get('/dashboard-contact', [ContactController::class, 'index'])->name('dashboard-contact');
 
 // Dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('instructors/create', 'InstructorController@create')->name('instructors.create');
-
 
 // Profile routes
 Route::middleware('auth')->group(function () {

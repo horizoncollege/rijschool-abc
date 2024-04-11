@@ -7,10 +7,21 @@
 
     <h1>Contactenlijst</h1>
 
-    <ul>
-        @foreach ($contacts as $contact)
-            <li><a href="{{ route('dashboard.contact.show', $contact->id) }}">{{ $contact->name }}</a></li>
-        @endforeach
-    </ul>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Contact Form Results</h1>
+                @foreach ($contacts as $contact)
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Name: {{ $contact->name }}</h5>
+                            <p class="card-text">Email: {{ $contact->email }}</p>
+                            <p class="card-text">Message: {{ $contact->message }}</p>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
 
 </x-app-layout>

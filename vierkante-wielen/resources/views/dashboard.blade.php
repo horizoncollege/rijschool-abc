@@ -95,10 +95,10 @@
         </div>
     </x-app-layout>
 
-    <div class="dashboard-section">
+    {{-- <div class="dashboard-section">
         <h2>Rijinstructeurs Beheren</h2>
         <p>Als admin kunt u hier rijinstructeurs toevoegen en beheren.</p>
         <a href="{{ route('instructors.create') }}" class="btn btn-primary">Rijinstructeur Toevoegen</a>
-    </div>
+    </div> --}}
 
     @include('partials.dashboard-agenda') {{-- Include the footer --}}
