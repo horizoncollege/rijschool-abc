@@ -32,6 +32,7 @@ Route::view('/dashboard-lespakketten', 'pages.dashboard.dashboard-lespakketten')
 
 // Contact Form
 Route::post('/contact-form', [ContactController::class, 'store'])->name('contact.store');
+Route::get('/dashboard/contacts', [ContactController::class, 'index'])->name('dashboard.contacts.index');
 
 // Dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');

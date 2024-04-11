@@ -16,7 +16,6 @@
                             <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                                 <x-nav-link>
                                     <a href="{{ url('dashboard') }}">Dashboard</a>
-                                    <a href="{{ url('dashboard-lespakketten') }}">Lespakketten</a>
                                     <a href="{{ url('dashboard-contact') }}">Contact</a>
                             </div>
                             </x-nav-link>
@@ -83,7 +82,6 @@
                 <div class="pt-2 pb-3 space-y-1">
                     <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
-                        <a href="{{ url('dashboard-lespakketten') }}">Lespakketten</a><br>
                         <a href="{{ url('dashboard-contact') }}">Contact</a>
                     </x-responsive-nav-link>
                 </div>
