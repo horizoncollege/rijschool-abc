@@ -48,7 +48,7 @@
     <x-app-layout>
         <x-slot name="header">
         </x-slot>
-    
+
         <div class="content">
             <div class="table-text">
                 <div class="table-grey">
@@ -84,7 +84,7 @@
                         </table>
                     </div>
                 </div>
-    
+
                 <div class="table-grey">
                     <h2>Jouw gegevens</h2>
                     <div class="table-content">
@@ -142,6 +142,15 @@
         </div>
     </x-app-layout>
 
+    <div class="dashboard-section">
+        <h2>Rijinstructeurs Beheren</h2>
+        <p>Als admin kunt u hier rijinstructeurs toevoegen en beheren.</p>
+        <a href="{{ route('instructors.create') }}" class="btn btn-primary">Rijinstructeur Toevoegen</a>
+    </div>
+
+
+
+{{-- Calandar --}}
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -265,7 +274,7 @@
             });
 
                 // $('.fc-event').css('font-size', '14px');
-            
+
                 // $('.fc').css('background-color', 'white')
 
                 $('.fc-event').css('display', 'flex');
