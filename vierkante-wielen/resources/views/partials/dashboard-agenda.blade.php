@@ -194,10 +194,10 @@
             
                 // $('.fc').css('background-color', 'white')
 
-                $('.fc-event').css('display', 'flex');
-                $('.fc-event').css('justify-content', 'center');
-                $('.fc-event').css('margin-bottem', '-30px');
-                $('.fc-event').css('margin-top', '-29px');
+                // $('.fc-event').css('display', 'flex');
+                // $('.fc-event').css('justify-content', 'center');
+                // $('.fc-event').css('margin-bottem', '-30px');
+                // $('.fc-event').css('margin-top', '-29px');
 
         });
     </script>
