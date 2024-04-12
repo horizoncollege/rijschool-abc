@@ -25,4 +25,12 @@ class ContactController extends Controller
         $contacts = Contact::latest()->get();
         return view('pages.dashboard.dashboard-contact', compact('contacts'));
     }
+
+    public function destroy($id)
+    {
+        $contact = Contact::findOrFail($id);
+        $contact->delete();
+
+        return redirect()->route('dashboard-contact')->with('success', 'Contactformulier succesvol verwijderd.');
+    }
 }

@@ -5,23 +5,51 @@
         </h2>
     </x-slot>
 
-    <h1>Contactenlijst</h1>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1>Contact Form Results</h1>
+    <div class="content">
+        <div class="table-text">
+            <div class="table-grey">
+                <h2>Ingevulde contactformulieren</h2>
                 @foreach ($contacts as $contact)
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <h5 class="card-title">Name: {{ $contact->name }}</h5>
-                            <p class="card-text">Email: {{ $contact->email }}</p>
-                            <p class="card-text">Message: {{ $contact->message }}</p>
+                    <div class="contact-grid">
+                        <div class="table-grey-content">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td><b>Name</b></td>
+                                        <td>{{ $contact->name }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>E-mail</b></td>
+                                        <td>{{ $contact->email }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Message</b></td>
+                                        <td>{{ $contact->message }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Datum</b></td>
+                                        <td>{{ $contact->created_at->addHours(2)->format('d-m-Y H:i:s') }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="action-cell">
+                                            <form method="POST" action="{{ route('contact.delete', $contact->id) }}">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit">Verwijderen</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 @endforeach
             </div>
         </div>
     </div>
+
+
+
+
 
 </x-app-layout>

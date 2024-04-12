@@ -31,6 +31,9 @@ Route::view('/gratis-proefrijles', 'pages.gratis-proefrijles');
 // Contact Form
 Route::post('/contact-form', [ContactController::class, 'store'])->name('contact.store');
 Route::get('/dashboard-contact', [ContactController::class, 'index'])->name('dashboard-contact');
+Route::delete('/contact-form/{id}', [ContactController::class, 'destroy'])->name('contact.delete');
+
+
 
 // Dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');

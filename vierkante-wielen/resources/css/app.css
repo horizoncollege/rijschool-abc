@@ -157,6 +157,26 @@ nav a:hover {
     background-color: #cc9400;
 }
 
+.menu-buttons-404 button {
+    padding: 0px 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 5px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.blue-button-404 {
+    background-color: #003D86;
+    color: #fff;
+}
+
+.blue-button-404:hover {
+    background-color: #001f4d;
+}
+
 /* Yellow bar */
 .yellow-bar {
     background-color: #FFB703;
@@ -175,6 +195,14 @@ nav a:hover {
 }
 
 /* Table */
+.action-cell {
+    width: 150px; /* Pas de breedte aan zoals nodig */
+}
+
+.contact-grid {
+    margin-bottom: 25px;
+}
+
 .table-text {
     display: flex;
     flex-wrap: wrap;
