@@ -28,20 +28,6 @@ body {
     padding-top: 120px;
 }
 
-
-/* Keyframes / Animation */
-@keyframes transitionIn {
-    from {
-        opacity: 0;
-        transform: rotateX('-10deg');
-    }
-
-    to {
-        opacity: 1;
-        transform: rotateX('0');
-    }
-}
-
 /* Navbar */
 nav {
     display: flex;
@@ -139,6 +125,21 @@ nav a:hover {
 }
 
 /* Buttons */
+button[type="submit"] {
+    background-color: #003D86;
+    color: #fff;
+    padding: 3px 10px;
+    border: 5px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover {
+    background-color: #001f4d;
+}
+
 .blue-button {
     background-color: #003D86;
     color: #fff;
@@ -196,7 +197,7 @@ nav a:hover {
 
 /* Table */
 .action-cell {
-    width: 150px; /* Pas de breedte aan zoals nodig */
+    width: 150px;
 }
 
 .contact-grid {
@@ -280,22 +281,6 @@ td {
     margin-top: 0;
 }
 
-/* Form Buttons */
-button[type="submit"] {
-    background-color: #003D86;
-    color: #fff;
-    padding: 5px 15px;
-    border: 5px solid transparent;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 16px;
-}
-
-button[type="submit"]:hover {
-    background-color: #001f4d;
-}
-
 /* Profile */
 .background-grey {
     background-color: #f2f2f2;
@@ -309,23 +294,7 @@ button[type="submit"]:hover {
     font-weight: bold;
 }
 
-/* Media Queries */
-@media screen and (min-width: 768px) {
-    .table-grey,
-    .table {
-        width: 48%;
-    }
-
-    .text {
-        width: 48%;
-    }
-}
-
-
-/* agenda */
-
-/* agenda */
-
+/* Agenda */
 .fc-event {
     display: flex;
     flex-wrap: wrap;
@@ -347,4 +316,29 @@ background-color: white;
 
 .min-h-screen {
 min-height: 10vh;
+}
+
+/* Media Queries */
+@media screen and (min-width: 768px) {
+    .table-grey,
+    .table {
+        width: 48%;
+    }
+
+    .text {
+        width: 48%;
+    }
+}
+
+/* Keyframes / Animation */
+@keyframes transitionIn {
+    from {
+        opacity: 0;
+        transform: rotateX('-10deg');
+    }
+
+    to {
+        opacity: 1;
+        transform: rotateX('0');
+    }
 }
