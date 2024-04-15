@@ -22,25 +22,7 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/locale/nl.js'></script>
 
     <style>
-        .fc-event {
-            display: flex;
-            flex-wrap: wrap;
-            align-content: center;
-        }
-        .fc-day-header {
-    background-color: #003D86;
-    color: white;
-}
-
-.fc-axis{
-    background-color: #003D86;
-    color: white;
-}
-
-.fc-next-button {
-    background-color: white;
-}
-
+   
 
     </style>
 </head>
