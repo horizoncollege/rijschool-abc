@@ -87,12 +87,6 @@
     </div>
 </x-app-layout>
 
-{{-- <div class="dashboard-section">
-        <h2>Rijinstructeurs Beheren</h2>
-        <p>Als admin kunt u hier rijinstructeurs toevoegen en beheren.</p>
-        <a href="{{ url('instructors.create') }}" class="btn btn-primary">Rijinstructeur Toevoegen</a>
-    </div> --}}
-
     <div class="menu-buttons-404">
         <a href="{{ url('instructors-create') }}"><button class="yellow-button">Rijinstructeur Toevoegen</button></a>
     </div>

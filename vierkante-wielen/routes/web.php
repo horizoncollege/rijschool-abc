@@ -35,7 +35,7 @@ Route::get('/instructors-create', [InstructorsController::class, 'create'])->nam
 Route::get('/instructors-update/{id}', [InstructorsController::class, 'update'])->name('instructors.update');
 Route::post('/instructors-store', [InstructorsController::class, 'store'])->name('instructors.store');
 Route::delete('/instructors/{id}', [InstructorsController::class, 'destroy'])->name('instructors.destroy');
-// Route::get('/instructors-destroy', [InstructorsController::class, 'destroy'])->name('instructors.destroy');
+
 
 // Dashboard Edit
 Route::view('/dashboard-gegevens-aanpassen', 'pages.dashboard.dashboard-gegevens-aanpassen');

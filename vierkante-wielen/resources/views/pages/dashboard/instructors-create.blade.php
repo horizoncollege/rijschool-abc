@@ -1,4 +1,4 @@
-<!-- resources/views/instructors/create.blade.php -->
+    <!-- resources/views/instructors/create.blade.php -->
 <!DOCTYPE html>
 <html>
 <head>
