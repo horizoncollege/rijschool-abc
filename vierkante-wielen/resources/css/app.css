@@ -207,17 +207,22 @@ button[type="submit"]:hover {
 .table-text {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    margin-bottom: 20px;
+    justify-content: center;
 }
 
 .table-grey,
+.table-grey-contact,
 .table {
     width: 100%;
     border-collapse: collapse;
+    margin-bottom: 20px;
+    padding: auto;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .table-grey h2,
+.table-grey-contact h2,
 .table h2 {
     margin-bottom: 10px;
     margin-top: 10px;
@@ -226,7 +231,8 @@ button[type="submit"]:hover {
     font-weight: bold;
 }
 
-.table-grey-content {
+.table-grey-content,
+.table-grey-contact-content {
     border: 5px solid transparent;
     border-radius: 5px;
     background-color: #f2f2f2;
@@ -241,10 +247,12 @@ button[type="submit"]:hover {
 }
 
 .table-grey th,
+.table-grey-contact th,
+.table-grey-contact td,
 .table-grey td,
 .table th,
 .table td {
-    padding: 8px;
+    padding: 10px;
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
@@ -255,6 +263,7 @@ button[type="submit"]:hover {
 }
 
 .table-grey a,
+.table-grey-contact a,
 .table a {
     text-decoration: none;
     color: blue;
@@ -300,29 +309,35 @@ td {
     flex-wrap: wrap;
     align-content: center;
 }
+
 .fc-day-header {
-background-color: #003D86;
-color: white;
+    background-color: #003D86;
+    color: white;
 }
 
-.fc-axis{
-background-color: #003D86;
-color: white;
+.fc-axis {
+    background-color: #003D86;
+    color: white;
 }
 
 .fc-next-button {
-background-color: white;
+    background-color: white;
 }
 
 .min-h-screen {
-min-height: 10vh;
+    min-height: 10vh;
 }
 
 /* Media Queries */
 @media screen and (min-width: 768px) {
+
     .table-grey,
     .table {
-        width: 48%;
+        width: max-content;
+    }
+
+    .table-grey-contact {
+        width: 100%;
     }
 
     .text {

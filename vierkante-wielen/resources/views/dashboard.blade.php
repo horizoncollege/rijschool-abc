@@ -5,59 +5,17 @@
     <div class="content">
         <div class="table-text">
             <div class="table-grey">
-                <h2>Recente rijlessen</h2>
+                <h2>Jouw gegevens</h2>
                 <div class="table-grey-content">
                     <table>
                         <tbody>
                             <tr>
-                                <td><b>Bruno Dijkhuis</b></td>
-                                <td>8-3-2024 om 13:00 uur</td>
-                            </tr>
-                            <tr>
-                                <td><b>Bruno Dijkhuis</b></td>
-                                <td>7-3-2024 om 14:30 uur</td>
-                            </tr>
-                            <tr>
-                                <td><b>Bruno Dijkhuis</b></td>
-                                <td>6-3-2024 om 12:45 uur</td>
-                            </tr>
-                            <tr>
-                                <td><b>Bruno Dijkhuis</b></td>
-                                <td>5-3-2024 om 13:00 uur</td>
-                            </tr>
-                            <tr>
-                                <td><b>Bruno Dijkhuis</b></td>
-                                <td>4-3-2024 om 14:30 uur</td>
-                            </tr>
-                            <tr>
-                                <td><b>Bruno Dijkhuis</b></td>
-                                <td>3-3-2024 om 12:45 uur</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <div class="table-grey">
-                <h2>Jouw gegevens</h2>
-                <div class="table-content">
-                    <table>
-                        <tbody>
-                            <tr>
                                 <td><b>Naam:</b></td>
-                                <td>Tyrone Sinnathamby</td>
+                                <td>{{ Auth::user()->name }}</td>
                             </tr>
                             <tr>
-                                <td><b>Adres:</b></td>
-                                <td>Westerweg 26</td>
-                            </tr>
-                            <tr>
-                                <td><b>Postcode:</b></td>
-                                <td>1906 EE</td>
-                            </tr>
-                            <tr>
-                                <td><b>Woonplaats:</b></td>
-                                <td>Limmen</td>
+                                <td><b>E-mail:</b></td>
+                                <td>{{ Auth::user()->email }}</td>
                             </tr>
                             <tr>
                                 <td><b>Telefoonnummer:</b></td>
@@ -72,20 +30,50 @@
                                 <td>Man</td>
                             </tr>
                             <tr>
-                                <td><b>E-mail:</b></td>
-                                <td>tyrone@vierkantewielen.com</td>
+                                <td><b>Adres:</b></td>
+                                <td>Westerweg 26</td>
                             </tr>
                             <tr>
-                                <td><b>Rang:</b></td>
-                                <td>Instructeur</td>
+                                <td><b>Postcode:</b></td>
+                                <td>1906 EE</td>
                             </tr>
                             <tr>
-                                <td><b>Meest recente rijles:</b></td>
+                                <td><b>Woonplaats:</b></td>
+                                <td>Limmen</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="table-grey">
+                <h2>Recente rijlessen</h2>
+                <div class="table-grey-content">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td><b>{{ Auth::user()->name }}</b></td>
                                 <td>8-3-2024 om 13:00 uur</td>
                             </tr>
                             <tr>
-                                <td><b>Volgende rijles:</b></td>
-                                <td>9-3-2024 om 12:45 uur</td>
+                                <td><b>{{ Auth::user()->name }}</b></td>
+                                <td>7-3-2024 om 14:30 uur</td>
+                            </tr>
+                            <tr>
+                                <td><b>{{ Auth::user()->name }}</b></td>
+                                <td>6-3-2024 om 12:45 uur</td>
+                            </tr>
+                            <tr>
+                                <td><b>{{ Auth::user()->name }}</b></td>
+                                <td>5-3-2024 om 13:00 uur</td>
+                            </tr>
+                            <tr>
+                                <td><b>{{ Auth::user()->name }}</b></td>
+                                <td>4-3-2024 om 14:30 uur</td>
+                            </tr>
+                            <tr>
+                                <td><b>{{ Auth::user()->name }}</b></td>
+                                <td>3-3-2024 om 12:45 uur</td>
                             </tr>
                         </tbody>
                     </table>

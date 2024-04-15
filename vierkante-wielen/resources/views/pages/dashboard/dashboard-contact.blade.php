@@ -7,11 +7,11 @@
 
     <div class="content">
         <div class="table-text">
-            <div class="table-grey">
+            <div class="table-grey-contact">
                 <h2>Ingevulde contactformulieren</h2>
                 @foreach ($contacts as $contact)
                     <div class="contact-grid">
-                        <div class="table-grey-content">
+                        <div class="table-grey-contact-content">
                             <table>
                                 <tbody>
                                     <tr>
