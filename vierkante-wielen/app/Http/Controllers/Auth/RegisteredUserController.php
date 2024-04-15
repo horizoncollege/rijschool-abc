@@ -43,7 +43,7 @@ class RegisteredUserController extends Controller
         ]);
 
         $user->assignRole([3]);
-        
+
         event(new Registered($user));
 
         Auth::login($user);

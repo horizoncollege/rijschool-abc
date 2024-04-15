@@ -44,6 +44,8 @@
                         </tbody>
                     </table>
                 </div>
+                <a href="{{ url('dashboard-gegevens-aanpassen') }}"><button class="b-form" type="submit">Gegevens
+                        aanpassen</button></a>
             </div>
 
             <div class="table-grey">

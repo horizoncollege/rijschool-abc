@@ -28,16 +28,17 @@ Route::view('/contact', 'pages.contact');
 Route::view('/tarieven', 'pages.tarieven');
 Route::view('/gratis-proefrijles', 'pages.gratis-proefrijles');
 
+// Dashboard
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('instructors/create', 'InstructorController@create')->name('instructors.create');
+
+// Dashboard Edit
+Route::view('/dashboard-gegevens-aanpassen', 'pages.dashboard.dashboard-gegevens-aanpassen');
+
 // Contact Form
 Route::post('/contact-form', [ContactController::class, 'store'])->name('contact.store');
 Route::get('/dashboard-contact', [ContactController::class, 'index'])->name('dashboard-contact');
 Route::delete('/contact-form/{id}', [ContactController::class, 'destroy'])->name('contact.delete');
-
-
-
-// Dashboard
-Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('instructors/create', 'InstructorController@create')->name('instructors.create');
 
 // Profile routes
 Route::middleware('auth')->group(function () {
