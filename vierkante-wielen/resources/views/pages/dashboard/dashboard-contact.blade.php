@@ -23,7 +23,7 @@
                                         <td>{{ $contact->email }}</td>
                                     </tr>
                                     <tr>
-                                        <td><b>Message</b></td>
+                                        <td><b>Bericht</b></td>
                                         <td>{{ $contact->message }}</td>
                                     </tr>
                                     <tr>
