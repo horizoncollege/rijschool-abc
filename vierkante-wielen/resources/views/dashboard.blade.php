@@ -1,3 +1,5 @@
+
+
 <x-app-layout>
     <x-slot name="header">
     </x-slot>
@@ -88,7 +90,11 @@
 {{-- <div class="dashboard-section">
         <h2>Rijinstructeurs Beheren</h2>
         <p>Als admin kunt u hier rijinstructeurs toevoegen en beheren.</p>
-        <a href="{{ route('instructors.create') }}" class="btn btn-primary">Rijinstructeur Toevoegen</a>
+        <a href="{{ url('instructors.create') }}" class="btn btn-primary">Rijinstructeur Toevoegen</a>
     </div> --}}
+
+    <div class="menu-buttons-404">
+        <a href="{{ url('instructors-create') }}"><button class="yellow-button">Rijinstructeur Toevoegen</button></a>
+    </div>
 
 @include('partials.dashboard-agenda') {{-- Include the footer --}}

@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CalendarController;
+use App\Http\Controllers\InstructorsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,7 +31,11 @@ Route::view('/gratis-proefrijles', 'pages.gratis-proefrijles');
 
 // Dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('instructors/create', 'InstructorController@create')->name('instructors.create');
+Route::get('/instructors-create', [InstructorsController::class, 'create'])->name('instructors.create');
+Route::get('/instructors-update/{id}', [InstructorsController::class, 'update'])->name('instructors.update');
+Route::post('/instructors-store', [InstructorsController::class, 'store'])->name('instructors.store');
+Route::delete('/instructors/{id}', [InstructorsController::class, 'destroy'])->name('instructors.destroy');
+// Route::get('/instructors-destroy', [InstructorsController::class, 'destroy'])->name('instructors.destroy');
 
 // Dashboard Edit
 Route::view('/dashboard-gegevens-aanpassen', 'pages.dashboard.dashboard-gegevens-aanpassen');
