@@ -277,6 +277,68 @@ td {
     color: #67697B;
 }
 
+/* Form */
+.contact-form {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    border-radius: 8px;
+    background-color: #F2F2F2;
+}
+
+.contact-form-seperate-left {
+    width: 400px;
+    margin: 0;
+    padding: 20px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    border-radius: 8px;
+    background-color: #F2F2F2;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #003D86;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
 /* Text */
 .text {
     width: 100%;
@@ -346,6 +408,10 @@ td {
 
     .text {
         width: 48%;
+    }
+
+    .contact-form {
+        width: 80%;
     }
 }
 
