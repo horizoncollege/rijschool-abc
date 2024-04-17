@@ -77,6 +77,8 @@
                             </tr>
                             <tr>
                                 <td><b>{{ Auth::user()->name }}</b></td>
+
+
                                 <td>3-3-2024 om 12:45 uur</td>
                             </tr>
                         </tbody>
@@ -87,8 +89,13 @@
     </div>
 </x-app-layout>
 
+{{-- Checks if the logged in user has Admin permissions. If not, the button won't show --}}
+
+    @if(Auth::user()->hasRole('Admin'))
     <div class="menu-buttons-404">
         <a href="{{ url('instructors-create') }}"><button class="yellow-button">Rijinstructeur Toevoegen</button></a>
     </div>
+@endif
+
 
 @include('partials.dashboard-agenda') {{-- Include the footer --}}

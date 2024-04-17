@@ -18,10 +18,10 @@ class InstructorsController extends Controller
 
         // Valideer de gegevens van het formulier
         $request->validate([
-            'naam' => 'required|string|max:255',
+            'name' => 'required|string|max:255',
             'adres' => 'required|string|max:255',
             'email' => 'required|email',
-            'telefoonnummer' => 'required|string|max:20',
+            'phone' => 'required|string|max:20',
             'password' => 'required|min:8|max:255',
         ]);
 
@@ -32,7 +32,7 @@ class InstructorsController extends Controller
         $instructor->password = bcrypt($request->input('password'));
         $instructor->adres = $request->input('adres');
         $instructor->phone = $request->input('phone');
-
+        
         // Sla de instructeur op in de database
         $instructor->save();
         $instructor->assignRole('Rijinstructeur');
