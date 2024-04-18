@@ -394,6 +394,15 @@ button[type="submit"]:hover {
     min-height: 10vh;
 }
 
+.time-event {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+
 /* Media Queries */
 @media screen and (min-width: 768px) {
 

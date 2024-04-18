@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateBookingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('auto_type')->default('Schakel'); // Standaardwaarde instellen
+            $table->enum('auto_type', ['Schakel', 'Automaat', 'Handicapt'])->default('Schakel'); // Standaardwaarde instellen
             $table->dateTime('start_date');
             $table->dateTime('end_date');
             $table->timestamps();
@@ -28,4 +28,4 @@ return new class extends Migration
     {
         Schema::dropIfExists('bookings');
     }
-};
+}

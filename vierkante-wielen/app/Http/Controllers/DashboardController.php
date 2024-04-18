@@ -50,8 +50,11 @@ class DashboardController extends Controller
         // Valideer de invoer
         $request->validate([
             'title' => 'required|string',
-            'auto_type' => 'required|string' // Valideer de geselecteerde waarde van de pulldown
+            'auto_type' => 'required|string', // Valideer de geselecteerde waarde van de pulldown
+            'start_date' => 'required|date_format:Y-m-d H:i',
+            'end_date' => 'required|date_format:Y-m-d H:i',
         ]);
+
         // Maak een nieuwe boeking aan
         $booking = Booking::create([
             'title' => $request->input('title'),
@@ -72,6 +75,12 @@ class DashboardController extends Controller
 
     public function update(Request $request ,$id)
     {
+        // Valideer de invoer
+        $request->validate([
+            'start_date' => 'required|date_format:Y-m-d H:i',
+            'end_date' => 'required|date_format:Y-m-d H:i',
+        ]);
+
         $booking = Booking::find($id);
         if(! $booking) {
             return response()->json([
@@ -84,6 +93,7 @@ class DashboardController extends Controller
         ]);
         return response()->json('Event updated');
     }
+
     public function destroy($id)
     {
         $booking = Booking::find($id);
@@ -96,4 +106,3 @@ class DashboardController extends Controller
         return $id;
     }
 }
-

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Agenda</title>
+    <title>Dashboard</title>
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -47,9 +47,16 @@
                         <option value="Automaat">Automaat</option>
                         <option value="Handicapt">Handicapt</option>
                     </select>
-                    <span id="autoTypeError" class="text-danger"></span> <!-- Voeg een nieuw span toe voor eventuele fouten -->
+                    <span id="autoTypeError" class="text-danger"></span>
+                    <!-- Voeg een nieuw span toe voor eventuele fouten -->
+                    <div class="time-event">
+                        
+                        <label for="appt">Begin tijd:</label>
+                        <input type="time" id="start-time" name="StartTime" required />
+                        <label for="appt">Eind tijd:</label>
+                        <input type="time" id="end-time" name="EndTime" required />
+                    </div>
                 </div>
-
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sluiten</button>
                     <button type="button" id="saveBtn" class="btn btn-primary">Opslaan</button>
@@ -97,8 +104,15 @@
                     $('#saveBtn').click(function() {
                         var title = $('#title').val();
                         var autoType = $('#auto-type').val();
-                        var start_date = moment(start).format('YYYY-MM-DD HH:mm');
-                        var end_date = moment(end).format('YYYY-MM-DD HH:mm');
+                        var startDateTime = $('#start-time').val();
+                        var endDateTime = $('#end-time').val();
+
+                        // Voeg de geselecteerde tijd toe aan de geselecteerde start- en einddatum
+                        var startDate = moment(start.format('YYYY-MM-DD HH:mm') + ' ' + startDateTime,
+                            'YYYY-MM-DD HH:mm').format('YYYY-MM-DD HH:mm');
+                        var endDate = moment(end.format('YYYY-MM-DD HH:mm') + ' ' + endDateTime,
+                            'YYYY-MM-DD HH:mm').format('YYYY-MM-DD HH:mm');
+
 
                         $.ajax({
                             url: "/calendar/store",
@@ -107,8 +121,8 @@
                             data: {
                                 title,
                                 auto_type: autoType,
-                                start_date,
-                                end_date
+                                start_date: startDate,
+                                end_date: endDate
                             },
                             success: function(response) {
                                 $('#bookingModal').modal('hide')
@@ -119,82 +133,73 @@
                                     'color': response.color
                                 });
                             },
+                           
                             error: function(error) {
-                                if (error.responseJSON.errors) {
-                                    $('#titleError').html(error.responseJSON.errors.title);
-                                    $('#autoTypeError').html(error.responseJSON.errors.auto_type); // Toon eventuele fouten voor auto_type
-                                }
-                            },
-                        });
-
+                            if (error.responseJSON.errors) {
+                                $('#titleError').html(error.responseJSON.errors
+                                    .title);
+                                $('#autoTypeError').html(error.responseJSON
+                                    .errors.auto_type);
+                            }
+                        },
                     });
 
-                },
-                editable: true,
-                eventDrop: function(event) {
-                    var id = event.id;
-                    var start_date = moment(event.start).format('YYYY-MM-DD HH:mm');
-                    var end_date = moment(event.end).format('YYYY-MM-DD HH:mm');
+                });
 
+            },
+            editable: true,
+            eventDrop: function(event) {
+                var id = event.id;
+                var start_date = moment(event.start).format('YYYY-MM-DD HH:mm');
+                var end_date = moment(event.end).format('YYYY-MM-DD HH:mm');
+
+                $.ajax({
+                    url: "/calendar/update/" + event.id,
+                    type: "PATCH",
+                    dataType: 'json',
+                    data: {
+                        start_date,
+                        end_date
+                    },
+                    success: function(response) {
+                        swal("Goed gedaan!", "Evenement bijgewerkt!", "success");
+                    },
+
+                    error: function(error) {
+                        console.log(error)
+                    },
+                });
+            },
+            eventClick: function(event) {
+                var id = event.id;
+
+                if (confirm('Weet je zeker dat je dit wilt verwijderen?')) {
                     $.ajax({
-                        url: "/calendar/update/" + event.id,
-                        type: "PATCH",
+                        url: "/calendar/destroy/" + event.id,
+                        type: "DELETE",
                         dataType: 'json',
-                        data: {
-                            start_date,
-                            end_date
-                        },
                         success: function(response) {
-                            swal("Goed gedaan!", "Evenement bijgewerkt!", "success");
+                            $('#calendar').fullCalendar('removeEvents', response);
                         },
-
                         error: function(error) {
                             console.log(error)
                         },
                     });
-                },
-                eventClick: function(event) {
-                    var id = event.id;
+                }
 
-                    if (confirm('Weet je zeker dat je dit wilt verwijderen?')) {
-                        $.ajax({
-                            url: "/calendar/destroy/" + event.id,
-                            type: "DELETE",
-                            dataType: 'json',
-                            success: function(response) {
-                                $('#calendar').fullCalendar('removeEvents', response);
-                                // swal("Goed gedaan!", "Evenement Verwijderd!", "success");
-                            },
-                            error: function(error) {
-                                console.log(error)
-                            },
-                        });
-                    }
-
-                },
-                selectAllow: function(event) {
-                    return moment(event.start).utcOffset(false).isSame(moment(event.end).subtract(1,
-                        'second').utcOffset(false), 'day');
-                },
+            },
+            selectAllow: function(event) {
+                return moment(event.start).utcOffset(false).isSame(moment(event.end).subtract(1,
+                    'second').utcOffset(false), 'day');
+            },
+        })
 
 
-            })
-
-
-            $("#bookingModal").on("hidden.bs.modal", function() {
-                $('#saveBtn').unbind();
-            });
-
-            // $('.fc-event').css('font-size', '14px');
-
-            // $('.fc').css('background-color', 'white')
-
-            // $('.fc-event').css('display', 'flex');
-            // $('.fc-event').css('justify-content', 'center');
-            // $('.fc-event').css('margin-bottem', '-30px');
-            // $('.fc-event').css('margin-top', '-29px');
-
+        $("#bookingModal").on("hidden.bs.modal", function() {
+            $('#saveBtn').unbind();
         });
+
+    });
     </script>
 </body>
 
