@@ -44,6 +44,12 @@ Route::post('/contact-form', [ContactController::class, 'store'])->name('contact
 Route::get('/dashboard-contact', [ContactController::class, 'index'])->name('dashboard-contact');
 Route::delete('/contact-form/{id}', [ContactController::class, 'destroy'])->name('contact.delete');
 
+// Calendar routes
+Route::get('calendar', [DashboardController::class, 'index'])->name('calendar.index');
+Route::post('calendar/store', [DashboardController::class, 'store'])->name('calendar.store');
+Route::patch('calendar/update/{id}', [DashboardController::class, 'update'])->name('calendar.update');
+Route::delete('calendar/destroy/{id}', [DashboardController::class, 'destroy'])->name('calendar.destroy');
+
 // Profile routes
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -51,11 +57,13 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-// Calendar routes
-Route::get('calendar', [DashboardController::class, 'index'])->name('calendar.index');
-Route::post('calendar/store', [DashboardController::class, 'store'])->name('calendar.store');
-Route::patch('calendar/update/{id}', [DashboardController::class, 'update'])->name('calendar.update');
-Route::delete('calendar/destroy/{id}', [DashboardController::class, 'destroy'])->name('calendar.destroy');
+// Logout route
+Route::post('/logout', function () {
+    // Logout user
+    auth()->logout();
+    // Redirect to home or any other page after logout
+    return redirect('/');
+})->name('logout');
 
 // Authentication routes
 require __DIR__ . '/auth.php';

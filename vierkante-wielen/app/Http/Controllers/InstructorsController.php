@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 use App\Models\User; // Zorg ervoor dat je het juiste model importeert
 
@@ -44,6 +45,9 @@ class InstructorsController extends Controller
         // Sla de instructeur op in de database
         $instructor->save();
         $instructor->assignRole('Rijinstructeur');
+
+        // Voer de redirect naar de dashboard uit
+        return Redirect::to('/dashboard');
 
     }
 

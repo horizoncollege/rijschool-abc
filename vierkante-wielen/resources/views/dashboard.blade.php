@@ -1,5 +1,3 @@
-
-
 <x-app-layout>
     <x-slot name="header">
     </x-slot>
@@ -21,33 +19,39 @@
                             </tr>
                             <tr>
                                 <td><b>Telefoonnummer:</b></td>
-                                <td>06 12 34 56 78</td>
+                                <td>{{ Auth::user()->phone }}</td>
                             </tr>
                             <tr>
                                 <td><b>Geboortedatum:</b></td>
-                                <td>28-02-2006</td>
+                                <td>{{ Auth::user()->date_of_birth }}</td>
                             </tr>
                             <tr>
                                 <td><b>Geslacht:</b></td>
-                                <td>Man</td>
+                                <td>{{ Auth::user()->gender }}</td>
                             </tr>
                             <tr>
                                 <td><b>Adres:</b></td>
-                                <td>Westerweg 26</td>
+                                <td>{{ Auth::user()->adres }}</td>
                             </tr>
                             <tr>
                                 <td><b>Postcode:</b></td>
-                                <td>1906 EE</td>
+                                <td>{{ Auth::user()->zip_code }}</td>
                             </tr>
                             <tr>
                                 <td><b>Woonplaats:</b></td>
-                                <td>Limmen</td>
+                                <td>{{ Auth::user()->city }}</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                <a href="{{ url('dashboard-gegevens-aanpassen') }}"><button class="b-form" type="submit">Gegevens
-                        aanpassen</button></a>
+
+                {{-- Checks if the logged in user has Admin permissions. If not, the button won't show --}}
+                @if (Auth::user()->hasRole('Admin'))
+                    <div class="menu-buttons-404" style="margin-top: 5px;">
+                        <a href="{{ url('instructors-create') }}"><button class="yellow-button">Rijinstructeur
+                                Toevoegen</button></a>
+                    </div>
+                @endif
             </div>
 
             <div class="table-grey">
@@ -77,8 +81,6 @@
                             </tr>
                             <tr>
                                 <td><b>{{ Auth::user()->name }}</b></td>
-
-
                                 <td>3-3-2024 om 12:45 uur</td>
                             </tr>
                         </tbody>
@@ -89,13 +91,4 @@
     </div>
 </x-app-layout>
 
-{{-- Checks if the logged in user has Admin permissions. If not, the button won't show --}}
-
-    @if(Auth::user()->hasRole('Admin'))
-    <div class="menu-buttons-404">
-        <a href="{{ url('instructors-create') }}"><button class="yellow-button">Rijinstructeur Toevoegen</button></a>
-    </div>
-@endif
-
-
-@include('partials.dashboard-agenda') {{-- Include the footer --}}
+@include('partials.dashboard-agenda') {{-- Include the Agenda --}}
