@@ -21,9 +21,9 @@ class DashboardController extends Controller
         foreach ($bookings as $booking) {
             $color = null;
             if ($booking->auto_type == 'Schakel' || $booking->auto_type == 'schakel') {
-                $color =  '#924ACE';
+                $color =  'purple';
             } elseif ($booking->auto_type == 'Automaat' || $booking->auto_type == 'automaat') {
-                $color =  '#68B01A';
+                $color =  'darkblue';
             } elseif ($booking->auto_type == 'Handicapt' || $booking->auto_type == 'handicapt') {
                 $color =  'red';
             }
