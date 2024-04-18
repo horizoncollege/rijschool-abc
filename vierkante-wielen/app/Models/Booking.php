@@ -9,7 +9,7 @@ class Booking extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'start_date', 'end_date'];
+    protected $fillable = ['title', 'start_date', 'end_date', 'auto_type'];
 }
 
 

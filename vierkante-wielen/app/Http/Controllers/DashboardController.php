@@ -15,76 +15,61 @@ class DashboardController extends Controller
     public function index()
     {
         // Haal de evenementen op uit de database
-
         $events = array();
         $bookings = Booking::all();
 
-        // hier moet pulldown komen met schakel,automaat en handicapt.
         foreach ($bookings as $booking) {
             $color = null;
-            if($booking->title == 'Schakel'){
+            if ($booking->auto_type == 'Schakel' || $booking->auto_type == 'schakel') {
                 $color =  '#924ACE';
-            }
-            if($booking->title == 'Automaat'){
+            } elseif ($booking->auto_type == 'Automaat' || $booking->auto_type == 'automaat') {
                 $color =  '#68B01A';
-            }
-            if($booking->title == 'Handicapt'){
-                $color =  'red';
-            }
-            if($booking->title == 'schakel'){
-                $color =  '#924ACE';
-            }
-            if($booking->title == 'automaat'){
-                $color =  '#68B01A';
-            }
-            if($booking->title == 'handicapt'){
+            } elseif ($booking->auto_type == 'Handicapt' || $booking->auto_type == 'handicapt') {
                 $color =  'red';
             }
 
             $events[] = [
                 'id' => $booking->id,
                 'title' => $booking->title,
+                'auto_type' => $booking->auto_type,
                 'start' => $booking->start_date,
                 'end' => $booking->end_date,
                 'color' => $color,
-                // 'color' => 'black',
                 'textColor' => '#CBD5D4',
                 'border' => 'green',
             ];
         }
 
-
-
         // Stuur de evenementen naar de view
         return view('dashboard', compact('events'));
     }
 
+    // Opslaan van een nieuw evenement
     public function store(Request $request)
     {
+        // Valideer de invoer
         $request->validate([
-            'title' => 'required|string'
+            'title' => 'required|string',
+            'auto_type' => 'required|string' // Valideer de geselecteerde waarde van de pulldown
         ]);
-
+        // Maak een nieuwe boeking aan
         $booking = Booking::create([
-            'title' => $request->title,
-            'start_date' => $request->start_date,
-            'end_date' => $request->end_date,
+            'title' => $request->input('title'),
+            'auto_type' => $request->input('auto_type'), // Sla de geselecteerde waarde van de pulldown op in de database
+            'start_date' => $request->input('start_date'),
+            'end_date' => $request->input('end_date'),
         ]);
 
-        $color = null;
-
-        if($booking->title == 'Test') {
-            $color = '#924ACE';
-        }
-
+        // Geef een succesreactie terug
         return response()->json([
             'id' => $booking->id,
             'start' => $booking->start_date,
             'end' => $booking->end_date,
             'title' => $booking->title,
-            'color' => $color ? $color: '',
+            'autoType' => $booking->auto_type,
         ]);
     }
+
     public function update(Request $request ,$id)
     {
         $booking = Booking::find($id);
@@ -110,13 +95,5 @@ class DashboardController extends Controller
         $booking->delete();
         return $id;
     }
-
-    public function showDashboard()
-    {
-        // Haal de evenementen op uit de database
-        $events = Booking::all();
-
-        // Stuur de evenementen naar de view
-        return view('dashboard', compact('events'));
-    }
 }
+

@@ -22,7 +22,7 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/locale/nl.js'></script>
 
     <style>
-   
+
 
     </style>
 </head>
@@ -41,6 +41,15 @@
                     <input type="text" class="form-control" id="title">
                     <span id="titleError" class="text-danger"></span>
                 </div>
+                <div class="modal-body">
+                    <select class="form-control" name="autoType" id="auto-type">
+                        <option value="Schakel">Schakel</option>
+                        <option value="Automaat">Automaat</option>
+                        <option value="Handicapt">Handicapt</option>
+                    </select>
+                    <span id="autoTypeError" class="text-danger"></span> <!-- Voeg een nieuw span toe voor eventuele fouten -->
+                </div>
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sluiten</button>
                     <button type="button" id="saveBtn" class="btn btn-primary">Opslaan</button>
@@ -61,7 +70,7 @@
     </div>
 
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
 
             $.ajaxSetup({
                 headers: {
@@ -82,24 +91,26 @@
                 selectable: true,
                 selectHelper: true,
                 defaultView: 'agendaWeek',
-                select: function (start, end, allDays) {
+                select: function(start, end, allDays) {
                     $('#bookingModal').modal('toggle');
 
-                    $('#saveBtn').click(function () {
+                    $('#saveBtn').click(function() {
                         var title = $('#title').val();
-                        var start_date = moment(start).format('YYYY-MM-DD');
-                        var end_date = moment(end).format('YYYY-MM-DD');
+                        var autoType = $('#auto-type').val();
+                        var start_date = moment(start).format('YYYY-MM-DD HH:mm');
+                        var end_date = moment(end).format('YYYY-MM-DD HH:mm');
 
                         $.ajax({
-                            url: "{{ route('calendar.store') }}",
+                            url: "/calendar/store",
                             type: "POST",
                             dataType: 'json',
                             data: {
                                 title,
+                                auto_type: autoType,
                                 start_date,
                                 end_date
                             },
-                            success: function (response) {
+                            success: function(response) {
                                 $('#bookingModal').modal('hide')
                                 $('#calendar').fullCalendar('renderEvent', {
                                     'title': response.title,
@@ -108,78 +119,80 @@
                                     'color': response.color
                                 });
                             },
-
-                            error: function (error) {
+                            error: function(error) {
                                 if (error.responseJSON.errors) {
-                                    $('#titleError').html(error.responseJSON.errors
-                                        .title);
+                                    $('#titleError').html(error.responseJSON.errors.title);
+                                    $('#autoTypeError').html(error.responseJSON.errors.auto_type); // Toon eventuele fouten voor auto_type
                                 }
                             },
                         });
+
                     });
+
                 },
                 editable: true,
-                eventDrop: function (event) {
+                eventDrop: function(event) {
                     var id = event.id;
-                    var start_date = moment(event.start).format('YYYY-MM-DD');
-                    var end_date = moment(event.end).format('YYYY-MM-DD');
+                    var start_date = moment(event.start).format('YYYY-MM-DD HH:mm');
+                    var end_date = moment(event.end).format('YYYY-MM-DD HH:mm');
 
                     $.ajax({
-                        url: "{{ route('calendar.update', '') }}" + '/' + id,
+                        url: "/calendar/update/" + event.id,
                         type: "PATCH",
                         dataType: 'json',
                         data: {
                             start_date,
                             end_date
                         },
-                        success: function (response) {
+                        success: function(response) {
                             swal("Goed gedaan!", "Evenement bijgewerkt!", "success");
                         },
 
-                        error: function (error) {
+                        error: function(error) {
                             console.log(error)
                         },
                     });
                 },
-                eventClick: function (event) {
+                eventClick: function(event) {
                     var id = event.id;
 
                     if (confirm('Weet je zeker dat je dit wilt verwijderen?')) {
                         $.ajax({
-                            url: "{{ route('calendar.destroy', '') }}" + '/' + id,
+                            url: "/calendar/destroy/" + event.id,
                             type: "DELETE",
                             dataType: 'json',
-                            success: function (response) {
+                            success: function(response) {
                                 $('#calendar').fullCalendar('removeEvents', response);
                                 // swal("Goed gedaan!", "Evenement Verwijderd!", "success");
                             },
-                            error: function (error) {
+                            error: function(error) {
                                 console.log(error)
                             },
                         });
                     }
 
                 },
-                selectAllow: function (event) {
-                    return moment(event.start).utcOffset(false).isSame(moment(event.end).subtract(1, 'second').utcOffset(false), 'day');
+                selectAllow: function(event) {
+                    return moment(event.start).utcOffset(false).isSame(moment(event.end).subtract(1,
+                        'second').utcOffset(false), 'day');
                 },
 
 
             })
 
 
-            $("#bookingModal").on("hidden.bs.modal", function () {
+            $("#bookingModal").on("hidden.bs.modal", function() {
                 $('#saveBtn').unbind();
             });
 
-                // $('.fc-event').css('font-size', '14px');
-            
-                // $('.fc').css('background-color', 'white')
+            // $('.fc-event').css('font-size', '14px');
 
-                // $('.fc-event').css('display', 'flex');
-                // $('.fc-event').css('justify-content', 'center');
-                // $('.fc-event').css('margin-bottem', '-30px');
-                // $('.fc-event').css('margin-top', '-29px');
+            // $('.fc').css('background-color', 'white')
+
+            // $('.fc-event').css('display', 'flex');
+            // $('.fc-event').css('justify-content', 'center');
+            // $('.fc-event').css('margin-bottem', '-30px');
+            // $('.fc-event').css('margin-top', '-29px');
 
         });
     </script>

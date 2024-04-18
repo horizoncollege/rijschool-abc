@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('auto_type')->default('Schakel'); // Standaardwaarde instellen
             $table->dateTime('start_date');
             $table->dateTime('end_date');
             $table->timestamps();

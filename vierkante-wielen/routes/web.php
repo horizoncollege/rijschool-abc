@@ -36,7 +36,6 @@ Route::get('/instructors-update/{id}', [InstructorsController::class, 'update'])
 Route::post('/instructors-store', [InstructorsController::class, 'store'])->name('instructors.store');
 Route::delete('/instructors/{id}', [InstructorsController::class, 'destroy'])->name('instructors.destroy');
 
-
 // Dashboard Edit
 Route::view('/dashboard-gegevens-aanpassen', 'pages.dashboard.dashboard-gegevens-aanpassen');
 
@@ -53,10 +52,10 @@ Route::middleware('auth')->group(function () {
 });
 
 // Calendar routes
-Route::get('calendar', [CalendarController::class, 'index'])->name('calendar.index');
-Route::post('calendar/store', [CalendarController::class, 'store'])->name('calendar.store');
-Route::patch('calendar/update/{id}', [CalendarController::class, 'update'])->name('calendar.update');
-Route::delete('calendar/destroy/{id}', [CalendarController::class, 'destroy'])->name('calendar.destroy');
+Route::get('calendar', [DashboardController::class, 'index'])->name('calendar.index');
+Route::post('calendar/store', [DashboardController::class, 'store'])->name('calendar.store');
+Route::patch('calendar/update/{id}', [DashboardController::class, 'update'])->name('calendar.update');
+Route::delete('calendar/destroy/{id}', [DashboardController::class, 'destroy'])->name('calendar.destroy');
 
 // Authentication routes
 require __DIR__ . '/auth.php';
