@@ -44,7 +44,7 @@
                 {{ __('Heb je al een account?') }}
             </a>
 
-            <x-primary-button class="ms-4">
+            <x-primary-button style="background-color: #003D86; color: #fff; font-weight: bold; font-size: 16px;" class="ms-4">
                 {{ __('Aanmaken') }}
             </x-primary-button>
         </div>
