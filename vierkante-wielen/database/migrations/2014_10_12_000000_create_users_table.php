@@ -19,6 +19,10 @@ return new class extends Migration
             $table->string('password');
             $table->string('adres')->nullable();
             $table->integer('phone')->nullable();
+            $table->date('date_of_birth')->nullable();
+            $table->string('gender')->nullable();
+            $table->string('zip_code')->nullable();
+            $table->string('city')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

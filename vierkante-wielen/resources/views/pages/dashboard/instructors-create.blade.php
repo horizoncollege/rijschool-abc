@@ -15,9 +15,6 @@
                         <label for="name">Naam:</label>
                         <input type="text" id="name" name="name"><br><br>
 
-                        <label for="adres">Adres:</label>
-                        <input type="text" id="adres" name="adres"><br><br>
-
                         <label for="email">E-mail:</label>
                         <input type="email" id="email" name="email"><br><br>
 
@@ -26,6 +23,23 @@
 
                         <label for="password">Wachtwoord:</label>
                         <input type="password" id="password" name="password"><br><br>
+
+                        <p>Extra informatie</p><br>
+
+                        <label for="date_of_birth">Geboortedatum:</label>
+                        <input type="date" id="date_of_birth" name="date_of_birth"><br><br>
+
+                        <label for="gender">Geslacht:</label>
+                        <input type="text" id="gender" name="gender"><br><br>
+
+                        <label for="adres">Adres:</label>
+                        <input type="text" id="adres" name="adres"><br><br>
+
+                        <label for="zip_code">Postcode:</label>
+                        <input type="text" id="zip_code" name="zip_code"><br><br>
+
+                        <label for="city">Woonplaats:</label>
+                        <input type="text" id="city" name="city"><br><br>
 
                         <div class="menu-buttons-404">
                             <button class="yellow-button">Aanmaken</button></a>
