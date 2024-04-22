@@ -50,10 +50,9 @@
                     <span id="autoTypeError" class="text-danger"></span>
                     <!-- Voeg een nieuw span toe voor eventuele fouten -->
                     <div class="time-event">
-                        
-                        <label for="appt">Begin tijd:</label>
+                        <label for="appt">Begin tijd</label>
                         <input type="time" id="start-time" name="StartTime" required />
-                        <label for="appt">Eind tijd:</label>
+                        <label for="appt">Eind tijd</label>
                         <input type="time" id="end-time" name="EndTime" required />
                     </div>
                 </div>
@@ -108,9 +107,9 @@
                         var endDateTime = $('#end-time').val();
 
                         // Voeg de geselecteerde tijd toe aan de geselecteerde start- en einddatum
-                        var startDate = moment(start.format('YYYY-MM-DD HH:mm') + ' ' + startDateTime,
+                        var startDate = moment(start.format('YYYY-MM-DD') + ' ' + startDateTime,
                             'YYYY-MM-DD HH:mm').format('YYYY-MM-DD HH:mm');
-                        var endDate = moment(end.format('YYYY-MM-DD HH:mm') + ' ' + endDateTime,
+                        var endDate = moment(end.format('YYYY-MM-DD') + ' ' + endDateTime,
                             'YYYY-MM-DD HH:mm').format('YYYY-MM-DD HH:mm');
 
 
@@ -162,7 +161,7 @@
                         end_date
                     },
                     success: function(response) {
-                        swal("Het is gelukt!", "Afspraak bijgewerkt!", "success");
+                        swal("Goed gedaan!", "Evenement bijgewerkt!", "success");
                     },
 
                     error: function(error) {
@@ -180,7 +179,6 @@
                         dataType: 'json',
                         success: function(response) {
                             $('#calendar').fullCalendar('removeEvents', response);
-                            swal("Het is gelukt!", "Afspraak verwijderd!", "success");
                         },
                         error: function(error) {
                             console.log(error)
