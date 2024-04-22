@@ -22,17 +22,23 @@ Gedurende dit project hebben wij vooral contact gehouden via Discord. Hier bespr
 Elke dag beginnen wij met een daily stand-up. Hierin bespreken wij wat wij gisteren hebben gedaan, wat wij vandaag gaan doen en of wij nog ergens problemen mee hebben.
 Deze Daily Stand-ups staan in ons [Excel](https://horizoncollege-my.sharepoint.com/:x:/r/personal/170370_student_horizoncollege_nl/Documents/Logboek.xlsx?d=we0f5415e0eca47fa9c09b72c79bd399a&csf=1&web=1&e=EMKgAy) Bestand.
 
-Op de github wiki kan je onze retrospective zien van de sprints die wij hebben gehad gedurende dit project.
+Op de github [wiki](https://github.com/horizoncollege/rijschool-abc/wiki) kan je onze retrospective zien van de sprints die wij hebben gehad gedurende dit project.
 
 ## Features💡
 Rijschool vierkante wielen heeft allemaal features zoals:
-- Het aanvragen van een lespakket
 - Het inplannen van een gratis proefles
 - Zelf je voortgang zien in de overzichtpagina van je eigen account
 - Zelf je lessen inplannen
 - Je zelf ziek kunnen melden
+
+## Missing Features
+Het is ons jammer genoeg niet gelukt om alle features toe te voegen aan ons project. Hieronder staat een korte lijst met features die wij wouden toevoegen, maar wat ons niet gelukt is wegens tekort aan tijd.
+- Een knop om jezelf ziek te melden als instructeur en als leerling
+- Een overzichtspagina voor de rijschoolhouder waarin hij de voortgang, aantal leerlingen, omzet en slagingspercentage kan zien
   
 ## Issues⚠️
+Wij zijn gedurende dit project tegen een paar issues opgelopen. De meeste hiervan hebben wij met succes opgelost. Er is nu 1 issue waar wij geen tijd meer voor hebben om dit op te lossen. 
+- De agenda kan geen afspraken verwijderen en updaten 
 
 ## License©️
 
