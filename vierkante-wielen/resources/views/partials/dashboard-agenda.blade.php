@@ -162,7 +162,7 @@
                         end_date
                     },
                     success: function(response) {
-                        swal("Goed gedaan!", "Evenement bijgewerkt!", "success");
+                        swal("Het is gelukt!", "Afspraak bijgewerkt!", "success");
                     },
 
                     error: function(error) {
@@ -180,6 +180,7 @@
                         dataType: 'json',
                         success: function(response) {
                             $('#calendar').fullCalendar('removeEvents', response);
+                            swal("Het is gelukt!", "Afspraak verwijderd!", "success");
                         },
                         error: function(error) {
                             console.log(error)
