@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Booking;
+use App\Models\User;
 
 class DashboardController extends Controller
 {
@@ -14,6 +15,9 @@ class DashboardController extends Controller
 
     public function index()
     {
+        // Retrieve the list of registered users
+        $users = User::all();
+
         // Haal de evenementen op uit de database
         $events = array();
         $bookings = Booking::all();
@@ -41,7 +45,7 @@ class DashboardController extends Controller
         }
 
         // Stuur de evenementen naar de view
-        return view('dashboard', compact('events'));
+        return view('dashboard', compact('events', 'users'));
     }
 
     // Opslaan van een nieuw evenement
@@ -73,7 +77,7 @@ class DashboardController extends Controller
         ]);
     }
 
-    public function update(Request $request ,$id)
+    public function update(Request $request, $id)
     {
         // Valideer de invoer
         $request->validate([
@@ -82,7 +86,7 @@ class DashboardController extends Controller
         ]);
 
         $booking = Booking::find($id);
-        if(! $booking) {
+        if (!$booking) {
             return response()->json([
                 'error' => 'Unable to locate the event'
             ], 404);
@@ -97,7 +101,7 @@ class DashboardController extends Controller
     public function destroy($id)
     {
         $booking = Booking::find($id);
-        if(! $booking) {
+        if (!$booking) {
             return response()->json([
                 'error' => 'Unable to locate the event'
             ], 404);

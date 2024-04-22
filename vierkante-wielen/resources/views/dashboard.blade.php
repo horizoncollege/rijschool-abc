@@ -54,39 +54,86 @@
                 @endif
             </div>
 
-            <div class="table-grey">
-                <h2>Recente rijlessen</h2>
-                <div class="table-grey-content">
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td><b>{{ Auth::user()->name }}</b></td>
-                                <td>8-3-2024 om 13:00 uur</td>
-                            </tr>
-                            <tr>
-                                <td><b>{{ Auth::user()->name }}</b></td>
-                                <td>7-3-2024 om 14:30 uur</td>
-                            </tr>
-                            <tr>
-                                <td><b>{{ Auth::user()->name }}</b></td>
-                                <td>6-3-2024 om 12:45 uur</td>
-                            </tr>
-                            <tr>
-                                <td><b>{{ Auth::user()->name }}</b></td>
-                                <td>5-3-2024 om 13:00 uur</td>
-                            </tr>
-                            <tr>
-                                <td><b>{{ Auth::user()->name }}</b></td>
-                                <td>4-3-2024 om 14:30 uur</td>
-                            </tr>
-                            <tr>
-                                <td><b>{{ Auth::user()->name }}</b></td>
-                                <td>3-3-2024 om 12:45 uur</td>
-                            </tr>
-                        </tbody>
-                    </table>
+            {{-- Checks if the logged in user has Admin permissions. If not, the button won't show --}}
+            @if (Auth::user()->hasRole('Admin'))
+                <div class="table-grey">
+                    <h2>Rijinstructeurs</h2>
+                    <div class="table-grey-content">
+                        <table>
+                            <tbody>
+                                @foreach ($users as $user)
+                                    @if ($user->hasRole('Rijinstructeur'))
+                                        <tr>
+                                            <td><b>{{ $user->name }}</b></td>
+                                            <td>{{ $user->email }}</td>
+                                        </tr>
+                                    @endif
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-            </div>
+
+                <div class="table-grey">
+                    <h2>Leerlingen</h2>
+                    <div class="table-grey-content">
+                        <table>
+                            <tbody>
+                                @foreach ($users as $user)
+                                    @if ($user->hasRole('Leerling'))
+                                        <tr>
+                                            <td><b>{{ $user->name }}</b></td>
+                                            <td>{{ $user->email }}</td>
+                                        </tr>
+                                    @endif
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            @endif
+
+            {{-- Checks if the logged in user has Leerling permissions. If not, the button won't show --}}
+            @if (Auth::user()->hasRole('Leerling'))
+                <div class="table-grey">
+                    <h2>Rijinstructeurs</h2>
+                    <div class="table-grey-content">
+                        <table>
+                            <tbody>
+                                @foreach ($users as $user)
+                                    @if ($user->hasRole('Rijinstructeur'))
+                                        <tr>
+                                            <td><b>{{ $user->name }}</b></td>
+                                            <td>{{ $user->email }}</td>
+                                        </tr>
+                                    @endif
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            @endif
+
+            {{-- Checks if the logged in user has Rijinstructeur permissions. If not, the button won't show --}}
+            @if (Auth::user()->hasRole('Rijinstructeur'))
+                <div class="table-grey">
+                    <h2>Leerlingen</h2>
+                    <div class="table-grey-content">
+                        <table>
+                            <tbody>
+                                @foreach ($users as $user)
+                                    @if ($user->hasRole('Leerling'))
+                                        <tr>
+                                            <td><b>{{ $user->name }}</b></td>
+                                            <td>{{ $user->email }}</td>
+                                        </tr>
+                                    @endif
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            @endif
         </div>
     </div>
 </x-app-layout>
