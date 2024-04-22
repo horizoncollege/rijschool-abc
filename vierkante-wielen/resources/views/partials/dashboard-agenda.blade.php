@@ -101,49 +101,49 @@
                     $('#bookingModal').modal('toggle');
 
                     $('#saveBtn').click(function() {
-                        var title = $('#title').val();
-                        var autoType = $('#auto-type').val();
-                        var startDateTime = $('#start-time').val();
-                        var endDateTime = $('#end-time').val();
+    var title = $('#title').val();
+    var autoType = $('#auto-type').val();
+    var startDateTime = $('#start-time').val();
+    var endDateTime = $('#end-time').val();
 
-                        // Voeg de geselecteerde tijd toe aan de geselecteerde start- en einddatum
-                        var startDate = moment(start.format('YYYY-MM-DD') + ' ' + startDateTime,
-                            'YYYY-MM-DD HH:mm').format('YYYY-MM-DD HH:mm');
-                        var endDate = moment(end.format('YYYY-MM-DD') + ' ' + endDateTime,
-                            'YYYY-MM-DD HH:mm').format('YYYY-MM-DD HH:mm');
+    // Voeg de geselecteerde tijd toe aan de geselecteerde start- en einddatum
+    var startDate = moment(start.format('YYYY-MM-DD') + ' ' + startDateTime,
+        'YYYY-MM-DD HH:mm').format('YYYY-MM-DD HH:mm');
+    var endDate = moment(end.format('YYYY-MM-DD') + ' ' + endDateTime,
+        'YYYY-MM-DD HH:mm').format('YYYY-MM-DD HH:mm');
 
 
-                        $.ajax({
-                            url: "/calendar/store",
-                            type: "POST",
-                            dataType: 'json',
-                            data: {
-                                title,
-                                auto_type: autoType,
-                                start_date: startDate,
-                                end_date: endDate
-                            },
-                            success: function(response) {
-                                $('#bookingModal').modal('hide')
-                                $('#calendar').fullCalendar('renderEvent', {
-                                    'title': response.title,
-                                    'start': response.start,
-                                    'end': response.end,
-                                    'color': response.color
-                                });
-                            },
-                           
-                            error: function(error) {
-                            if (error.responseJSON.errors) {
-                                $('#titleError').html(error.responseJSON.errors
-                                    .title);
-                                $('#autoTypeError').html(error.responseJSON
-                                    .errors.auto_type);
-                            }
-                        },
-                    });
+    $.ajax({
+        url: "/calendar/store",
+        type: "POST",
+        dataType: 'json',
+        data: {
+            title,
+            auto_type: autoType,
+            start_date: startDate,
+            end_date: endDate
+        },
+        success: function(response) {
+            $('#bookingModal').modal('hide');
+            $('#calendar').fullCalendar('renderEvent', {
+                'title': response.title,
+                'start': response.start,
+                'end': response.end,
+                'color': response.color
+            });
+            location.reload(); // Hier wordt de pagina vernieuwd
+        },
+        error: function(error) {
+            if (error.responseJSON.errors) {
+                $('#titleError').html(error.responseJSON.errors
+                    .title);
+                $('#autoTypeError').html(error.responseJSON
+                    .errors.auto_type);
+            }
+        },
+    });
+});
 
-                });
 
             },
             editable: true,
