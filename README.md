@@ -31,14 +31,13 @@ Rijschool vierkante wielen heeft allemaal features zoals:
 - Zelf je lessen inplannen
 - Je zelf ziek kunnen melden
 
-## Missing Features
+## Missing Features 🔻
 Het is ons jammer genoeg niet gelukt om alle features toe te voegen aan ons project. Hieronder staat een korte lijst met features die wij wouden toevoegen, maar wat ons niet gelukt is wegens tekort aan tijd.
 - Een knop om jezelf ziek te melden als instructeur en als leerling
 - Een overzichtspagina voor de rijschoolhouder waarin hij de voortgang, aantal leerlingen, omzet en slagingspercentage kan zien
   
 ## Issues⚠️
-Wij zijn gedurende dit project tegen een paar issues opgelopen. De meeste hiervan hebben wij met succes opgelost. Er is nu 1 issue waar wij geen tijd meer voor hebben om dit op te lossen. 
-- De agenda kan geen afspraken verwijderen en updaten 
+Wij hebben geen issues gevonden op onze pagina
 
 ## License©️
 
