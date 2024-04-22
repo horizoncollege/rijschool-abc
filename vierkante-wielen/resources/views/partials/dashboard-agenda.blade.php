@@ -68,7 +68,7 @@
         <div class="row">
             <div class="col-12">
                 <h3 class="text-center mt-5">Agenda</h3>
-                <div class="col-md-11 offset-1 mt-5 mb-5">
+                <div class="">
                     <div id="calendar"></div>
                 </div>
             </div>
@@ -161,7 +161,7 @@
                         end_date
                     },
                     success: function(response) {
-                        swal("Goed gedaan!", "Evenement bijgewerkt!", "success");
+                        swal("Gelukt!", "afspraak bijgewerkt!", "success");
                     },
 
                     error: function(error) {
