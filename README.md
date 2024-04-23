@@ -9,6 +9,10 @@ Vierkante wielen is rijschoolwebsite waar je kan lessen. gespecialiceerd voor me
 - Chris Groen [github](https://github.com/166389)
 - Bruno Dijkhuis [github](https://github.com/Bruntho2802)
 
+## Sprints🏃
+- Sprint 1: van 12-3-2024 tot 2-4-2024
+- Sprint 2: van 5-4-2024 tot 23-4-2024
+
 ## Over de website🌐
 Rijschool vierkante wielen is gebouwd met het php framework Laravel. Ook is er gebruik maakt van HTML, CSS en JavaScript. 
 
