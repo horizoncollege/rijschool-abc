@@ -54,7 +54,7 @@
                 @endif
             </div>
 
-            {{-- Checks if the logged in user has Admin permissions. If not, the button won't show --}}
+            {{-- Checks if the logged in user has Admin permissions. If not, the column won't show --}}
             @if (Auth::user()->hasRole('Admin'))
                 <div class="table-grey">
                     <h2>Rijinstructeurs</h2>
