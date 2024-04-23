@@ -191,8 +191,12 @@
                 return moment(event.start).utcOffset(false).isSame(moment(event.end).subtract(1,
                     'second').utcOffset(false), 'day');
             },
+
+            minTime: "07:00:00", // Begin van de dag
+            maxTime: "24:00:00", // Einde van de dag
         })
 
+        
 
         $("#bookingModal").on("hidden.bs.modal", function() {
             $('#saveBtn').unbind();
