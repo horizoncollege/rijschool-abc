@@ -51,9 +51,9 @@
                     <!-- Voeg een nieuw span toe voor eventuele fouten -->
                     <div class="time-event">
                         <label for="appt">Begin tijd</label>
-                        <input type="time" id="start-time" name="StartTime" required />
+                        <input type="time" id="start-time" name="StartTime" min="07:00" max="23:59" required />
                         <label for="appt">Eind tijd</label>
-                        <input type="time" id="end-time" name="EndTime" required />
+                        <input type="time" id="end-time" name="EndTime" min="07:00" max="23:59" required />
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -179,6 +179,7 @@
                         dataType: 'json',
                         success: function(response) {
                             $('#calendar').fullCalendar('removeEvents', response);
+                            swal("Gelukt!", "afspraak verwijderd!", "success");
                         },
                         error: function(error) {
                             console.log(error)
