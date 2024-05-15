@@ -44,14 +44,6 @@
                         </tbody>
                     </table>
                 </div>
-
-                {{-- Checks if the logged in user has Admin permissions. If not, the button won't show --}}
-                @if (Auth::user()->hasRole('Admin'))
-                    <div class="menu-buttons-404" style="margin-top: 5px;">
-                        <a href="{{ url('instructors-create') }}"><button class="yellow-button">Rijinstructeur
-                                Toevoegen</button></a>
-                    </div>
-                @endif
             </div>
 
             {{-- Checks if the logged in user has Admin permissions. If not, the column won't show --}}
@@ -72,6 +64,13 @@
                             </tbody>
                         </table>
                     </div>
+                    {{-- Checks if the logged in user has Admin permissions. If not, the button won't show --}}
+                @if (Auth::user()->hasRole('Admin'))
+                <div class="menu-buttons-404" style="margin-top: 5px;">
+                    <a href="{{ url('instructors-create') }}"><button class="yellow-button">Rijinstructeur
+                            Toevoegen</button></a>
+                </div>
+            @endif
                 </div>
 
                 <div class="table-grey">
