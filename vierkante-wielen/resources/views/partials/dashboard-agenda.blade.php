@@ -29,7 +29,7 @@
 
 <body>
 
-    <!-- Modal -->
+    <!-- Popup -->
     <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -38,10 +38,18 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <input type="text" class="form-control" id="title">
+                    <input type="text" class="form-control" id="title" value="Naam leerling:">
                     <span id="titleError" class="text-danger"></span>
                 </div>
+
+                <div class="time-event">
+                    <label for="appt">Begin tijd</label>
+                    <input type="time" id="start-time" name="StartTime" min="07:00" max="23:59" required />
+                    <label for="appt">Eind tijd</label>
+                    <input type="time" id="end-time" name="EndTime" min="07:00" max="23:59" required />
+                </div>
                 <div class="modal-body">
+
                     <select class="form-control" name="autoType" id="auto-type">
                         <option value="Schakel">Schakel</option>
                         <option value="Automaat">Automaat</option>
@@ -49,12 +57,13 @@
                     </select>
                     <span id="autoTypeError" class="text-danger"></span>
                     <!-- Voeg een nieuw span toe voor eventuele fouten -->
-                    <div class="time-event">
-                        <label for="appt">Begin tijd</label>
-                        <input type="time" id="start-time" name="StartTime" min="07:00" max="23:59" required />
-                        <label for="appt">Eind tijd</label>
-                        <input type="time" id="end-time" name="EndTime" min="07:00" max="23:59" required />
+                    
+                    {{-- hier moet een knop opmerking --}}
+                    <div class="opmerking">opmerking
+                        <input type="text">
                     </div>
+
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sluiten</button>
@@ -63,6 +72,8 @@
             </div>
         </div>
     </div>
+
+    {{-- popup --}}
 
     <div class="container">
         <div class="row">
