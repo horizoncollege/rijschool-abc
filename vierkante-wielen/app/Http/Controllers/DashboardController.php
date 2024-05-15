@@ -103,10 +103,17 @@ class DashboardController extends Controller
         $booking = Booking::find($id);
         if (!$booking) {
             return response()->json([
-                'error' => 'Unable to locate the event'
+                'error' => 'Unable to locate the booking'
             ], 404);
         }
         $booking->delete();
-        return $id;
+        return redirect()->back()->with('success', 'Booking deleted successfully');
+    }
+
+    public function showOpmerkingen()
+    {
+        $bookings = Booking::all();
+
+        return view('pages.dashboard.dashboard-opmerkingen', compact('bookings'));
     }
 }

@@ -40,6 +40,10 @@ Route::delete('/instructors/{id}', [InstructorsController::class, 'destroy'])->n
 // Dashboard Edit
 Route::view('/dashboard-gegevens-aanpassen', 'pages.dashboard.dashboard-gegevens-aanpassen');
 
+// Dashboard Opmerkingen
+Route::get('/dashboard-opmerkingen', [DashboardController::class, 'showOpmerkingen'])->name('dashboard-opmerkingen');
+Route::delete('/bookings/{id}', [DashboardController::class, 'destroy'])->name('bookings.destroy');
+
 // Contact Form
 Route::post('/contact-form', [ContactController::class, 'store'])->name('contact.store');
 Route::get('/dashboard-contact', [ContactController::class, 'index'])->name('dashboard-contact');
