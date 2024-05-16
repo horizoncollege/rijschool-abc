@@ -16,6 +16,8 @@
                                 <x-nav-link>
                                     <a href="{{ url('dashboard') }}">Dashboard</a>
                                     <a href="{{ url('dashboard-contact') }}">Contact</a>
+                                    <a href="{{ url('dashboard-ziekmelden') }}">Ziekmelden</a>
+                                    <a href="{{ url('dashboard-opmerkingen') }}">Opmerkingen</a>
                                 </x-nav-link>
                             </div>
                         </div>

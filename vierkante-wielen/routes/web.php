@@ -46,6 +46,10 @@ Route::delete('/bookings/{id}', [DashboardController::class, 'destroy'])->name('
 Route::delete('/clear-opmerkingen/{id}', [DashboardController::class, 'clearOpmerkingen'])->name('booking.clearOpmerkingen');
 
 
+// Dashboard Ziekmelden
+Route::get('/dashboard-ziekmelden', [DashboardController::class, 'showBookings'])->name('dashboard-ziekmelden');
+Route::delete('/bookings/{id}', [DashboardController::class, 'destroy'])->name('bookings.destroy');
+
 // Contact Form
 Route::post('/contact-form', [ContactController::class, 'store'])->name('contact.store');
 Route::get('/dashboard-contact', [ContactController::class, 'index'])->name('dashboard-contact');

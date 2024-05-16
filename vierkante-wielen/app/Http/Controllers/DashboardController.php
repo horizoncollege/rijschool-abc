@@ -117,6 +117,13 @@ class DashboardController extends Controller
         return view('pages.dashboard.dashboard-opmerkingen', compact('bookings'));
     }
 
+    public function showBookings()
+    {
+        $bookings = Booking::all();
+
+        return view('pages.dashboard.dashboard-ziekmelden', compact('bookings'));
+    }
+
     public function clearOpmerkingen($id)
     {
         $booking = Booking::find($id);
