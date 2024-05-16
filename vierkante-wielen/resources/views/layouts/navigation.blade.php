@@ -15,9 +15,16 @@
                             <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                                 <x-nav-link>
                                     <a href="{{ url('dashboard') }}">Dashboard</a>
-                                    <a href="{{ url('dashboard-contact') }}">Contact</a>
+
+                                    @if (Auth::user()->hasRole('Admin'))
+                                        <a href="{{ url('dashboard-contact') }}">Contact</a>
+                                    @endif
+
                                     <a href="{{ url('dashboard-ziekmelden') }}">Ziekmelden</a>
-                                    <a href="{{ url('dashboard-opmerkingen') }}">Opmerkingen</a>
+
+                                    @if (Auth::user()->hasRole('Leerling'))
+                                        <a href="{{ url('dashboard-opmerkingen') }}">Opmerkingen</a>
+                                    @endif
                                 </x-nav-link>
                             </div>
                         </div>
@@ -44,24 +51,16 @@
 
                             <x-slot name="content">
                                 <x-dropdown-link :href="route('profile.edit')">
-                                    {{ __('Profile') }}
+                                    {{ __('Profiel') }}
                                 </x-dropdown-link>
-
-                                {{-- Ziekmelden --}}
-                                @if (Auth::user()->hasRole('Rijinstructeur'))
-                                    <x-dropdown-link :href="route('profile.edit')">
-                                        {{ __('Ziekmelden') }}
-                                    </x-dropdown-link>
-                                @endif
 
                                 <!-- Authentication -->
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
-
                                     <x-dropdown-link :href="route('logout')"
                                         onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                        {{ __('Log Out') }}
+                                        {{ __('Uitloggen') }}
                                     </x-dropdown-link>
                                 </form>
                             </x-slot>
@@ -96,22 +95,32 @@
 
                 <!-- Responsive Settings Options -->
                 <div class="pt-4 pb-1 border-t border-gray-200">
-                    <div class="px-4">
-                        <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
-                        <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
-                    </div>
+
 
                     <div class="mt-3 space-y-1">
-                        <x-responsive-nav-link :href="route('profile.edit')">
-                            {{ __('Profile') }}
+                        <x-responsive-nav-link :href="route('dashboard')">
+                            {{ __('Dashboard') }}
                         </x-responsive-nav-link>
 
-                        {{-- Ziekmelden --}}
-                        @if (Auth::user()->hasRole('Rijinstructeur'))
-                            <x-responsive-nav-link :href="route('profile.edit')">
-                                {{ __('Ziekmelden') }}
+                        @if (Auth::user()->hasRole('Admin'))
+                            <x-responsive-nav-link :href="route('dashboard-contact')">
+                                {{ __('Contact') }}
                             </x-responsive-nav-link>
                         @endif
+
+                        <x-responsive-nav-link :href="route('dashboard-ziekmelden')">
+                            {{ __('Ziekmelden') }}
+                        </x-responsive-nav-link>
+
+                        @if (Auth::user()->hasRole('Leerling'))
+                            <x-responsive-nav-link :href="route('dashboard-opmerkingen')">
+                                {{ __('Opmerkingen') }}
+                            </x-responsive-nav-link>
+                        @endif
+
+                        <x-responsive-nav-link :href="route('profile.edit')">
+                            {{ __('Profiel') }}
+                        </x-responsive-nav-link>
 
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
@@ -120,7 +129,7 @@
                             <x-responsive-nav-link :href="route('logout')"
                                 onclick="event.preventDefault();
                                         this.closest('form').submit();">
-                                {{ __('Log Out') }}
+                                {{ __('Uitloggen') }}
                             </x-responsive-nav-link>
                         </form>
                     </div>
