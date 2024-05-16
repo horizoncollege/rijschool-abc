@@ -10,37 +10,44 @@
             <div class="table-grey-contact">
                 <h2>Jouw opmerkingen</h2>
 
-                @if ($bookings->isEmpty())
+                @if (
+                    $bookings->isEmpty() ||
+                        $bookings->filter(function ($booking) {
+                                return $booking->opmerking != null;
+                            })->isEmpty())
                     <p>Je hebt momenteel geen opmerkingen toegevoegd.</p>
                 @else
                     @foreach ($bookings as $booking)
-                        <div class="contact-grid">
-                            <div class="table-grey-contact-content">
-                                <table>
-                                    <tbody>
-                                        <tr>
-                                            <td><b>Datum</b></td>
-                                            <td>{{ $booking->start_date }}</td>
-                                        </tr>
-                                        <tr>
-                                            <td><b>Opmerking</b></td>
-                                            <td>{{ $booking->opmerking }}</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="action-cell">
-                                                <form action="{{ route('bookings.destroy', $booking->id) }}" method="POST">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <div class="menu-buttons-404">
-                                                        <button class="yellow-button">Verwijderen</button>
-                                                    </div>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                        @if ($booking->opmerking != null)
+                            <div class="contact-grid">
+                                <div class="table-grey-contact-content">
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td><b>Datum</b></td>
+                                                <td>{{ $booking->start_date }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Opmerking</b></td>
+                                                <td>{{ $booking->opmerking }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="action-cell">
+                                                    <form action="{{ route('booking.clearOpmerkingen', $booking->id) }}"
+                                                        method="POST">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <div class="menu-buttons-404">
+                                                            <button class="yellow-button">Verwijderen</button>
+                                                        </div>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
-                        </div>
+                        @endif
                     @endforeach
                 @endif
             </div>

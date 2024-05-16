@@ -116,4 +116,20 @@ class DashboardController extends Controller
 
         return view('pages.dashboard.dashboard-opmerkingen', compact('bookings'));
     }
+
+    public function clearOpmerkingen($id)
+    {
+        $booking = Booking::find($id);
+
+        if (!$booking) {
+            return redirect()->back()->with('error', 'Booking not found');
+        }
+
+        $booking->opmerking = null;
+        $booking->save();
+
+        $bookings = Booking::all();
+
+        return redirect()->route('dashboard-opmerkingen')->with('success', 'Booking deleted successfully');
+    }
 }

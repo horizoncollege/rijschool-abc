@@ -11,5 +11,3 @@ class Booking extends Model
 
     protected $fillable = ['title', 'start_date', 'end_date', 'auto_type'];
 }
-
-

@@ -43,6 +43,8 @@ Route::view('/dashboard-gegevens-aanpassen', 'pages.dashboard.dashboard-gegevens
 // Dashboard Opmerkingen
 Route::get('/dashboard-opmerkingen', [DashboardController::class, 'showOpmerkingen'])->name('dashboard-opmerkingen');
 Route::delete('/bookings/{id}', [DashboardController::class, 'destroy'])->name('bookings.destroy');
+Route::delete('/clear-opmerkingen/{id}', [DashboardController::class, 'clearOpmerkingen'])->name('booking.clearOpmerkingen');
+
 
 // Contact Form
 Route::post('/contact-form', [ContactController::class, 'store'])->name('contact.store');
