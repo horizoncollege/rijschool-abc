@@ -48,8 +48,38 @@
                     <label for="appt">Eind tijd</label>
                     <input type="time" id="end-time" name="EndTime" min="07:00" max="23:59" required />
                 </div>
-                <div class="modal-body">
 
+                <div class="table-grey">
+                    <h2>Leerlingen</h2>
+                    <div class="table-grey-content">
+                        <select id="leerlingen-dropdown">
+                            <option value="">Selecteer een leerling</option>
+                            @foreach ($users as $user)
+                                @if ($user->hasRole('Leerling'))
+                                    <option value="{{ $user->id }}">{{ $user->name }}</option>
+                                @endif
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+
+                <div class="table-grey">
+                    <h2>Rijinstructeurs</h2>
+                    <div class="table-grey-content">
+                        <select id="rijinstructeurs-dropdown">
+                            <option value="">Selecteer een rijinstructeur</option>
+                            @foreach ($users as $user)
+                                @if ($user->hasRole('Rijinstructeur'))
+                                    <option value="{{ $user->id }}">{{ $user->name }}</option>
+                                @endif
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+                
+                
+
+                <div class="modal-body">
                     <select class="form-control" name="autoType" id="auto-type">
                         <option value="Schakel">Schakel</option>
                         <option value="Automaat">Automaat</option>
