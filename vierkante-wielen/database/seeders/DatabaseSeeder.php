@@ -10,11 +10,9 @@ use Spatie\Permission\Models\Role;
 
 class DatabaseSeeder extends Seeder
 {
-
     /**
-     * List of applications to add.
+     * List of permissions to add.
      */
-
     private $permissions = [
         'role-list',
         'role-create',
@@ -30,7 +28,6 @@ class DatabaseSeeder extends Seeder
         'admin-dashboard-delete',
     ];
 
-
     /**
      * Seed the application's database.
      */
@@ -39,7 +36,6 @@ class DatabaseSeeder extends Seeder
         foreach ($this->permissions as $permission) {
             Permission::create(['name' => $permission]);
         }
-
 
         // Define different sets of permissions for each role
         $adminPermissions = [
@@ -69,21 +65,43 @@ class DatabaseSeeder extends Seeder
         ];
 
         // Create roles
-        $role1 = Role::create(['name' => 'Admin']);
-        $role2 = Role::create(['name' => 'Rijinstructeur']);
-        $role3 = Role::create(['name' => 'Leerling']);
+        $roleAdmin = Role::create(['name' => 'Admin']);
+        $roleInstructor = Role::create(['name' => 'Rijinstructeur']);
+        $roleStudent = Role::create(['name' => 'Leerling']);
 
         // Assign permissions to roles
         foreach ($adminPermissions as $permission) {
-            $role1->givePermissionTo($permission);
+            $roleAdmin->givePermissionTo($permission);
         }
 
         foreach ($instructorPermissions as $permission) {
-            $role2->givePermissionTo($permission);
+            $roleInstructor->givePermissionTo($permission);
         }
 
         foreach ($studentPermissions as $permission) {
-            $role3->givePermissionTo($permission);
+            $roleStudent->givePermissionTo($permission);
+        }
+
+        // Create users with the 'Rijinstructeur' role
+        $instructors = [
+            ['name' => 'Rijinstructeur 1', 'email' => 'rijinstructeur1@gmail.com', 'password' => Hash::make('12345678')],
+            ['name' => 'Rijinstructeur 2', 'email' => 'rijinstructeur2@gmail.com', 'password' => Hash::make('12345678')],
+        ];
+
+        foreach ($instructors as $instructor) {
+            $user = User::create($instructor);
+            $user->assignRole($roleInstructor);
+        }
+
+        // Create users with the 'Leerling' role
+        $students = [
+            ['name' => 'Leerling1', 'email' => 'leerling1@gmail.com', 'password' => Hash::make('12345678')],
+            ['name' => 'Leerling2', 'email' => 'leerling2@gmail.com', 'password' => Hash::make('12345678')],
+        ];
+
+        foreach ($students as $student) {
+            $user = User::create($student);
+            $user->assignRole($roleStudent);
         }
     }
 }
