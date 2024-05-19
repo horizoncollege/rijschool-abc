@@ -18,6 +18,7 @@ class DashboardController extends Controller
         // Haal de lijst van geregistreerde gebruikers op
         $users = User::all();
 
+
         // Haal de ingelogde gebruiker op
         $currentUser = auth()->user();
 

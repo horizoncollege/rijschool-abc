@@ -57,7 +57,6 @@
             cursor: pointer;
             font-weight: bold;
             font-size: 16px;
-
         }
 
         .btn-primary {
@@ -71,56 +70,55 @@
             cursor: pointer;
             font-weight: bold;
             font-size: 16px;
-
         }
 
         .btn-secondary,
-.btn-primary {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Toevoegen van een schaduw */
-    transition: box-shadow 0.3s ease; /* Vloeiende overgang voor schaduw bij hover */
-    
+        .btn-primary {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            /* Toevoegen van een schaduw */
+            transition: box-shadow 0.3s ease;
+            /* Vloeiende overgang voor schaduw bij hover */
+        }
 
-}
+        .btn-secondary:hover,
+        .btn-primary:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* Intensifiëren van de schaduw bij hover */
+            background-color: #6c757d;
+        }
 
-.btn-secondary:hover,
-.btn-primary:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Intensifiëren van de schaduw bij hover */
-    background-color: #6c757d;
-}
+        .time-event label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
 
-.time-event label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
+        .time-event input[type="time"] {
+            padding: 5px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
 
-.time-event input[type="time"] {
-    padding: 5px;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
+        .time-event input[type="time"]:focus {
+            outline: none;
+            border-color: #FFB703;
+            /* Kleur van de focusrand aanpassen */
+            box-shadow: 0 0 5px rgba(0, 61, 134, 0.5);
+            /* Toevoegen van een schaduw bij focus */
+        }
 
-.time-event input[type="time"]:focus {
-    outline: none;
-    border-color: #FFB703; /* Kleur van de focusrand aanpassen */
-    box-shadow: 0 0 5px rgba(0, 61, 134, 0.5); /* Toevoegen van een schaduw bij focus */
-}
-
-h3{
-    margin-bottom: 10px;
-    margin-top: 10px;
-    font-size: 18px;
-    color: #003D86;
-    font-weight: bold;
-
-}
-
+        h3 {
+            margin-bottom: 10px;
+            margin-top: 10px;
+            font-size: 18px;
+            color: #003D86;
+            font-weight: bold;
+        }
     </style>
 </head>
 
 <body>
-
     <!-- Popup Modal for Booking -->
     <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -131,7 +129,6 @@ h3{
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <!-- Modal Body -->
-                
                 <div class="modal-body">
                     <h3>Titel</h3>
                     <input type="text" class="form-control" id="title">
@@ -144,7 +141,6 @@ h3{
                     <h3 for="appt">Eind tijd</h3>
                     <input type="time" id="end-time" name="EndTime" min="07:00" max="23:59" required />
                 </div>
-                
                 <!-- Dropdown for Students -->
                 <div class="table-grey">
                     <h3>Leerlingen</h3>
@@ -184,7 +180,8 @@ h3{
                     <span id="autoTypeError" class="text-danger"></span>
                 </div>
                 <!-- Remarks Section -->
-                <div class="opmerking"><h3>Opmerking</h3>
+                <div class="opmerking">
+                    <h3>Opmerking</h3>
                     <input type="text" id="opmerking">
                 </div>
                 <!-- Modal Footer -->
@@ -208,89 +205,44 @@ h3{
 
     <!-- Script to handle FullCalendar and Modal -->
     <script>
-        $(document).ready(function() {
-
+        $(document).ready(function () {
             // Set up AJAX with CSRF token
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
-
+    
             // Load events into FullCalendar
             var booking = @json($events);
-
+    
+            // Determine if user is admin or instructor
+            var isAuthorizedUser = {{ auth()->user()->hasRole('Admin') || auth()->user()->hasRole('Rijinstructeur') ? 'true' : 'false' }};
+    
             // Initialize FullCalendar
-            $('#calendar').fullCalendar({
+            var calendar = $('#calendar').fullCalendar({
                 header: {
-                    left: 'prev, next today',
+                    left: 'prev,next today',
                     center: 'title',
-                    right: 'month, agendaWeek, agendaDay, list',
+                    right: 'month,agendaWeek,agendaDay,list',
                 },
                 events: booking,
-                selectable: true,
+                selectable: isAuthorizedUser,
                 selectHelper: true,
                 defaultView: 'agendaWeek',
-                select: function(start, end, allDays) {
-                    $('#bookingModal').modal('toggle');
-
-                    $('#saveBtn').click(function() {
-                        var title = $('#title').val();
-                        var autoType = $('#auto-type').val();
-                        var startDateTime = $('#start-time').val();
-                        var endDateTime = $('#end-time').val();
-                        var instructeurid = $('#rijinstructeurs-dropdown').val();
-                        var leerlingid = $('#leerlingen-dropdown').val();
-                        var opmerking = $('#opmerking').val();
-
-                        var startDate = moment(start.format('YYYY-MM-DD') + ' ' + startDateTime,
-                            'YYYY-MM-DD HH:mm').format('YYYY-MM-DD HH:mm');
-                        var endDate = moment(end.format('YYYY-MM-DD') + ' ' + endDateTime,
-                            'YYYY-MM-DD HH:mm').format('YYYY-MM-DD HH:mm');
-
-                        // AJAX request to store the event
-                        $.ajax({
-                            url: "/calendar/store",
-                            type: "POST",
-                            dataType: 'json',
-                            data: {
-                                title,
-                                auto_type: autoType,
-                                start_date: startDate,
-                                end_date: endDate,
-                                instructeurid,
-                                leerlingid,
-                                opmerking,
-                            },
-                            success: function(response) {
-                                $('#bookingModal').modal('hide');
-                                $('#calendar').fullCalendar('renderEvent', {
-                                    'title': response.title,
-                                    'start': response.start,
-                                    'end': response.end,
-                                    'color': response.color,
-                                    'instructeurid': instructeurid,
-                                    'leerlingid': leerlingid
-                                });
-                                location.reload();
-                            },
-                            error: function(error) {
-                                if (error.responseJSON.errors) {
-                                    $('#titleError').html(error.responseJSON.errors
-                                        .title);
-                                    $('#autoTypeError').html(error.responseJSON
-                                        .errors.auto_type);
-                                }
-                            },
-                        });
-                    });
+                select: function (start, end, allDays) {
+                    if (isAuthorizedUser) {
+                        $('#bookingModal').modal('toggle');
+                        $('#saveBtn').data('start', start);
+                        $('#saveBtn').data('end', end);
+                    }
                 },
                 editable: true,
-                eventDrop: function(event) {
+                eventDrop: function (event) {
                     var id = event.id;
                     var start_date = moment(event.start).format('YYYY-MM-DD HH:mm');
                     var end_date = moment(event.end).format('YYYY-MM-DD HH:mm');
-
+    
                     // AJAX request to update the event
                     $.ajax({
                         url: "/calendar/update/" + event.id,
@@ -300,49 +252,105 @@ h3{
                             start_date,
                             end_date
                         },
-                        success: function(response) {
+                        success: function (response) {
                             swal("Gelukt!", "afspraak bijgewerkt!", "success");
                         },
-                        error: function(error) {
+                        error: function (error) {
                             console.log(error)
                         },
                     });
                 },
-                eventClick: function(event) {
+                eventClick: function (event) {
                     var id = event.id;
-
+    
                     if (confirm('Weet je zeker dat je dit wilt verwijderen?')) {
                         // AJAX request to delete the event
                         $.ajax({
                             url: "/calendar/destroy/" + event.id,
                             type: "DELETE",
                             dataType: 'json',
-                            success: function(response) {
+                            success: function (response) {
                                 $('#calendar').fullCalendar('removeEvents', response);
                                 swal("Gelukt!", "afspraak verwijderd!", "success");
                             },
-                            error: function(error) {
+                            error: function (error) {
                                 location.reload();
                                 console.log(error)
                             },
                         });
                     }
                 },
-                selectAllow: function(event) {
-                    return moment(event.start).utcOffset(false).isSame(moment(event.end).subtract(1,
-                        'second').utcOffset(false), 'day');
+                selectAllow: function (event) {
+                    return moment(event.start).utcOffset(false).isSame(moment(event.end).subtract(1, 'second').utcOffset(false), 'day');
                 },
                 minTime: "07:00:00", // Begin van de dag
                 maxTime: "24:00:00", // Einde van de dag
             });
-
+    
+            // Function to open booking modal
+            function openBookingModal() {
+                $('#bookingModal').modal('toggle');
+            }
+    
             // Unbind the save button click event when modal is closed
-            $("#bookingModal").on("hidden.bs.modal", function() {
+            $("#bookingModal").on("hidden.bs.modal", function () {
                 $('#saveBtn').unbind();
             });
-
+    
+            // Save button click event
+            $('#saveBtn').click(function () {
+                var title = $('#title').val();
+                var autoType = $('#auto-type').val();
+                var startDateTime = $('#start-time').val();
+                var endDateTime = $('#end-time').val();
+                var instructeurid = $('#rijinstructeurs-dropdown').val();
+                var leerlingid = $('#leerlingen-dropdown').val();
+                var opmerking = $('#opmerking').val();
+    
+                var start = $('#saveBtn').data('start');
+                var end = $('#saveBtn').data('end');
+    
+                var startDate = moment(start.format('YYYY-MM-DD') + ' ' + startDateTime,
+                    'YYYY-MM-DD HH:mm').format('YYYY-MM-DD HH:mm');
+                var endDate = moment(end.format('YYYY-MM-DD') + ' ' + endDateTime,
+                    'YYYY-MM-DD HH:mm').format('YYYY-MM-DD HH:mm');
+    
+                // AJAX request to store the event
+                $.ajax({
+                    url: "/calendar/store",
+                    type: "POST",
+                    dataType: 'json',
+                    data: {
+                        title,
+                        auto_type: autoType,
+                        start_date: startDate,
+                        end_date: endDate,
+                        instructeurid,
+                        leerlingid,
+                        opmerking,
+                    },
+                    success: function (response) {
+                        $('#bookingModal').modal('hide');
+                        $('#calendar').fullCalendar('renderEvent', {
+                            'title': response.title,
+                            'start': response.start,
+                            'end': response.end,
+                            'color': response.color,
+                            'instructeurid': instructeurid,
+                            'leerlingid': leerlingid
+                        });
+                        location.reload();
+                    },
+                    error: function (error) {
+                        if (error.responseJSON.errors) {
+                            $('#titleError').html(error.responseJSON.errors.title);
+                            $('#autoTypeError').html(error.responseJSON.errors.auto_type);
+                        }
+                    },
+                });
+            });
         });
     </script>
-</body>
-
-</html>
+    </body>
+    
+    </html>
