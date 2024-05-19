@@ -27,6 +27,95 @@
 
     <style>
         /* Voeg hier eventuele aangepaste stijlen toe */
+        .opmerking {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .modal-content {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            pointer-events: auto;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 7px solid #FFB703;
+            border-radius: .3rem;
+            outline: 0;
+        }
+
+        .btn-secondary {
+            color: #fff;
+            border-color: #6c757d;
+            background-color: #003D86;
+            padding: 5px 15px;
+            margin-left: 10px;
+            border: 5px solid transparent;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+
+        }
+
+        .btn-primary {
+            color: #fff;
+            background-color: #FFB703;
+            border-color: #6c757d;
+            padding: 5px 15px;
+            margin-left: 10px;
+            border: 5px solid transparent;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+
+        }
+
+        .btn-secondary,
+.btn-primary {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Toevoegen van een schaduw */
+    transition: box-shadow 0.3s ease; /* Vloeiende overgang voor schaduw bij hover */
+    
+
+}
+
+.btn-secondary:hover,
+.btn-primary:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Intensifiëren van de schaduw bij hover */
+    background-color: #6c757d;
+}
+
+.time-event label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.time-event input[type="time"] {
+    padding: 5px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.time-event input[type="time"]:focus {
+    outline: none;
+    border-color: #FFB703; /* Kleur van de focusrand aanpassen */
+    box-shadow: 0 0 5px rgba(0, 61, 134, 0.5); /* Toevoegen van een schaduw bij focus */
+}
+
+h3{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 18px;
+    color: #003D86;
+    font-weight: bold;
+
+}
+
     </style>
 </head>
 
@@ -42,20 +131,23 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <!-- Modal Body -->
+                
                 <div class="modal-body">
-                    <input type="text" class="form-control" id="title" value="Naam leerling:">
+                    <h3>Titel</h3>
+                    <input type="text" class="form-control" id="title">
                     <span id="titleError" class="text-danger"></span>
                 </div>
                 <!-- Time Selection -->
                 <div class="time-event">
-                    <label for="appt">Begin tijd</label>
+                    <h3 for="appt">Begin tijd</h3>
                     <input type="time" id="start-time" name="StartTime" min="07:00" max="23:59" required />
-                    <label for="appt">Eind tijd</label>
+                    <h3 for="appt">Eind tijd</h3>
                     <input type="time" id="end-time" name="EndTime" min="07:00" max="23:59" required />
                 </div>
+                
                 <!-- Dropdown for Students -->
                 <div class="table-grey">
-                    <h2>Leerlingen</h2>
+                    <h3>Leerlingen</h3>
                     <div class="table-grey-content">
                         <select id="leerlingen-dropdown">
                             <option value="leerlingid">Selecteer een leerling</option>
@@ -69,7 +161,7 @@
                 </div>
                 <!-- Dropdown for Instructors -->
                 <div class="table-grey">
-                    <h2>Rijinstructeurs</h2>
+                    <h3>Rijinstructeurs</h3>
                     <div class="table-grey-content">
                         <select id="rijinstructeurs-dropdown">
                             <option value="instructeurid">Selecteer een rijinstructeur</option>
@@ -83,6 +175,7 @@
                 </div>
                 <!-- Car Type Selection -->
                 <div class="modal-body">
+                    <h3>Auto type</h3>
                     <select class="form-control" name="autoType" id="auto-type">
                         <option value="Schakel">Schakel</option>
                         <option value="Automaat">Automaat</option>
@@ -91,7 +184,7 @@
                     <span id="autoTypeError" class="text-danger"></span>
                 </div>
                 <!-- Remarks Section -->
-                <div class="opmerking">Opmerking
+                <div class="opmerking"><h3>Opmerking</h3>
                     <input type="text" id="opmerking">
                 </div>
                 <!-- Modal Footer -->
@@ -107,7 +200,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h3 class="text-center mt-5">Agenda</h3>
+                <h2 class="text-center mt-5">Agenda</h2>
                 <div id="calendar"></div>
             </div>
         </div>
@@ -167,7 +260,7 @@
                                 end_date: endDate,
                                 instructeurid,
                                 leerlingid,
-                                opmerking, 
+                                opmerking,
                             },
                             success: function(response) {
                                 $('#bookingModal').modal('hide');
@@ -229,6 +322,7 @@
                                 swal("Gelukt!", "afspraak verwijderd!", "success");
                             },
                             error: function(error) {
+                                location.reload();
                                 console.log(error)
                             },
                         });
