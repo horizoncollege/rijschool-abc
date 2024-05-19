@@ -188,6 +188,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sluiten</button>
                     <button type="button" id="saveBtn" class="btn btn-primary">Opslaan</button>
+                    <button type="button" id="deleteBtn" class="btn btn-danger">Verwijderen</button>
                 </div>
             </div>
         </div>
@@ -263,22 +264,81 @@
                 eventClick: function (event) {
                     var id = event.id;
     
-                    if (confirm('Weet je zeker dat je dit wilt verwijderen?')) {
-                        // AJAX request to delete the event
+                    // Load event data into the modal
+                    $('#title').val(event.title);
+                    $('#start-time').val(moment(event.start).format('HH:mm'));
+                    $('#end-time').val(moment(event.end).format('HH:mm'));
+                    $('#rijinstructeurs-dropdown').val(event.instructeurid);
+                    $('#leerlingen-dropdown').val(event.leerlingid);
+                    $('#auto-type').val(event.auto_type);
+                    $('#opmerking').val(event.opmerking);
+    
+                    // Show the modal
+                    $('#bookingModal').modal('toggle');
+    
+                    // Set the save button data
+                    $('#saveBtn').data('id', id);
+    
+                    // Unbind and bind the save button click event
+                    $('#saveBtn').unbind().click(function () {
+                        var title = $('#title').val();
+                        var autoType = $('#auto-type').val();
+                        var startDateTime = $('#start-time').val();
+                        var endDateTime = $('#end-time').val();
+                        var instructeurid = $('#rijinstructeurs-dropdown').val();
+                        var leerlingid = $('#leerlingen-dropdown').val();
+                        var opmerking = $('#opmerking').val();
+    
+                        var start = moment(event.start).format('YYYY-MM-DD') + ' ' + startDateTime;
+                        var end = moment(event.end).format('YYYY-MM-DD') + ' ' + endDateTime;
+    
+                        // AJAX request to update the event
                         $.ajax({
-                            url: "/calendar/destroy/" + event.id,
-                            type: "DELETE",
+                            url: "/calendar/update/" + id,
+                            type: "PATCH",
                             dataType: 'json',
+                            data: {
+                                title,
+                                auto_type: autoType,
+                                start_date: start,
+                                end_date: end,
+                                instructeurid,
+                                leerlingid,
+                                opmerking,
+                            },
                             success: function (response) {
-                                $('#calendar').fullCalendar('removeEvents', response);
-                                swal("Gelukt!", "afspraak verwijderd!", "success");
+                                $('#bookingModal').modal('hide');
+                                location.reload();
                             },
                             error: function (error) {
-                                location.reload();
-                                console.log(error)
+                                if (error.responseJSON.errors) {
+                                    $('#titleError').html(error.responseJSON.errors.title);
+                                    $('#autoTypeError').html(error.responseJSON.errors.auto_type);
+                                }
                             },
                         });
-                    }
+                    });
+    
+                    // Unbind and bind the delete button click event
+                    $('#deleteBtn').unbind().click(function () {
+                        if (confirm('Weet je zeker dat je dit wilt verwijderen?')) {
+                            // AJAX request to delete the event
+                            $.ajax({
+                                url: "/calendar/destroy/" + id,
+                                type: "DELETE",
+                                dataType: 'json',
+                                success: function (response) {
+                                    $('#calendar').fullCalendar('removeEvents', id);
+                                    location.reload();
+                                    $('#bookingModal').modal('hide');
+                                },
+                                error: function (error) {
+                                    location.reload();
+                                    console.log(error);
+                                },
+                            });
+                        }
+                    });
                 },
                 selectAllow: function (event) {
                     return moment(event.start).utcOffset(false).isSame(moment(event.end).subtract(1, 'second').utcOffset(false), 'day');
@@ -287,70 +347,13 @@
                 maxTime: "24:00:00", // Einde van de dag
             });
     
-            // Function to open booking modal
-            function openBookingModal() {
-                $('#bookingModal').modal('toggle');
-            }
-    
             // Unbind the save button click event when modal is closed
             $("#bookingModal").on("hidden.bs.modal", function () {
                 $('#saveBtn').unbind();
-            });
-    
-            // Save button click event
-            $('#saveBtn').click(function () {
-                var title = $('#title').val();
-                var autoType = $('#auto-type').val();
-                var startDateTime = $('#start-time').val();
-                var endDateTime = $('#end-time').val();
-                var instructeurid = $('#rijinstructeurs-dropdown').val();
-                var leerlingid = $('#leerlingen-dropdown').val();
-                var opmerking = $('#opmerking').val();
-    
-                var start = $('#saveBtn').data('start');
-                var end = $('#saveBtn').data('end');
-    
-                var startDate = moment(start.format('YYYY-MM-DD') + ' ' + startDateTime,
-                    'YYYY-MM-DD HH:mm').format('YYYY-MM-DD HH:mm');
-                var endDate = moment(end.format('YYYY-MM-DD') + ' ' + endDateTime,
-                    'YYYY-MM-DD HH:mm').format('YYYY-MM-DD HH:mm');
-    
-                // AJAX request to store the event
-                $.ajax({
-                    url: "/calendar/store",
-                    type: "POST",
-                    dataType: 'json',
-                    data: {
-                        title,
-                        auto_type: autoType,
-                        start_date: startDate,
-                        end_date: endDate,
-                        instructeurid,
-                        leerlingid,
-                        opmerking,
-                    },
-                    success: function (response) {
-                        $('#bookingModal').modal('hide');
-                        $('#calendar').fullCalendar('renderEvent', {
-                            'title': response.title,
-                            'start': response.start,
-                            'end': response.end,
-                            'color': response.color,
-                            'instructeurid': instructeurid,
-                            'leerlingid': leerlingid
-                        });
-                        location.reload();
-                    },
-                    error: function (error) {
-                        if (error.responseJSON.errors) {
-                            $('#titleError').html(error.responseJSON.errors.title);
-                            $('#autoTypeError').html(error.responseJSON.errors.auto_type);
-                        }
-                    },
-                });
+                $('#deleteBtn').unbind();
             });
         });
     </script>
-    </body>
-    
-    </html>
+</body>
+
+</html>
