@@ -15,21 +15,38 @@ class DashboardController extends Controller
 
     public function index()
     {
-        // Retrieve the list of registered users
+        // Haal de lijst van geregistreerde gebruikers op
         $users = User::all();
 
-        // Haal de evenementen op uit de database
-        $events = array();
-        $bookings = Booking::all();
+        // Haal de ingelogde gebruiker op
+        $currentUser = auth()->user();
 
+        // Haal de evenementen op uit de database gefilterd op basis van de rol van de gebruiker
+        $events = array();
+        
+        if ($currentUser->hasRole('Admin')) {
+            // Als de gebruiker een admin is, toon alle boekingen
+            $bookings = Booking::all();
+        } elseif ($currentUser->hasRole('Rijinstructeur')) {
+            // Als de gebruiker een rijinstructeur is, toon alleen boekingen gekoppeld aan deze instructeur
+            $bookings = Booking::where('instructeurid', $currentUser->id)->get();
+        } elseif ($currentUser->hasRole('Leerling')) {
+            // Als de gebruiker een leerling is, toon alleen boekingen gekoppeld aan deze leerling
+            $bookings = Booking::where('leerlingid', $currentUser->id)->get();
+        } else {
+            // Als de gebruiker geen van bovenstaande rollen heeft, toon geen boekingen
+            $bookings = collect();
+        }
+
+        // Format de boekingen voor de kalenderweergave
         foreach ($bookings as $booking) {
             $color = null;
             if ($booking->auto_type == 'Schakel' || $booking->auto_type == 'schakel') {
-                $color =  'purple';
+                $color = 'purple';
             } elseif ($booking->auto_type == 'Automaat' || $booking->auto_type == 'automaat') {
-                $color =  'darkblue';
+                $color = 'darkblue';
             } elseif ($booking->auto_type == 'Handicapt' || $booking->auto_type == 'handicapt') {
-                $color =  'red';
+                $color = 'red';
             }
 
             $events[] = [
@@ -38,13 +55,16 @@ class DashboardController extends Controller
                 'auto_type' => $booking->auto_type,
                 'start' => $booking->start_date,
                 'end' => $booking->end_date,
+                'instructeurid' => $booking->instructeurid,
+                'leerlingid' => $booking->leerlingid,
+                'opmerking' => $booking->opmerking,
                 'color' => $color,
                 'textColor' => '#CBD5D4',
                 'border' => 'green',
             ];
         }
 
-        // Stuur de evenementen naar de view
+        // Stuur de evenementen en gebruikers naar de view
         return view('dashboard', compact('events', 'users'));
     }
 
@@ -65,6 +85,9 @@ class DashboardController extends Controller
             'auto_type' => $request->input('auto_type'), // Sla de geselecteerde waarde van de pulldown op in de database
             'start_date' => $request->input('start_date'),
             'end_date' => $request->input('end_date'),
+            'instructeurid' => $request->input('instructeurid'),
+            'leerlingid' => $request->input('leerlingid'),
+            'opmerking' => $request->input('opmerking'),
         ]);
 
         // Geef een succesreactie terug
@@ -74,6 +97,9 @@ class DashboardController extends Controller
             'end' => $booking->end_date,
             'title' => $booking->title,
             'autoType' => $booking->auto_type,
+            'instructeurid' => $booking->instructeurid,
+            'leerlingid' => $booking->leerlingid,
+            'opmerking' => $booking->opmerking,
         ]);
     }
 

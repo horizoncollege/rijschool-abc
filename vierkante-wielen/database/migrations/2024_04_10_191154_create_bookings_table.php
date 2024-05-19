@@ -17,6 +17,8 @@ class CreateBookingsTable extends Migration
             $table->enum('auto_type', ['Schakel', 'Automaat', 'Handicapt'])->default('Schakel'); // Standaardwaarde instellen
             $table->dateTime('start_date');
             $table->dateTime('end_date');
+            $table->foreignId('instructeurid')->nullable();
+            $table->foreignId('leerlingid')->nullable();
             $table->timestamps();
         });
     }
