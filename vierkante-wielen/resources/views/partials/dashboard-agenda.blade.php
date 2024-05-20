@@ -154,8 +154,7 @@
                             @endforeach
                         </select>
                     </div>
-                </div>
-                <!-- Dropdown for Instructors -->
+                </div <!-- Dropdown for Instructors -->
                 <div class="table-grey">
                     <h3>Rijinstructeurs</h3>
                     <div class="table-grey-content">
@@ -204,22 +203,24 @@
         </div>
     </div>
 
+
     <!-- Script to handle FullCalendar and Modal -->
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             // Set up AJAX with CSRF token
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
-    
+
             // Load events into FullCalendar
             var booking = @json($events);
-    
+
             // Determine if user is admin or instructor
-            var isAuthorizedUser = {{ auth()->user()->hasRole('Admin') || auth()->user()->hasRole('Rijinstructeur') ? 'true' : 'false' }};
-    
+            var isAuthorizedUser =
+                {{ auth()->user()->hasRole('Admin') || auth()->user()->hasRole('Rijinstructeur') ? 'true' : 'false' }};
+
             // Initialize FullCalendar
             var calendar = $('#calendar').fullCalendar({
                 header: {
@@ -231,7 +232,7 @@
                 selectable: isAuthorizedUser,
                 selectHelper: true,
                 defaultView: 'agendaWeek',
-                select: function (start, end, allDays) {
+                select: function(start, end, allDays) {
                     if (isAuthorizedUser) {
                         $('#bookingModal').modal('toggle');
                         $('#saveBtn').data('start', start);
@@ -239,11 +240,11 @@
                     }
                 },
                 editable: true,
-                eventDrop: function (event) {
+                eventDrop: function(event) {
                     var id = event.id;
                     var start_date = moment(event.start).format('YYYY-MM-DD HH:mm');
                     var end_date = moment(event.end).format('YYYY-MM-DD HH:mm');
-    
+
                     // AJAX request to update the event
                     $.ajax({
                         url: "/calendar/update/" + event.id,
@@ -253,17 +254,17 @@
                             start_date,
                             end_date
                         },
-                        success: function (response) {
+                        success: function(response) {
                             swal("Gelukt!", "afspraak bijgewerkt!", "success");
                         },
-                        error: function (error) {
+                        error: function(error) {
                             console.log(error)
                         },
                     });
                 },
-                eventClick: function (event) {
+                eventClick: function(event) {
                     var id = event.id;
-    
+
                     // Load event data into the modal
                     $('#title').val(event.title);
                     $('#start-time').val(moment(event.start).format('HH:mm'));
@@ -272,15 +273,15 @@
                     $('#leerlingen-dropdown').val(event.leerlingid);
                     $('#auto-type').val(event.auto_type);
                     $('#opmerking').val(event.opmerking);
-    
+
                     // Show the modal
                     $('#bookingModal').modal('toggle');
-    
+
                     // Set the save button data
                     $('#saveBtn').data('id', id);
-    
+
                     // Unbind and bind the save button click event
-                    $('#saveBtn').unbind().click(function () {
+                    $('#saveBtn').unbind().click(function() {
                         var title = $('#title').val();
                         var autoType = $('#auto-type').val();
                         var startDateTime = $('#start-time').val();
@@ -288,10 +289,12 @@
                         var instructeurid = $('#rijinstructeurs-dropdown').val();
                         var leerlingid = $('#leerlingen-dropdown').val();
                         var opmerking = $('#opmerking').val();
-    
-                        var start = moment(event.start).format('YYYY-MM-DD') + ' ' + startDateTime;
-                        var end = moment(event.end).format('YYYY-MM-DD') + ' ' + endDateTime;
-    
+
+                        // Formatteer de start- en einddatum met moment.js
+                        var start = moment(startDateTime, 'HH:mm').format(
+                        'YYYY-MM-DD HH:mm:ss');
+                        var end = moment(endDateTime, 'HH:mm').format('YYYY-MM-DD HH:mm:ss');
+
                         // AJAX request to update the event
                         $.ajax({
                             url: "/calendar/update/" + id,
@@ -306,33 +309,35 @@
                                 leerlingid,
                                 opmerking,
                             },
-                            success: function (response) {
+                            success: function(response) {
                                 $('#bookingModal').modal('hide');
                                 location.reload();
                             },
-                            error: function (error) {
+                            error: function(error) {
                                 if (error.responseJSON.errors) {
-                                    $('#titleError').html(error.responseJSON.errors.title);
-                                    $('#autoTypeError').html(error.responseJSON.errors.auto_type);
+                                    $('#titleError').html(error.responseJSON.errors
+                                        .title);
+                                    $('#autoTypeError').html(error.responseJSON
+                                        .errors.auto_type);
                                 }
                             },
                         });
                     });
-    
+
                     // Unbind and bind the delete button click event
-                    $('#deleteBtn').unbind().click(function () {
+                    $('#deleteBtn').unbind().click(function() {
                         if (confirm('Weet je zeker dat je dit wilt verwijderen?')) {
                             // AJAX request to delete the event
                             $.ajax({
                                 url: "/calendar/destroy/" + id,
                                 type: "DELETE",
                                 dataType: 'json',
-                                success: function (response) {
+                                success: function(response) {
                                     $('#calendar').fullCalendar('removeEvents', id);
                                     location.reload();
                                     $('#bookingModal').modal('hide');
                                 },
-                                error: function (error) {
+                                error: function(error) {
                                     location.reload();
                                     console.log(error);
                                 },
@@ -340,20 +345,71 @@
                         }
                     });
                 },
-                selectAllow: function (event) {
-                    return moment(event.start).utcOffset(false).isSame(moment(event.end).subtract(1, 'second').utcOffset(false), 'day');
+                selectAllow: function(event) {
+                    return moment(event.start).utcOffset(false).isSame(moment(event.end).subtract(1,
+                        'second').utcOffset(false), 'day');
                 },
                 minTime: "07:00:00", // Begin van de dag
                 maxTime: "24:00:00", // Einde van de dag
             });
-    
+
             // Unbind the save button click event when modal is closed
-            $("#bookingModal").on("hidden.bs.modal", function () {
+            $("#bookingModal").on("hidden.bs.modal", function() {
                 $('#saveBtn').unbind();
                 $('#deleteBtn').unbind();
             });
+
+            $('#saveBtn').click(function () {
+                var title = $('#title').val();
+                var autoType = $('#auto-type').val();
+                var startDateTime = $('#start-time').val();
+                var endDateTime = $('#end-time').val();
+                var instructeurid = $('#rijinstructeurs-dropdown').val();
+                var leerlingid = $('#leerlingen-dropdown').val();
+                var opmerking = $('#opmerking').val();
+    
+                var start = $('#saveBtn').data('start');
+                var end = $('#saveBtn').data('end');
+    
+                var startDate = moment(start.format('YYYY-MM-DD') + ' ' + startDateTime,
+                    'YYYY-MM-DD HH:mm').format('YYYY-MM-DD HH:mm');
+                var endDate = moment(end.format('YYYY-MM-DD') + ' ' + endDateTime,
+                    'YYYY-MM-DD HH:mm').format('YYYY-MM-DD HH:mm');
+    
+                // AJAX request to store the event
+                $.ajax({
+                    url: "/calendar/store",
+                    type: "POST",
+                    dataType: 'json',
+                    data: {
+                        title,
+                        auto_type: autoType,
+                        start_date: startDate,
+                        end_date: endDate,
+                        instructeurid,
+                        leerlingid,
+                        opmerking,
+                    },
+                    success: function (response) {
+                        $('#bookingModal').modal('hide');
+                        $('#calendar').fullCalendar('renderEvent', {
+                            'title': response.title,
+                            'start': response.start,
+                            'end': response.end,
+                            'color': response.color,
+                            'instructeurid': instructeurid,
+                            'leerlingid': leerlingid
+                        });
+                        location.reload();
+                    },
+                    error: function (error) {
+                        if (error.responseJSON.errors) {
+                            $('#titleError').html(error.responseJSON.errors.title);
+                            $('#autoTypeError').html(error.responseJSON.errors.auto_type);
+                        }
+                    },
+                });
+            });
         });
     </script>
-</body>
-
-</html>
+    </body>
