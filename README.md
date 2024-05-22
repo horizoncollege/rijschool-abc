@@ -12,6 +12,7 @@ Vierkante wielen is rijschoolwebsite waar je kan lessen. gespecialiceerd voor me
 ## Sprints🏃
 - Sprint 1: van 12-3-2024 tot 2-4-2024
 - Sprint 2: van 5-4-2024 tot 23-4-2024
+- Sprint 3: van 13-5-2024 tot 22-5-2024
 
 ## Over de website🌐
 Rijschool vierkante wielen is gebouwd met het php framework Laravel. Ook is er gebruik maakt van HTML, CSS en JavaScript. 
