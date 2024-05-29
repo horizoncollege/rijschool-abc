@@ -8,7 +8,7 @@
 
 <div class="hero-image">
     <div class="hero-text">
-        <h1>Tarieven</h1>
+        <h1>Tarieven test</h1>
         <p>Bij Vierkante Wielen hanteren we scherpe tarieven voor je rijles. Je kan losse lessen of lespakketten
             afnemen. Wil je advies hierover, neem dan contact op en we bespreken de mogelijkheden.</p>
     </div>
