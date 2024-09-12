@@ -14,10 +14,16 @@ Vierkante wielen is rijschoolwebsite waar je kan lessen. gespecialiceerd voor me
  2. open de applicatie in je editor en open de .env-dummy file
  3. Wijzig de naam van de .env-dummy naar .env en wijzig de gegevens naar je eigen database
  4. Maak in Mysql database een nieuwe database en noem het 'project_vierkante_wielen'
- 5. Open de terminal in de applicatie en voor de volgende commando's uit
-    - docker-compose up -d
-    - docker-compose run composer install  
- 6. Start docker op en start de applicatie
+ 5. Voer de volgende commando's uit
+  - `composer install`
+  - `npm install`
+  - `php artisan migrate`
+6. Start de applicatie op door de volgende commando's
+  - `php artisan serve`
+  - `npm run dev `
+    
+
+
 
 
 
